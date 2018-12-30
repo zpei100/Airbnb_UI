@@ -44,7 +44,8 @@ class Booking extends React.Component {
   render () {
     const {room} = this.props;
     return (
-      <div className="card" style={{ width: '24rem' }}>
+      <div className="px-4">
+        <div className="card mt-4 float-right" style={{ width: '24rem' }} id="booking" >
         <div className="card-body">
           <Headers {...room} />
           <Calendar />
@@ -52,6 +53,7 @@ class Booking extends React.Component {
           <Fees guest={this.state.guest} />
           <Book />
         </div>
+      </div>
       </div>
     )
   };

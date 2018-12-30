@@ -8,7 +8,6 @@ const Book = ({dateRange: {startDate, endDate}, room: {id, datesBooked}, updateD
     id="book-button" 
     className="btn btn-danger rounded border border-light my-4 px-2 w-100"
     onClick={() => {
-      console.log('start and end date: ', startDate, endDate)
       updateDatesBooked({startDate, endDate, id, datesBooked})
     }}
   >Book</button>

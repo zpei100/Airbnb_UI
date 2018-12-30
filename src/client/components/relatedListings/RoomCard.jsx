@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from "redux";
-import Rating from './Rating';
+import Rating from './Rating.jsx';
 import { heart } from '../../lib/svg';
 import updateFavorites from "../../actionCreators/updateFavorites";
 
@@ -23,7 +23,7 @@ const RoomCard = ({type, tag, description, id, beds, price, rating, reviews, img
   
         <div style={{cursor: "pointer"}} className="mt-2 p-0 card-body" >
           <div className="mb-0 room-type d-flex" style={{ height: '20px' }}>
-            {tag === 'PLUS' ? (
+            {tag === 'PLUS' ? ( 
               <span
                 className="mr-1 small px-1 border rounded"
                 style={{ backgroundColor: 'rgb(166, 30, 85)' }}

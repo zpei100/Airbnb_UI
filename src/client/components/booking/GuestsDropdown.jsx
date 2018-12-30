@@ -13,6 +13,7 @@ export default class GuestsDropDown extends Component {
 
   componentDidMount = () => {
     $('html').on('click', e => {
+      console.log('click happeend');
       if (e.target.id === 'dropdown-button' || e.target.id === 'dropdown-close' || $(e.target).parents('#dropdown-button').length) {
         $('#dropdown-menu').slideToggle(0);
         return this.setState({toggled: !this.state.toggled})
@@ -22,7 +23,7 @@ export default class GuestsDropDown extends Component {
         $('#dropdown-menu').slideToggle(0);
         this.setState({toggled: false});
       }
-
+      console.log('end of code reached');
     })
   }
 

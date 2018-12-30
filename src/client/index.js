@@ -8,10 +8,10 @@ import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 
 import rootReducer from './reducers/rootReducer';
-import RelatedListings from './components/relatedListings/RelatedListings'
+import RelatedListings from './components/relatedListings/RelatedListings.jsx'
 import Gallery from "./components/gallery/Gallery";
 import Nav from "./components/navbar/Nav";
-import Description from './components/description/Description';
+import Description from './components/description/Description.jsx';
 import CarouselModal from './components/modal/CarouselModal';
 import Booking from './components/booking/Booking.jsx';
 
@@ -43,12 +43,12 @@ hydrate(
   document.getElementById('nav-app')
 );
 
-// hydrate(
-//   <Provider store={store}>
-//     <Description />
-//   </Provider>,
-//   document.getElementById('description-app')
-// );
+hydrate(
+  <Provider store={store}>
+    <Description />
+  </Provider>,
+  document.getElementById('description-app')
+);
 
 hydrate(
   <Provider store={store}>

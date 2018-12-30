@@ -1,3 +1,39 @@
+@media screen and (max-width: 768px) {
+  #booking-app {
+    display: none;
+  }
+}
+#app-body {
+  display: grid;
+  margin: auto;
+  grid-template-columns: 11fr 8fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: "description-app booking-app" "reviews-app booking-app";
+}
+
+#description-app {
+  grid-area: description-app;
+}
+
+#booking-app {
+  grid-area: booking-app;
+}
+
+#reviews-app {
+  grid-area: reviews-app;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.room-type {
+  color: #a61d55;
+  font-weight: 800;
+  font-size: 14px;
+}
+
 .gallery {
   display: grid;
   position: relative;
@@ -6,8 +42,7 @@
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "img0 img1 img3" "img0 img2 img4";
 }
-
-@media (max-height: 860px), (max-width: 1200px) {
+@media screen and (max-height: 860px), (max-width: 1200px) {
   .gallery {
     height: 442px;
   }
@@ -23,12 +58,10 @@
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "img0 img1" "img0 img2";
   }
-
-  .img3 {
+  .gallery .img3 {
     display: none;
   }
-
-  .img4 {
+  .gallery .img4 {
     display: none;
   }
 }
@@ -38,12 +71,10 @@
     grid-template-rows: 1fr;
     grid-template-areas: "img0";
   }
-
-  .gallery-div:not(.img0) {
+  .gallery .gallery-div:not(.img0) {
     display: none;
   }
-
-  .hide-text {
+  .gallery .hide-text {
     display: none;
   }
 }
@@ -51,63 +82,50 @@
   position: absolute;
   z-index: 1;
 }
-
-.button-group-top {
+.gallery .button-group-top {
   right: 0;
 }
-
-.button-bottom {
+.gallery .button-bottom {
   bottom: 0;
   right: 0;
 }
-
 .gallery img {
   width: 100%;
   height: 100%;
   transition: transform 0.5s;
   cursor: pointer;
 }
-
-.jump {
+.gallery .jump {
   transform: translateY(-20px);
   transition: opacity 0.2s ease-in, transform 0.35s;
 }
-
-.fall {
+.gallery .fall {
   transform: translateY(20px);
   transition: opacity 0.2s ease-in, transform 0.35s;
 }
-
-.gallery-div {
+.gallery .gallery-div {
   overflow: hidden;
   background-color: #262626;
 }
-
-.gallery img:hover {
+.gallery .gallery img:hover {
   transform: scale(1.08);
 }
-
-.img0 {
+.gallery .img0 {
   grid-area: img0;
 }
-
-.img1 {
+.gallery .img1 {
   grid-area: img1;
 }
-
-.img2 {
+.gallery .img2 {
   grid-area: img2;
 }
-
-.img3 {
+.gallery .img3 {
   grid-area: img3;
 }
-
-.img4 {
+.gallery .img4 {
   grid-area: img4;
 }
-
-.button-text {
+.gallery .button-text {
   font-size: 15px;
   font-weight: 200;
 }
@@ -214,10 +232,19 @@
   color: #a61d55;
 }
 
-.description .highlight .active {
-  color: teal;
-  fill: teal;
-  font-weight: 300;
+.description #profile-picture {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
+.description ul img {
+  margin-right: 12px;
+}
+.description .description-bold {
+  font-weight: 650;
+}
+.description #room-title {
+  font-weight: 800;
 }
 
 ::after {
@@ -289,6 +316,11 @@
 }
 #dropdown-button .active {
   background-color: #99ede6;
+}
+
+#booking {
+  position: sticky;
+  top: 20px;
 }
 
 .DateRangePickerInput {

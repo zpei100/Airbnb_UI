@@ -18,7 +18,7 @@ import RelatedListings from '../client/components/relatedListings/RelatedListing
 import Nav from '../client/components/navbar/Nav';
 import Description from '../client/components/description/Description';
 import CarouselModal from '../client/components/modal/CarouselModal';
-import Booking from '../client/components/booking/Booking';
+import Booking from '../client/components/booking/Booking.jsx';
 
 import { getRoomAndUserInfo, addDates } from './handlers/getRoomAndUserInfo';
 
@@ -78,11 +78,11 @@ app.get('/getRoom/:id', function(req, res) {
             <RelatedListings />
           </Provider>
         ),
-        navHtml: renderToString(
-          <Provider store={store}>
-            <Nav />
-          </Provider>
-        ),
+        // navHtml: renderToString(
+        //   <Provider store={store}>
+        //     <Nav />
+        //   </Provider>
+        // ),
         // descriptionHtml: renderToString(
         //   <Provider store={store}>
         //     <Description />
@@ -99,6 +99,8 @@ app.get('/getRoom/:id', function(req, res) {
         //   </Provider>
         // )
       };
+
+      console.log(initialState.bookingHtml);
 
       res.status(200).send({initialState, htmls});
     }).catch(() => res.status(404));

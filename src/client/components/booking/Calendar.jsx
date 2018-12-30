@@ -25,7 +25,6 @@ class Calendar extends Component {
   render() {
     const { room: { datesBooked : dates }, updateDateRange, dateRange: {startDate, endDate}} = this.props;
     const datesBooked = dates.map(date => Moment(date));
-    console.log('dates booked: ', datesBooked)
    
     return (
       <DateRangePicker
@@ -56,30 +55,9 @@ class Calendar extends Component {
           };
 
           if (this.state.focusedInput === 'startDate') {
-            if (endDate && datesBooked.some(date => Moment.range(day, endDate).contais(date))) return true;
+            if (endDate && datesBooked.some(date => Moment.range(day, endDate).contains(date))) return true;
             if (datesBooked.some(date => day.clone().add(1, 'day').isSame(date, 'day'))) return true; 
           };
-
-       
-
-          // if (endDate && this.state.focusedInput === 'startDate') {
-          //   const range = Moment.range(day, endDate);
-          //   if (datesBooked.some(date => range.contains(date))) return true;
-          // };
-
-          // //or condition: when startDate is not null,  and the range of start to day, includes some booked date
-
-          // if(this.state.focusedInput === 'endDate' && datesBooked.some(date => day.add(1, 'day').isSame(date))) {
-          //   return true;
-          // }
-
-          // //and the day is blocked if it is one day before some already booked date, when focused input is startDate
-
-          // if(this.state.focusedInput === 'startDate' && datesBooked.some(date => date.isSame(day.add(1, 'day')))) {
-          //   return true;
-          // }
-
-          //and the day is blocked if it is one day after some already booked date, when focused input is endDate
 
           return datesBooked.some(date => date.isSame(day, 'day'));
         }}

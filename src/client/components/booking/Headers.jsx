@@ -1,5 +1,5 @@
 import React from 'react';
-import Rating from '../relatedListings/Rating';
+import Rating from '../relatedListings/Rating.jsx';
 
 export default ({price, rating, id, tag, reviews}) => (
   <React.Fragment>

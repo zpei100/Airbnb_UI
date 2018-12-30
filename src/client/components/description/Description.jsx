@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { thumbsUp } from '../../lib/svg';
+import Header from './Header.jsx';
+import Icons from './Icons.jsx';
 import $ from 'jquery';
 
 const toggleHighlight = function(e) {
@@ -21,52 +23,34 @@ const Description = function({
     owner
   }
 }) {
-  return (
-    <div className="d-flex mt-3 description justify-content-end">
-      <div style={{width: '60%'}}>
-        <div className="small">{type}</div>
-        <div className="row d-flex justify-content-around">
-          <div className="mt-2 col-8 p-0">
-            <div
-              className="font-weightbold"
-              style={{ fontSize: '1.8rem', fontWeight: '700' }}
-            >
-              {title}
-            </div>
-            <div className="ml-0">{location}</div>
-          </div>
-          <div className="col-2 d-flex flex-column p-0">
-            <div className="row align-self-center">
-              <img
-                className="m-auto h-75 w-auto"
-                src="https://image.ibb.co/cz7USf/David.png"
-              />
-            </div>
-            <span className="row m-auto">{owner}</span>
-          </div>
-        </div>
 
-        <ul
-          className="d-flex justify-content-start mt-2 pl-0"
-          style={{ listStyleType: 'none' }}
-        >
-          <li className="mr-5">
-            <img src="https://image.ibb.co/hjsPcf/guests.png" />
-            {guests}
-          </li>
-          <li className="mr-5">
-            <img src="https://image.ibb.co/nDMviL/bedrooms.png" />
-            {bedrooms}
-          </li>
-          <li className="mr-5">
-            <img src="https://image.ibb.co/emdxxf/beds.png" />
-            {beds}
-          </li>
-          <li className="mr-5">
-            <img src="https://image.ibb.co/daQzA0/baths.png" />
-            {baths}
-          </li>
-        </ul>
+  const headerProps = {title, location, picture: "https://picsum.photos/200/300/?random" };
+  const iconProps = {guests, bedrooms, beds, baths};
+
+  return (
+    <div className="description mt-4 px-4">
+      <div className="room-type">{type}</div>
+      <Header {...headerProps} />
+      <Icons {...iconProps} />
+      <hr className="my-4" />
+
+    </div>
+  );
+};
+
+const mapStateToProps = function(state) {
+  return {
+    _description: state.description
+  };
+};
+
+export default connect(mapStateToProps)(Description);
+
+
+/*
+
+
+        
 
         <div className="card border border-secondary">
           <div className="card-body">
@@ -108,14 +92,5 @@ const Description = function({
         </div>
         <div className="card-text mt-3">{description}</div>
       </div>
-    </div>
-  );
-};
-
-const mapStateToProps = function(state) {
-  return {
-    _description: state.description
-  };
-};
-
-export default connect(mapStateToProps)(Description);
+    </div> 
+    */

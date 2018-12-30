@@ -1,3 +1,52 @@
+//============================================ All ============================================
+$purple: rgb(166, 29, 85);
+$break-width-md: 1200px;
+$break-width-sm: 768px;
+$break-height-md: 860px;
+$break-height-sm: 678px;
+
+@media screen and (max-width: $break-width-sm) {
+  #booking-app {
+    display: none;
+  }
+};
+
+#app-body {
+  display: grid;
+  margin: auto;
+  grid-template-columns: 11fr 8fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+  "description-app booking-app"
+  "reviews-app booking-app"
+}
+
+#description-app {
+  grid-area: description-app;
+}
+
+#booking-app {
+  grid-area: booking-app;
+}
+
+#reviews-app {
+  grid-area: reviews-app;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.room-type {
+  color: $purple;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+
+
+//============================================ Gallery ============================================
 .gallery {
   display: grid;
   position: relative;
@@ -7,119 +56,114 @@
   grid-template-areas:
     'img0 img1 img3'
     'img0 img2 img4';
-}
-
-@media (max-height: 860px), (max-width: 1200px) {
-  .gallery {
+  
+  @media screen and (max-height: $break-height-md), (max-width: $break-width-md) {
     height: 442px;
-  }
-}
+  } 
 
-@media (max-height: 678px) {
-  .gallery {
+  @media (max-height: $break-height-sm) {
     height: 295px;
   }
-}
 
-@media (max-width: 1200px) {
-  .gallery {
+  @media (max-width: 1200px) {
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
       'img0 img1'
       'img0 img2';
+    
+    .img3 {
+      display: none;
+    }
+
+    .img4 {
+      display: none;
+    }
   }
 
-  .img3 {
-    display: none;
-  }
-
-  .img4 {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .gallery {
+  @media (max-width: 768px) {
+    
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas: 
-    "img0"
+    grid-template-areas: "img0";
+    
+    .gallery-div:not(.img0) {
+      display: none;
+    }
+  
+    .hide-text {
+      display: none;
+    }
   }
 
-  .gallery-div:not(.img0) {
-    display: none;
+  .button {
+    position: absolute;
+    z-index: 1;
   }
 
-  .hide-text {
-    display: none;
+  .button-group-top {
+    right: 0;
+  }
+  
+  .button-bottom {
+    bottom: 0;
+    right: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    cursor: pointer;
+  }
+
+  .jump {
+    transform: translateY(-20px);
+    transition: opacity 0.2s ease-in, transform 0.35s;
+  }
+  
+  .fall {
+    transform: translateY(+20px);
+    transition: opacity 0.2s ease-in, transform 0.35s;
+  }
+  
+  .gallery-div {
+    overflow: hidden;
+    background-color: #262626;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.08);
+  }
+  
+  .img0 {
+    grid-area: img0;
+  }
+  
+  .img1 {
+    grid-area: img1;
+  }
+  
+  .img2 {
+    grid-area: img2;
+  }
+  
+  .img3 {
+    grid-area: img3;
+  }
+  
+  .img4 {
+    grid-area: img4;
+  }
+  
+  .button-text {
+    font-size: 15px;
+    font-weight: 200;
   }
 }
 
-.gallery .button {
-  position: absolute;
-  z-index: 1;
-}
-
-.button-group-top {
-  right: 0;
-}
-
-.button-bottom {
-  bottom: 0;
-  right: 0;
-}
-
-.gallery img {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s;
-  cursor: pointer;
-}
-
-.jump {
-  transform: translateY(-20px);
-  transition: opacity 0.2s ease-in, transform 0.35s;
-}
-
-.fall {
-  transform: translateY(+20px);
-  transition: opacity 0.2s ease-in, transform 0.35s;
-}
-
-.gallery-div {
-  overflow: hidden;
-  background-color: #262626;
-}
-
-.gallery img:hover {
-  transform: scale(1.08);
-}
-
-.img0 {
-  grid-area: img0;
-}
-
-.img1 {
-  grid-area: img1;
-}
-
-.img2 {
-  grid-area: img2;
-}
-
-.img3 {
-  grid-area: img3;
-}
-
-.img4 {
-  grid-area: img4;
-}
-
-.button-text {
-  font-size: 15px;
-  font-weight: 200;
-}
+//============================================ Gallery ============================================
+//============================================ Modal ============================================
 
 .ReactModal__Body--open {
   overflow-y: hidden;
@@ -192,6 +236,9 @@
   }
 };
 
+//============================================ Modal ============================================
+//============================================ RelatedListings ============================================
+
 #relatedListings.star {
   color: gray;
   position: relative;
@@ -210,7 +257,7 @@
   position: absolute;
   left: 0;
   width: 5.7px;
-  color: rgb(166, 29, 85);
+  color: $purple;
   overflow: hidden;
 };
 
@@ -221,29 +268,52 @@
 
 .purple-star {
   position: relative;
-  color: rgb(166, 29, 85);
+  color: $purple;
 };
 
-.description .highlight .active {
-  color: teal;
-  fill: teal;
-  font-weight: 300;
-};
+//============================================ RelatedListings ============================================
+//============================================ Descriptions ============================================
+$image-size: 65px;
+
+.description {
+  #profile-picture {
+    width: $image-size;
+    height: $image-size;
+    border-radius: 50%;
+  }
+
+  ul img {
+    margin-right: 12px;
+  }
+
+  .description-bold {
+    font-weight: 650;
+  }
+
+  #room-title {
+    font-weight: 800
+  }
+
+}
+
+
+// .highlight .active {
+//   color: teal;
+//   fill: teal;
+//   font-weight: 300;
+// };
 
 
 
 
-
-
-
-
+//============================================ Descriptions ============================================
+//============================================ Calendar ============================================
+$btn-circle-size: 35px;
+$drop-down-option-text-size: $btn-circle-size * 2 /5;
 
 ::after {
   display: none!important;
 }
-
-$btn-circle-size: 35px;
-$drop-down-option-text-size: $btn-circle-size * 2 /5;
 
 .btn-circle {
   width: $btn-circle-size; 
@@ -315,6 +385,13 @@ $calendar-flex-height: 50px;
   }
 }
 
+
+
+#booking {
+  position: sticky;
+  top: 20px;
+}
+
 .DateRangePickerInput {
   border-color: $calendar-flex-border-color!important;
   height: $calendar-flex-height!important;
@@ -332,3 +409,5 @@ $calendar-flex-height: 50px;
 #total p {
   font-weight: 800;
 }
+
+//============================================ Calendar ============================================

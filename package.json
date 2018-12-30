@@ -5,7 +5,7 @@
   "scripts": {
     "webpack": "webpack -d -w",
     "start": "webpack -p && sass src/client/styles.scss dist/styles.css && node src/server/start.js",
-    "sass": "sass watch src/client/styles.scss dist/styles.css",
+    "sass": "sass --watch src/client/styles.scss dist/styles.css",
     "proxy": "node ../FEC_Proxy/server.js"
   },
   "author": "Zhengqing Pei",
@@ -41,7 +41,7 @@
     "sass": "^1.15.2",
     "slick-carousel": "^1.8.1",
     "style-loader": "^0.23.1",
-    "webpack": "^4.27.1",
+    "webpack": "^4.28.3",
     "webpack-cli": "^3.1.2"
   }
 }

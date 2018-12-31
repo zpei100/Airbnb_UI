@@ -13,7 +13,6 @@ export default class GuestsDropDown extends Component {
 
   componentDidMount = () => {
     $('html').on('click', e => {
-      console.log('click happeend');
       if (e.target.id === 'dropdown-button' || e.target.id === 'dropdown-close' || $(e.target).parents('#dropdown-button').length) {
         $('#dropdown-menu').slideToggle(0);
         return this.setState({toggled: !this.state.toggled})
@@ -23,7 +22,6 @@ export default class GuestsDropDown extends Component {
         $('#dropdown-menu').slideToggle(0);
         this.setState({toggled: false});
       }
-      console.log('end of code reached');
     })
   }
 
@@ -35,7 +33,7 @@ export default class GuestsDropDown extends Component {
   }
 
   render() {
-    const {guest, infant, max, addGuest, addInfant, wordString} = this.props;
+    const {guest, infant, maxGuests, addGuest, addInfant, wordString} = this.props;
 
     return (
       <React.Fragment>
@@ -56,10 +54,10 @@ export default class GuestsDropDown extends Component {
             : ''}
         </button>
         <div className="dropdown-menu w-100 px-3 rounded" id="dropdown-menu">
-          <DropdownOption text="Adult" handleChange={addGuest} count={1} maxed={guest >= max} />
-          <DropdownOption text="Children" handleChange={addGuest} maxed={guest >= max} />
+          <DropdownOption text="Adult" handleChange={addGuest} count={1} maxed={guest >= maxGuests} />
+          <DropdownOption text="Children" handleChange={addGuest} maxed={guest >= maxGuests} />
           <DropdownOption text="Infants" handleChange={addInfant} />
-          <p className="mt-2">{max} guests maximum. Infants don't count toward the number of guests</p>
+          <p className="mt-2">{maxGuests} guests maximum. Infants don't count toward the number of guests</p>
           <a id="dropdown-close">Close</a>
         </div>
       </div>

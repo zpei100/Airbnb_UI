@@ -4,7 +4,7 @@ import host from '../serviceHost';
 export const UPDATE_DATES_BOOKED = 'UDPATE_DATES_BOOKED';
 
 export default function({startDate, endDate, id, datesBooked}) {
-  let now = startDate;
+  let now = startDate.clone();
   while (now <= endDate) {
     datesBooked.push(now.clone());
     now.add(1, 'day');

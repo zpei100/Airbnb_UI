@@ -1,31 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { thumbsUp } from '../../lib/svg';
 import Header from './Header.jsx';
 import Icons from './Icons.jsx';
-import $ from 'jquery';
+import Summary from './Summary.jsx';
+import Contact from './Contact.jsx';
+import Calendar from './Calendar.jsx';
 
-const toggleHighlight = function(e) {
-  $(e.target).toggleClass('active');
-};
-
-const Description = function({
-  _description: {
-    type,
-    title,
-    location,
-    guests,
-    bedrooms,
-    beds,
-    baths,
-    highlights,
-    description,
-    owner
-  }
-}) {
-
-  const headerProps = {title, location, picture: "https://picsum.photos/200/300/?random" };
-  const iconProps = {guests, bedrooms, beds, baths};
+const Description = ({room : {type, title, location, maxGuests, bedrooms, beds, baths, header, details, owner, ownerImage }}) => {
+    
+  const headerProps = {title, location, ownerImage, owner };
+  const iconProps = {maxGuests, bedrooms, beds, baths};
+  const summaryProps = {header, details};
 
   return (
     <div className="description mt-4 px-4">
@@ -33,16 +18,16 @@ const Description = function({
       <Header {...headerProps} />
       <Icons {...iconProps} />
       <hr className="my-4" />
+      <Summary {...summaryProps} />
+      <Contact />
+      <hr className="my-4" />
+      <Calendar />
 
     </div>
   );
 };
 
-const mapStateToProps = function(state) {
-  return {
-    _description: state.description
-  };
-};
+const mapStateToProps = ({room}) => ({room}) 
 
 export default connect(mapStateToProps)(Description);
 

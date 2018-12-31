@@ -6,7 +6,8 @@
     "webpack": "webpack -d -w",
     "start": "webpack -p && sass src/client/styles.scss dist/styles.css && node src/server/start.js",
     "sass": "sass --watch src/client/styles.scss dist/styles.css",
-    "proxy": "node ../FEC_Proxy/server.js"
+    "proxy": "node ../FEC_Proxy/server.js",
+    "populate": "node src/server/db/populate.js"
   },
   "author": "Zhengqing Pei",
   "license": "MIT",
@@ -19,6 +20,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.3",
+    "casual": "^1.5.19",
     "compression": "^1.7.3",
     "cors": "^2.8.5",
     "css-loader": "^1.0.1",

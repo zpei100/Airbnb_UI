@@ -10,12 +10,12 @@ import $ from 'jquery';
 
 class Booking extends React.Component {
 
-  constructor() {
+  constructor({room: {maxGuests}}) {
     super();
     this.state = {
       guest: 1,
       infant: 0,
-      max: 4
+      maxGuests: maxGuests
     }
   }
 
@@ -44,16 +44,14 @@ class Booking extends React.Component {
   render () {
     const {room} = this.props;
     return (
-      <div className="px-4">
-        <div className="card mt-4 float-right" style={{ width: '24rem' }} id="booking" >
+      <div className="card mt-4 float-right" style={{ width: '24rem' }} id="booking" >
         <div className="card-body">
           <Headers {...room} />
           <Calendar />
           <GuestsDropdown {...this.state} addGuest={this.addGuest} addInfant={this.addInfant} wordString={this.wordString}/>
-          <Fees guest={this.state.guest} />
+          <Fees maxGuests={this.state.maxGuests} />
           <Book />
         </div>
-      </div>
       </div>
     )
   };

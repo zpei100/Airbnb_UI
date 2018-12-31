@@ -36,9 +36,7 @@ class Calendar extends Component {
           updateDateRange({startDate, endDate});
         }}
         focusedInput={this.state.focusedInput}
-        onFocusChange={focusedInput => {
-          this.setState({ focusedInput })
-        }}
+        onFocusChange={focusedInput => this.setState({ focusedInput })}
         startDatePlaceholderText="Check in"
         endDatePlaceholderText="Check out"
         orientation="horizontal"

@@ -7,7 +7,7 @@ const roomSchema = new mongoose.Schema({
     unique: true
   },
   type: String,
-  description: String,
+  title: String,
   beds: Number,
   tag: String,
   favorite: Boolean,
@@ -20,7 +20,16 @@ const roomSchema = new mongoose.Schema({
   related: [Number],
   serviceFee: Number,
   serviceFeePerPerson: Number,
-  cleaningFee: Number
+  cleaningFee: Number,
+  maxGuests: Number,
+  location: String,
+  bedrooms: Number,
+  beds: Number,
+  baths: Number,
+  owner: String,
+  ownerImage: String,
+  header: String,
+  details: String
 });
 
 const userSchema = new mongoose.Schema({

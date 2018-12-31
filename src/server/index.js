@@ -40,8 +40,6 @@ app.get('/', function(req, res){
   res.send('world')
 })
 
-//is same is not a function ? Moment is not properly created
-
 app.post('/addDates', function({body: {id, datesBooked}}, res) {
   addDates({id, datesBooked}).then(room => {
     res.send(room)
@@ -78,16 +76,16 @@ app.get('/getRoom/:id', function(req, res) {
             <RelatedListings />
           </Provider>
         ),
-        // navHtml: renderToString(
-        //   <Provider store={store}>
-        //     <Nav />
-        //   </Provider>
-        // ),
-        // descriptionHtml: renderToString(
-        //   <Provider store={store}>
-        //     <Description />
-        //   </Provider>
-        // ),
+        navHtml: renderToString(
+          <Provider store={store}>
+            <Nav />
+          </Provider>
+        ),
+        descriptionHtml: renderToString(
+          <Provider store={store}>
+            <Description />
+          </Provider>
+        ),
         modalHtml: renderToString(
           <Provider store={store}>
             <CarouselModal />
@@ -99,8 +97,6 @@ app.get('/getRoom/:id', function(req, res) {
         //   </Provider>
         // )
       };
-
-      console.log(initialState.bookingHtml);
 
       res.status(200).send({initialState, htmls});
     }).catch(() => res.status(404));

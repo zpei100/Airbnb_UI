@@ -1,23 +1,24 @@
 import React from 'react';
 
-export default ({guests, bedrooms, beds, baths}) => {
+export default ({maxGuests, bedrooms, beds, baths}) => {
+
   return (
     <React.Fragment>
       <ul
-      className="d-flex p-0"
+      className="d-flex p-0 mt-3"
       style={{ listStyleType: 'none' }}
     >
       <li className="mr-4">
-        <img src="icons/guest-icon.png"></img><span className="description-bold">{guests}</span>
+        <img src="icons/guest-icon.png"></img><span className="description-bold">{maxGuests} guests</span>
       </li>
       <li className="mr-4"><img src="icons/bedroom-icon.png"></img>
-        <span className="description-bold">{bedrooms}</span>
+        <span className="description-bold">{bedrooms} bedrooms</span>
       </li>
       <li className="mr-4">
-        <img src="icons/bed-icon.png"></img><span className="description-bold">{beds}</span>
+        <img src="icons/bed-icon.png"></img><span className="description-bold">{beds} beds</span>
       </li>
       <li className="mr-4">
-        <img src="icons/bath-icon.png"></img><span className="description-bold">{baths}</span>
+        <img src="icons/bath-icon.png"></img><span className="description-bold">{baths} bath</span>
       </li>
     </ul>
     <ul 

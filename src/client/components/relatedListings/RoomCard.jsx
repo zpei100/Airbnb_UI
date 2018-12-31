@@ -5,7 +5,7 @@ import Rating from './Rating.jsx';
 import { heart } from '../../lib/svg';
 import updateFavorites from "../../actionCreators/updateFavorites";
 
-const RoomCard = ({type, tag, description, id, beds, price, rating, reviews, imgs, favorites, updateFavorites}) => {
+const RoomCard = ({type, tag, title, id, beds, price, rating, reviews, imgs, favorites, updateFavorites}) => {
 
   const favorite = (favorites.includes(id) ? true : false);
   const onClick = function() {
@@ -49,7 +49,7 @@ const RoomCard = ({type, tag, description, id, beds, price, rating, reviews, img
             </div>
           </div>
           <div className="h6 m-0">
-            <strong style={{ fontSize: '14px' }}>{description}</strong>
+            <strong style={{ fontSize: '14px' }}>{title}</strong>
           </div>
           <div className="small">${price} per night</div>
           <div className="small">

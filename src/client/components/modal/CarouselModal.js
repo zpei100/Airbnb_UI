@@ -13,8 +13,6 @@ class CarouselModal extends Component {
   constructor(props) {
     super(props);
 
-    console.log('currently acitvei: ',props.activeImageIndex)
-    
     this.state = {
       isAnimating: false,
       animationDuration: 200,

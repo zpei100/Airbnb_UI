@@ -49,7 +49,7 @@ class Booking extends React.Component {
           <Headers {...room} />
           <Calendar />
           <GuestsDropdown {...this.state} addGuest={this.addGuest} addInfant={this.addInfant} wordString={this.wordString}/>
-          <Fees maxGuests={this.state.maxGuests} />
+          <Fees guest={this.state.guest} maxGuests={this.state.maxGuests} />
           <Book />
         </div>
       </div>

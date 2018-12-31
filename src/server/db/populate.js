@@ -56,7 +56,7 @@ Room.remove({}).then(() => User.remove({})).then(() => {
       ...roomData,
       id: i,
       beds: random(4) + 2,
-      price: random(500),
+      price: random(300) + 150,
       pricePerPerson: random(5) + 5,
       serviceFee: random(40) + 300,
       serviceFeePerPerson: random(5) + 5,

@@ -51,7 +51,7 @@ const RoomCard = ({type, tag = 'activity', title, id, beds, price, rating, revie
           <div className="h6 m-0">
             <strong style={{ fontSize: '14px' }}>{title}</strong>
           </div>
-          <div className="small">${price} per night</div>
+          <div className="small">${price} per {tag === 'activity' ? 'person' : 'night'}</div>
           <div className="small">
             <Rating
               rating={rating}

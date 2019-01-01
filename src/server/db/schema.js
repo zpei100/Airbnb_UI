@@ -18,6 +18,7 @@ const roomSchema = new mongoose.Schema({
   reviews: Number,
   imgs: [String],
   related: [Number],
+  activities: [Number],
   serviceFee: Number,
   serviceFeePerPerson: Number,
   cleaningFee: Number,
@@ -32,6 +33,19 @@ const roomSchema = new mongoose.Schema({
   details: String
 });
 
+const activitySchema = new mongoose.Schema({
+  id: {
+    type: Number,
+    unique: true
+  },
+  type: String,
+  title: String,
+  price: Number,
+  rating: Number,
+  reviews: Number,
+  imgs: [String]
+})
+
 const userSchema = new mongoose.Schema({
   id: {
     type: Number,
@@ -44,5 +58,6 @@ const userSchema = new mongoose.Schema({
 
 const Room = mongoose.model('Rooms', roomSchema);
 const User = mongoose.model('User', userSchema);
+const Activity = mongoose.model('Activity', activitySchema)
 
-module.exports = { Room, User };
+module.exports = { Room, User, Activity };

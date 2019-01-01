@@ -5,6 +5,10 @@ $break-width-sm: 768px;
 $break-height-md: 860px;
 $break-height-sm: 678px;
 
+* {
+  font-family: Helvetica
+}
+
 @media screen and (max-width: $break-width-sm) {
   #booking-app {
     display: none;
@@ -45,7 +49,33 @@ $break-height-sm: 678px;
 }
 
 
+//============================================ All ================================================
 
+//============================================ Nav ================================================
+.search-bar {
+  width: 500px!important;
+  
+  input {
+    box-shadow: 0 0 0.3em black!important;
+  }
+}
+
+@media screen and (max-width: $break-width-md) {
+  #navbar-content {
+    width: 100vw!important;
+  }
+}
+
+#navbar-content {
+  list-style: none;
+}
+
+.nav-text {
+  font-weight: 700;
+  font-size: 14px;
+  color: gray;
+}
+//============================================ Nav ================================================
 //============================================ Gallery ============================================
 .gallery {
   display: grid;
@@ -344,9 +374,6 @@ $calendar-flex-height: 50px;
   font-size: 12px;
 }
 
-.search-bar {
-  box-shadow: 0 0 0.3em black!important;
-}
 
 #nav-bar-input {
   display: none!important;

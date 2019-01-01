@@ -1,3 +1,7 @@
+* {
+  font-family: Helvetica;
+}
+
 @media screen and (max-width: 768px) {
   #booking-app {
     display: none;
@@ -32,6 +36,28 @@
   color: #a61d55;
   font-weight: 800;
   font-size: 14px;
+}
+
+.search-bar {
+  width: 500px !important;
+}
+.search-bar input {
+  box-shadow: 0 0 0.3em black !important;
+}
+
+@media screen and (max-width: 1200px) {
+  #navbar-content {
+    width: 100vw !important;
+  }
+}
+#navbar-content {
+  list-style: none;
+}
+
+.nav-text {
+  font-weight: 700;
+  font-size: 14px;
+  color: gray;
 }
 
 .gallery {
@@ -275,10 +301,6 @@
 
 .calender-labels {
   font-size: 12px;
-}
-
-.search-bar {
-  box-shadow: 0 0 0.3em black !important;
 }
 
 #nav-bar-input {

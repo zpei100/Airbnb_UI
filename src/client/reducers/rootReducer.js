@@ -7,6 +7,10 @@ import updateFavorites from './updateFavorites';
 import updateDatesBooked from './updateDatesBookedReducer';
 import dateRangeReducer from './dateRangeReducer';
 
+const activityReducer = (state = [], action) => {
+  return state;
+}
+
 export default combineReducers({
   activeImageIndex: changeActiveImageReducer,
   relatedListings: updateRelatedListingsReducer,
@@ -14,4 +18,5 @@ export default combineReducers({
   room: updateDatesBooked,
   dateRange: dateRangeReducer,
   user: updateFavorites,
+  activities: activityReducer
 })

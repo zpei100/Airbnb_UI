@@ -62,9 +62,11 @@ app.post('/updateFavorites', function(req, res) {
 
 app.get('/getRoom/:id', function(req, res) {
   getRoomAndUserInfo(req)
-    .then(({ room, relatedListings, user }) => {
-      const store = createStore(rootReducer, { room, relatedListings, user }, applyMiddleware(thunk));
+    .then(({ room, relatedListings, activities, user }) => {
+      const store = createStore(rootReducer, { room, relatedListings, activities, user }, applyMiddleware(thunk));
       const initialState = store.getState();
+
+      console.log('initial state: ', initialState)
       const htmls = {
         galleryHtml: renderToString(
           <Provider store={store}>
@@ -76,11 +78,11 @@ app.get('/getRoom/:id', function(req, res) {
             <RelatedListings />
           </Provider>
         ),
-        navHtml: renderToString(
-          <Provider store={store}>
-            <Nav />
-          </Provider>
-        ),
+        // navHtml: renderToString(
+        //   <Provider store={store}>
+        //     <Nav />
+        //   </Provider>
+        // ),
         descriptionHtml: renderToString(
           <Provider store={store}>
             <Description />

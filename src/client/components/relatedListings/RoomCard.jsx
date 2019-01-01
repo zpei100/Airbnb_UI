@@ -5,7 +5,7 @@ import Rating from './Rating.jsx';
 import { heart } from '../../lib/svg';
 import updateFavorites from "../../actionCreators/updateFavorites";
 
-const RoomCard = ({type, tag, title, id, beds, price, rating, reviews, imgs, favorites, updateFavorites}) => {
+const RoomCard = ({type, tag = 'activity', title, id, beds, price, rating, reviews, imgs, favorites, updateFavorites}) => {
 
   const favorite = (favorites.includes(id) ? true : false);
   const onClick = function() {
@@ -41,10 +41,10 @@ const RoomCard = ({type, tag, title, id, beds, price, rating, reviews, imgs, fav
                 style={
                   tag === 'PLUS'
                     ? { color: 'rgb(166, 29, 85)', fontWeight: 800 }
-                    : { fontWeight: 800 }
+                    : { color: 'teal', fontWeight: 800 }
                 }
               >
-                {tag === 'PLUS' ? 'VERIFIED' : type} &#183; {beds} BEDS
+                {tag === 'PLUS' ? 'VERIFIED' : type} {tag === 'activity' ? '' : <span>&#183; {beds} BEDS</span> }
               </span>
             </div>
           </div>

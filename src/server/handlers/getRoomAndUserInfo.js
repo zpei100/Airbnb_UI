@@ -1,4 +1,4 @@
-import { Room, User } from '../db/schema';
+import { Room, User, Activity } from '../db/schema';
 
 export const getRoomAndUserInfo = function(req) {
   return new Promise(function(resolve, reject) {
@@ -8,26 +8,37 @@ export const getRoomAndUserInfo = function(req) {
   try {
     const id = parseInt(req.params.id);
 
-    Room.find({ id }).then(rooms => {
-      const room = rooms[0]
+    Room.findOne({ id }).then(room => {
+      
       let relatedListings = [];
-      const related = room.related;
+      let activitiesList = [];
+      const {related, activities} = room;
 
-      related.forEach((id) => {
-        Room.find({ id }).then(relatedRooms => {
-          const relatedRoom = relatedRooms[0]
-          relatedListings.push(relatedRoom);
+      console.log('activities: ', activities);
 
-          if (relatedListings.length === related.length) {
-            User.find({ id: userId }).then(users => {
-              const { favorites, id, username } = users[0];
-              var user = {favorites, id, username }
+      activities.forEach(id => {
+        Activity.findOne({id}).then(activity => {
+          activitiesList.push(activity);
 
-              resolve({room, relatedListings, user} )
-            }).catch(reject);
+          if (activitiesList.length === activities.length) {
+
+            related.forEach((id) => {
+              Room.findOne({ id }).then(relatedRoom => {
+                relatedListings.push(relatedRoom);
+      
+                if (relatedListings.length === related.length) {
+                  User.findOne({ id: userId }).then(user => {
+                    const { favorites, id, username } = user;
+                    var user = {favorites, id, username }
+      
+                    resolve({room, relatedListings, activities:activitiesList, user})
+                  }).catch(reject);
+                }
+              }).catch(reject);
+            });
           }
-        }).catch(reject);
-      });
+        })
+      })
     });
   } catch(e) {
       reject(e)

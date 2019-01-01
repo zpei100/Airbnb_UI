@@ -1,9 +1,12 @@
 const casual = require('casual');
 const dummyData = require('./dummy');
-const { Room, User } = require('./schema');
+const { Room, User, Activity } = require('./schema');
 const axios = require('axios');
 
-Room.remove({}).then(() => User.remove({})).then(() => {
+Room.remove({})
+.then(() => User.remove({}))
+.then(() => Activity.remove({}))
+.then(() => {
 
   const data = {
     type: ['ENTIRE CONDOMINIUM', 'ENTIRE APARTMENT', 'ENTIRE VILLA'],
@@ -32,6 +35,7 @@ Room.remove({}).then(() => User.remove({})).then(() => {
   };
   
   const size = 100;
+  const activitySize = size * 10;
   
   for (var i = 0; i < size; i++) {
     var roomData = {};
@@ -47,6 +51,15 @@ Room.remove({}).then(() => User.remove({})).then(() => {
       position += random(Math.floor(size / 5)) + 1;
       if (position < size) related.push(position);
     }
+
+    position = 0;
+    
+    var activities = [];
+    while (position < activitySize) {
+      position += random(Math.floor(activitySize / 5)) + 1;
+      if (position < activitySize) activities.push(position);
+    }
+
   
     for (var k = 0; k < random(10) + 10; k++) {
       imgs.push(`https://picsum.photos/666/444/?${random(999999)}`);
@@ -71,9 +84,38 @@ Room.remove({}).then(() => User.remove({})).then(() => {
       baths: random(2) + 1,
       owner: casual.first_name,
       ownerImage: `https://picsum.photos/666/444/?${random(999999)}`,
-      header: dummyData[random(dummyData.length)].header,
-      details: dummyData[random(dummyData.length)].details,
+      header: dummyData.headers[random(dummyData.headers.length)],
+      details: dummyData.details[random(dummyData.details.length)],
       related,
+      activities,
+      imgs
+    }).save();
+  }
+
+  
+
+  const activityData = {
+    type: ['KAYAKING', 'SNORKELING', 'DAY TRIP', 'GUIDED HIKE', 'BAR CRAWL', 'CULTURE WALK', 'YOGA CLASS'],
+    title: [
+      `Harbour Kayak Adventure`, `Snorkel in Beautiful Manly`, `Hunter Valley Wine, Cheese & Kangaroos`, `Blue Mountains. Hoke, art and coffee`, `Crawl Sydney's Secret Bars`
+    ],
+  };
+
+  for (var i = 0; i < activitySize; i++) {
+    const randIndex = random(activityData.type.length);
+    var imgs = [];
+
+    for (var k = 0; k < random(5) + 5; k++) {
+      imgs.push(`https://picsum.photos/666/444/?${random(999999)}`);
+    }
+
+    new Activity({
+      id: i,
+      type: activityData.type[randIndex],
+      title: activityData.title[randIndex],
+      price: random(80) + 30,
+      reviews: random(200) + 20,
+      rating: Math.random() * 5,
       imgs
     }).save();
   }
@@ -82,6 +124,6 @@ Room.remove({}).then(() => User.remove({})).then(() => {
     id: 15,
     username: 'Adam',
     email: 'adam@gmail.com',
-    favorites: [1, 5, 8, 13, 28, 29, 47]
+    favorites: [1, 5, 8, 13, 28, 29, 47, 2]
   }).save();
 })

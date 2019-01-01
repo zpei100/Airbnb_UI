@@ -1,32 +1,47 @@
 import React, { Component } from 'react';
 import { logo } from '../../lib/svg';
+import Responsive from 'react-responsive';
 
 class Nav extends Component {
   render() {
     return (
-      <div className="navbar navbar-light bg-light">
-        <div className="col-6 justify-content-start d-flex">
-          <div className="my-auto">{logo}</div>
-          <form className="form-inline my-2 col-10">
-            <input
-              className="form-control ml-2 w-50 shadow-lg search-bar"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
-        </div>
+      <Responsive minWidth={1200}>
+        {matches => {
+          console.log('matches: ', matches)
+          if (!matches) return ''
+          else return (
+            <div className="navbar d-flex">
+              <div className="d-flex mr-auto search-bar">
+                <div className="my-auto">
+                  <span>{logo}</span>
+                </div>
+                <form className="form-inline my-2 col-10">
+                  <input
+                    className="form-control ml-2 shadow-lg w-100"
+                    id="search-bar"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                </form>
+              </div>
 
-        <ul className="navbar-nav d-flex flex-row justify-content-end">
-          {['Become a host', 'Help', 'Sign up', 'Log in'].map(key => (
-            <li className="nav-item mx-3" key={key}>
-              <a className="text-dark" href="#" >
-                {key}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+              <div>
+                <ul className="d-flex my-auto" id="navbar-content">
+                  {['Become a host', 'Help', 'Sign up', 'Log in'].map(key => (
+                    <li className="nav-item mx-3" key={key}>
+                      <a className="nav-text" href="#">
+                        {key}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            
+            </div>
+          )
+        }}
+      </Responsive>
     );
   }
 }

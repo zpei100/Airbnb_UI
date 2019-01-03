@@ -5,11 +5,13 @@ import Rating from './Rating.jsx';
 import { heart } from '../../lib/svg';
 import updateFavorites from "../../actionCreators/updateFavorites";
 
-const RoomCard = ({type, tag = 'activity', title, id, beds, price, rating, reviews, imgs, favorites, updateFavorites}) => {
+const RoomCard = ({type, tag = 'activity', title, id, beds, price, rating, reviews, imgs, favorites, favoriteActivities, handleHeart}) => {
 
-  const favorite = (favorites.includes(id) ? true : false);
+  //this component is used by both related homes and activities near area
+  const favoriteList = tag === 'activity' ? favoriteActivities : favorites;
+  const favorite = (favoriteList.includes(id) ? true : false);
   const onClick = function() {
-    updateFavorites(id)
+    handleHeart(id)
   }
 
   if (imgs) {
@@ -18,7 +20,10 @@ const RoomCard = ({type, tag = 'activity', title, id, beds, price, rating, revie
       <div className="p-2">
         <div style={{ position: 'relative' }} className="card">
           {heart(favorite, onClick)}
-          <a target="_self" href={`${window.location.origin}/rooms/${id}`}><img style={{cursor: "pointer"}} className="m-auto w-100 h-auto card-img-top" src={thumbNail} alt=""/></a>
+          {tag === 'activity'
+          ? <img style={{cursor: "pointer"}} className="m-auto w-100 h-auto card-img-top" src={thumbNail} alt=""/>
+          : <a target="_self" href={`${window.location.origin}/rooms/${id}`}><img style={{cursor: "pointer"}} className="m-auto w-100 h-auto card-img-top" src={thumbNail} alt=""/></a>
+          }
         </div>
   
         <div style={{cursor: "pointer"}} className="mt-2 p-0 card-body" >
@@ -68,18 +73,13 @@ const RoomCard = ({type, tag = 'activity', title, id, beds, price, rating, revie
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({user: {favorites, favoriteActivities}}) => {
+
   return {
-    favorites: state.user.favorites
+    favorites, favoriteActivities
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    updateFavorites: bindActionCreators(updateFavorites, dispatch)
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(RoomCard);
+export default connect(mapStateToProps)(RoomCard);
 
  

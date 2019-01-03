@@ -9,7 +9,6 @@ const Fees = ({guest, startDate, endDate, price, pricePerPerson, serviceFee, ser
   const days = Moment(endDate).diff(Moment(startDate), 'days');
   const convertUSD = value => currencyFormatter.format(value, {code: 'USD'});
 
-  console.log('service fee, guest: ', serviceFee, guest)
 
   const _cleaningFee = convertUSD(cleaningFee);
   const _serviceFee = convertUSD(serviceFeePerPerson * guest + serviceFee);

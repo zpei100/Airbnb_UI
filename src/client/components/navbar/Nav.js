@@ -7,7 +7,6 @@ class Nav extends Component {
     return (
       <Responsive minWidth={1200}>
         {matches => {
-          console.log('matches: ', matches)
           if (!matches) return ''
           else return (
             <div className="navbar d-flex">

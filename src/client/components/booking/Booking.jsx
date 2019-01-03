@@ -1,12 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { DateRangePicker } from 'react-dates';
 import Calendar from './Calendar.jsx';
 import GuestsDropdown from './GuestsDropdown.jsx';
 import Headers from './Headers.jsx';
 import Book from './Book.jsx';
 import Fees from './Fees.jsx';
 import $ from 'jquery';
+import MediaQuery from 'react-responsive';
+import { bindActionCreators } from 'redux';
+import updateDatesBooked from '../../actionCreators/updateDatesBooked';
+import updateDateRange from '../../actionCreators/updateDateRange';
 
 class Booking extends React.Component {
 
@@ -41,33 +44,57 @@ class Booking extends React.Component {
     return this.state[word] === 1 ? word : word + 's';
   };
 
+  book = () => {
+    const {dateRange: {startDate, endDate}, room: {id, datesBooked}, updateDatesBooked, updateDateRange} = this.props; 
+    updateDatesBooked({startDate, endDate, id, datesBooked});
+    updateDateRange({startDate: null, endDate: null})
+  };
+
   render () {
-    const {room} = this.props;
+    const {room, showModal} = this.props;
+    
     return (
-      <div className="card mt-4 float-right" style={{ width: '24rem' }} id="booking" >
-        <div className="card-body">
-          <Headers {...room} />
-          <Calendar />
-          <GuestsDropdown {...this.state} addGuest={this.addGuest} addInfant={this.addInfant} wordString={this.wordString}/>
-          <Fees guest={this.state.guest} maxGuests={this.state.maxGuests} />
-          <Book />
-        </div>
-      </div>
+      <MediaQuery minWidth={1200} values={{width: 1600}}>
+        {matches => {
+          if (matches) return (
+            <div className="card mt-4 float-right" style={{ width: '24rem' }} id="booking" >
+              <div className="card-body">
+                <Headers {...room} />
+                <Calendar />
+                <GuestsDropdown {...this.state} addGuest={this.addGuest} addInfant={this.addInfant} wordString={this.wordString}/>
+                <Fees guest={this.state.guest} maxGuests={this.state.maxGuests} />
+                <Book handleClick={this.book} />
+              </div>
+            </div>
+          ); else return (
+            showModal ? '' :
+            <div>
+            <div className="d-flex justify-content-between container px-2">
+              <div className="my-auto">
+                <Headers {...room} />
+              </div>
+              <Book />
+            </div>
+            </div>
+          )
+        }}
+      </MediaQuery>
     )
   };
 }
 
-const mapStateToProps = function({ room, user }) {
+const mapStateToProps = function({ room, user, dateRange, showModal }) {
   return {
     room,
-    user
+    user,
+    dateRange,
+    showModal
   };
 };
 
-// const mapDispatchToProps = function(dispatch) {
-//   return {
+const mapDispatchToProps = dispatch => ({
+  updateDatesBooked: bindActionCreators(updateDatesBooked, dispatch),
+  updateDateRange: bindActionCreators(updateDateRange, dispatch)
+});
 
-//   }
-// };
-
-export default connect(mapStateToProps)(Booking);
+export default connect(mapStateToProps, mapDispatchToProps)(Booking);

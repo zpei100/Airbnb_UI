@@ -4,37 +4,76 @@ $break-width-md: 1200px;
 $break-width-sm: 768px;
 $break-height-md: 860px;
 $break-height-sm: 678px;
+$app-body-md: 716px;
+
+.container {
+  width: 1044px!important;
+
+  @media screen and (max-width: $break-width-md) {
+    width: 720px!important;
+  }
+
+  @media screen and (max-width: $break-width-sm) {
+    width: 80vw!important;
+  }
+}
 
 * {
   font-family: Helvetica
 }
 
-@media screen and (max-width: $break-width-sm) {
-  #booking-app {
-    display: none;
-  }
-};
-
 #app-body {
   display: grid;
-  margin: auto;
-  grid-template-columns: 11fr 8fr;
-  grid-template-rows: auto auto auto;
-  grid-template-areas: 
-  "description-app booking-app"
-  "reviews-app booking-app"
-}
+  margin: auto!important;
+  
+  @media screen and (min-width: $break-width-md) {
+    grid-template-columns: 11fr 8fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+    "description-app booking-app"
+    "reviews-app booking-app"
+    "reviews-app booking-app"
+    "related-listings-app related-listings-app";
 
-#description-app {
-  grid-area: description-app;
-}
+    #description-app {
+      grid-area: description-app;
+    }
+    
+    #booking-app {
+      grid-area: booking-app;
+    }
+    
+    #reviews-app {
+      grid-area: reviews-app;
+    }
 
-#booking-app {
-  grid-area: booking-app;
-}
+    #related-listings-app {
+      grid-area: related-listings-app;
+    }
+  }
 
-#reviews-app {
-  grid-area: reviews-app;
+  @media screen and (max-width: $break-width-md) {
+    grid-template-rows: auto auto auto;
+    width: $app-body-md!important;
+
+    #booking-app {
+      position: fixed;
+      bottom: 0;
+      z-index: 10;
+      width: 100vw;
+      left: 0;
+      background-color: white;
+      border-top: 1px solid lightgray;
+    }
+
+    #book-button {
+      width: 180px!important;
+    }
+  }
+
+  @media screen and (max-width: $break-width-sm) {
+    width: 80vw!important;
+  }
 }
 
 .section-title {
@@ -95,7 +134,7 @@ $break-height-sm: 678px;
     height: 295px;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: $break-width-md) {
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
@@ -111,7 +150,7 @@ $break-height-sm: 678px;
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: $break-width-sm) {
     
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -235,10 +274,8 @@ $break-height-sm: 678px;
 
 #Slider {
   height: 99px;
-  margin-bottom: 24px;
-  margin-top: 0;
-  position: absolute;
-  bottom: 0;
+  padding: 0;
+  margin-top: 20px!important;
 }
 
 .caption-text {
@@ -255,11 +292,16 @@ $break-height-sm: 678px;
   margin-right: 0;
 }
 
+.carousel-indicators li {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 #Slider li:not(.active) {
   filter: brightness(50%);
 }
 
-@media (max-width: 735px) {
+@media (max-width: $break-width-sm) {
   #modal-carousel .carousel-arrows svg {
     height: 30px;
     width: 30px;

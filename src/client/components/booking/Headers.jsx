@@ -3,7 +3,7 @@ import Rating from '../relatedListings/Rating.jsx';
 
 export default ({price, rating, id, tag, reviews}) => (
   <React.Fragment>
-    <p className="card-title mb-0">
+    <p className=" mb-0">
       <span className="lead lead-3 booking-price">${price}</span>
       <small> per night</small>
     </p>
@@ -15,7 +15,5 @@ export default ({price, rating, id, tag, reviews}) => (
       />
       <span>{reviews}</span>
     </div>
-    <hr></hr>
-    <div className='calender-labels'>Dates</div>
   </React.Fragment>
 )

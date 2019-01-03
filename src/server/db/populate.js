@@ -120,10 +120,19 @@ Room.remove({})
     }).save();
   }
   
+  var favoriteActivities = [];
+  var position = -1;
+
+  while (position <= activitySize) {
+    position += random(10) + 1;
+    if (position < activitySize) favoriteActivities.push(position);
+  }
+  
   new User({
     id: 15,
     username: 'Adam',
     email: 'adam@gmail.com',
-    favorites: [1, 5, 8, 13, 28, 29, 47, 2]
+    favorites: [1, 5, 8, 13, 28, 29, 47, 2],
+    favoriteActivities,
   }).save();
 })

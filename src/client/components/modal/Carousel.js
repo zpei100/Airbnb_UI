@@ -10,7 +10,7 @@ const Carousel = ({ room: { imgs }, thumbnailWidth, isAnimating }) => {
       <div className="carousel-inner container-fluid flex-nowrap p-0" id="Carousel-inner" style={{ width: `${thumbnailWidth}px` }} role="listbox">
         {imgs.map((img, idx) => (
           <div className={"carousel-item h-100"} style={{ maxHeight: '700px ' }} key={`carousel${idx}`}>
-            <img className="d-block h-100 w-auto" src={img} alt="" />
+            <img className="d-block w-auto h-100" src={img} alt="" />
           </div>
         ))}
       </div>

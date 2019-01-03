@@ -6,14 +6,14 @@ import changeActiveImage from '../../actionCreators/changeActiveImage';
 const Slider = ({ room: { imgs }, thumbnailWidth, activeImageIndex, changeActiveImage }) => {
 
   return (
-    <div id="Slider" className="container-fluid">
-      <div style={{width: `${thumbnailWidth}px`, overflow: 'hidden', position: 'relative' }} className="container h-100 p-0">
+    <div id="Slider" className="container-fluid m-auto">
+      <div style={{width: `${thumbnailWidth}px`, overflow: 'hidden', position: 'relative' }} className="container-fluid h-100 p-0">
         <ol className="carousel-indicators justify-content-start h-100">
           {imgs.map((img, idx) => (
             <li
               data-target="#modal-carousel"
               data-slide-to={idx}
-              className={`${activeImageIndex === idx ? 'active' : ''} h-100 w-auto mx-2`}
+              className={`${activeImageIndex === idx ? 'active' : ''} h-100 w-auto ${Number(idx) === 0 ? 'mr-1' : Number(idx) === imgs.length - 1 ? 'ml-1' : 'mx-1'}`}
               style={{ position: 'relative' }}
               key={`slider${idx}`}
               onClick={() => {

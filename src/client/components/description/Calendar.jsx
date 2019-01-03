@@ -58,8 +58,6 @@ class Calendar extends React.Component {
           onDatesChange={updateDateRange}        
           focusedInput={focusedInput()}
           onFocusChange={focusedInput => {
-            console.log('focused input is: ', focusedInput);
-            console.log('and focused input in state is: ', focusedInput);
             this.setState({ focusedInput })
           }}
           renderCalendarInfo={() => {

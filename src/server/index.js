@@ -49,16 +49,30 @@ app.post('/addDates', function({body: {id, datesBooked}}, res) {
 app.post('/updateFavorites', function(req, res) {
   const userId = req.session.user ? req.session.user : 15;
   const { id } = req.body;
-  User.findOne({ id: userId }).then(({ favorites: favorites }) => {
+  User.findOne({ id: userId }).then(({ favorites }) => {
     const len = favorites.length;
     favorites = favorites.filter(num => num !== id);
     if (favorites.length === len) favorites.push(id);
 
     User.findOneAndUpdate({ id: userId }, { $set: { favorites } }, { new: true }).then(result => {
-        res.status(200).send(result.favorites);
-      }).catch(() => res.status(404));
+      res.status(200).send(result.favorites);
+    }).catch(() => res.status(404));
   });
 });
+
+app.post('/updateFavoriteActivities', function(req, res) {
+  const userId = req.session.user || 15;
+  const { id } = req.body;
+  User.findOne({ id: userId }).then(({favoriteActivities}) => {
+    const len = favoriteActivities.length;
+    favoriteActivities = favoriteActivities.filter(num => num !== id); 
+    if (favoriteActivities.length === len) favoriteActivities.push(id);
+
+    User.findOneAndUpdate({ id: userId }, { $set: {favoriteActivities}}, {new: true}).then(result => {
+      res.status(200).send(result.favoriteActivities);
+    }).catch(() => res.status(404));
+  })
+})
 
 app.get('/getRoom/:id', function(req, res) {
   getRoomAndUserInfo(req)
@@ -66,7 +80,6 @@ app.get('/getRoom/:id', function(req, res) {
       const store = createStore(rootReducer, { room, relatedListings, activities, user }, applyMiddleware(thunk));
       const initialState = store.getState();
 
-      console.log('initial state: ', initialState)
       const htmls = {
         galleryHtml: renderToString(
           <Provider store={store}>
@@ -78,11 +91,11 @@ app.get('/getRoom/:id', function(req, res) {
             <RelatedListings />
           </Provider>
         ),
-        // navHtml: renderToString(
-        //   <Provider store={store}>
-        //     <Nav />
-        //   </Provider>
-        // ),
+        navHtml: renderToString(
+          <Provider store={store}>
+            <Nav />
+          </Provider>
+        ),
         descriptionHtml: renderToString(
           <Provider store={store}>
             <Description />

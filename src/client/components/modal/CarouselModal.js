@@ -33,12 +33,14 @@ class CarouselModal extends Component {
 
     const direction = activeImageIndex - prevActiveImageIndex;
     const sliderImageWidth = $('#Slider li').width();
-    const sliderImageMargin = 2 * parseInt($('#Slider li').first().css('margin-left'));
+    const sliderImageMargin = 2 * parseInt($('#Slider li').first().css('margin-right'));
+
     const adjustedSliderImageWidth = sliderImageWidth + sliderImageMargin;
 
     //The margin-left property returns negative result
     const totalDistanceSlided = -parseInt($('.carousel-indicators').css('margin-left'));
-    const rightSideOverflow = adjustedSliderImageWidth * (imgs.length - 1) + sliderImageWidth - totalDistanceSlided - thumbnailWidth;
+
+    const rightSideOverflow = adjustedSliderImageWidth * (imgs.length - 2) + 2 * sliderImageWidth - totalDistanceSlided - thumbnailWidth;
     const leftSideOverflow = totalDistanceSlided;
 
     //Offset calculates the distance between the left side of the image and the left edge of the container
@@ -81,15 +83,17 @@ class CarouselModal extends Component {
       ariaHideApp={false}
     >
       <ExitBtn />
-      <Carousel
-        thumbnailWidth={thumbnailWidth}
-        isAnimating={this.state.isAnimating}
-      />
-      <Slider
-        thumbnailWidth={thumbnailWidth}
-        id="Slider"
-        active={this.props.activeImageIndex}
-      />
+      <div className="container-fluid">
+        <Carousel
+          thumbnailWidth={thumbnailWidth}
+          isAnimating={this.state.isAnimating}
+        />
+        <Slider
+          thumbnailWidth={thumbnailWidth}
+          id="Slider"
+          active={this.props.activeImageIndex}
+        />
+      </div> 
     </ReactModal>
     );
   }

@@ -12,7 +12,6 @@ export default class Summary extends React.Component {
   }
 
   toggleDetails = () => { 
-    console.log('i got clicked !!!')
     this.setState({toggled: !this.state.toggled});
   }
 

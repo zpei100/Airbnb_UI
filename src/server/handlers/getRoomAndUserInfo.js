@@ -14,7 +14,6 @@ export const getRoomAndUserInfo = function(req) {
       let activitiesList = [];
       const {related, activities} = room;
 
-      console.log('activities: ', activities);
 
       activities.forEach(id => {
         Activity.findOne({id}).then(activity => {
@@ -28,9 +27,7 @@ export const getRoomAndUserInfo = function(req) {
       
                 if (relatedListings.length === related.length) {
                   User.findOne({ id: userId }).then(user => {
-                    const { favorites, id, username } = user;
-                    var user = {favorites, id, username }
-      
+                    
                     resolve({room, relatedListings, activities:activitiesList, user})
                   }).catch(reject);
                 }

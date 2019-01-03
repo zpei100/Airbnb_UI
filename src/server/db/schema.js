@@ -53,7 +53,8 @@ const userSchema = new mongoose.Schema({
   },
   username: String,
   email: String,
-  favorites: [Number]
+  favorites: [Number],
+  favoriteActivities: [Number]
 });
 
 const Room = mongoose.model('Rooms', roomSchema);

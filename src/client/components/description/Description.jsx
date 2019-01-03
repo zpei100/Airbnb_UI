@@ -13,7 +13,7 @@ const Description = ({room : {type, title, location, maxGuests, bedrooms, beds, 
   const summaryProps = {header, details};
 
   return (
-    <div className="description mt-4 px-4">
+    <div className="description mt-4 pl-2 mx-auto">
       <div className="room-type">{type}</div>
       <Header {...headerProps} />
       <Icons {...iconProps} />
@@ -22,7 +22,6 @@ const Description = ({room : {type, title, location, maxGuests, bedrooms, beds, 
       <Contact />
       <hr className="my-4" />
       <Calendar />
-
     </div>
   );
 };

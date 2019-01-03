@@ -46,17 +46,17 @@ export const share = (
   </svg>
 );
 
-export const exit = (
+export const exit = (color = 'white', size = '2em') => (
   <svg
     viewBox="0 0 24 24"
     role="img"
     aria-label="Close"
     focusable="false"
     style={{
-      height: '2em',
-      width: '2em',
+      height: size,
+      width: size,
       display: 'block',
-      fill: 'rgb(255, 255, 255)'
+      fill: color
     }}
   >
     <path

@@ -96,16 +96,16 @@ app.get('/getRoom/:id', function(req, res) {
             <Nav />
           </Provider>
         ),
-        descriptionHtml: renderToString(
-          <Provider store={store}>
-            <Description />
-          </Provider>
-        ),
-        modalHtml: renderToString(
-          <Provider store={store}>
-            <CarouselModal />
-          </Provider>
-        ),
+        // descriptionHtml: renderToString(
+        //   <Provider store={store}>
+        //     <Description />
+        //   </Provider>
+        // ),
+        // modalHtml: renderToString(
+        //   <Provider store={store}>
+        //     <CarouselModal />
+        //   </Provider>
+        // ),
         // bookingHtml: renderToString(
         //   <Provider store={store}>
         //     <Booking />

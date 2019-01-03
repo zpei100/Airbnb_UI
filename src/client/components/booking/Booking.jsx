@@ -10,6 +10,9 @@ import MediaQuery from 'react-responsive';
 import { bindActionCreators } from 'redux';
 import updateDatesBooked from '../../actionCreators/updateDatesBooked';
 import updateDateRange from '../../actionCreators/updateDateRange';
+import ReactModal from 'react-modal';
+import { exit } from '../../lib/svg';
+
 
 class Booking extends React.Component {
 
@@ -18,7 +21,8 @@ class Booking extends React.Component {
     this.state = {
       guest: 1,
       infant: 0,
-      maxGuests: maxGuests
+      maxGuests: maxGuests,
+      modal: false
     }
   }
 
@@ -54,7 +58,40 @@ class Booking extends React.Component {
     const {room, showModal} = this.props;
     
     return (
-      <MediaQuery minWidth={1200} values={{width: 1600}}>
+      <React.Fragment>
+        {this.state.modal ?  
+          <ReactModal isOpen={this.state.modal} style={
+            {
+              content: {
+              backgroundColor: 'rgba(0,0,0,0)',
+              border: 'none',
+              position: 'relative',
+              width: '100%',
+              height: '100%',
+              top: 0,
+              left: 0,
+              bottom: 0,
+              right: 0,
+              verticalAlign: 'middle',
+              display: 'flex',
+              alignItems: 'center'
+            }}
+          }>
+            <div className="card d-inline m-auto" style={{ width: '24rem', verticalAlign: 'middle'}} >
+              <button className="border-0 mt-3 ml-3" onClick={() => this.setState({modal: false})} style={{backgroundColor: 'rgba(0,0,0,0)'}} >{exit('black', '20px')}</button>
+              <div className="card-body">
+                <Headers {...room} />
+                <Calendar />
+                <GuestsDropdown {...this.state} addGuest={this.addGuest} addInfant={this.addInfant} wordString={this.wordString}/>
+                <Fees guest={this.state.guest} maxGuests={this.state.maxGuests} />
+                <Book handleClick={this.book} />
+              </div>
+            </div>
+          </ReactModal>
+        : ''}
+
+
+        <MediaQuery minWidth={1200} values={{width: 1600}}>
         {matches => {
           if (matches) return (
             <div className="card mt-4 float-right" style={{ width: '24rem' }} id="booking" >
@@ -67,18 +104,19 @@ class Booking extends React.Component {
               </div>
             </div>
           ); else return (
-            showModal ? '' :
+            showModal || this.state.modal ? '' :
             <div>
-            <div className="d-flex justify-content-between container px-2">
-              <div className="my-auto">
-                <Headers {...room} />
+              <div className="d-flex justify-content-between container px-2">
+                <div className="my-auto">
+                  <Headers {...room} />
+                </div>
+                <Book handleClick={() => this.setState({modal: true})}/>
               </div>
-              <Book />
-            </div>
             </div>
           )
         }}
       </MediaQuery>
+      </React.Fragment>
     )
   };
 }

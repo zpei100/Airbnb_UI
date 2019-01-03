@@ -192,25 +192,6 @@
   font-weight: 200;
 }
 
-.ReactModal__Body--open {
-  overflow-y: hidden;
-}
-
-.ReactModal__Overlay {
-  position: fixed;
-  z-index: 2;
-}
-
-.ReactModal__Content {
-  background-color: black;
-  z-index: 3;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
 #ExitBtn {
   height: 86px;
 }
@@ -224,10 +205,6 @@
   margin-top: 15px;
   margin-right: 33px;
   border: none;
-}
-
-.carousel-item {
-  min-height: 700px;
 }
 
 #Slider {

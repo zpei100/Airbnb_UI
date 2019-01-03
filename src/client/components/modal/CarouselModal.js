@@ -80,10 +80,32 @@ class CarouselModal extends Component {
     <ReactModal
       isOpen={this.props.showModal}
       className="Modal"
-      ariaHideApp={false}
+      style={{
+        content: {
+          backgroundColor: 'black',
+          zIndex: 3,
+          position: 'absolute',
+          margin: 'auto',
+          width: '100vw',
+          height: '100vh',
+          verticalAlign: 'middle',
+          display: 'flex',
+          alignItems: 'center'
+
+          
+        },
+        body: {
+          overflow: 'hidden'
+        },
+        overlay: {
+          position: 'fixed',
+          zIndex: 2,
+        
+        }
+      }}
     >
       <ExitBtn />
-      <div className="container-fluid">
+      <div className="container-fluid" id="modal-container" style={{maxWidth: `100vw`, }}>
         <Carousel
           thumbnailWidth={thumbnailWidth}
           isAnimating={this.state.isAnimating}

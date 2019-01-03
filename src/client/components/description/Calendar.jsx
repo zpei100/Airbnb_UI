@@ -48,7 +48,8 @@ class Calendar extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="my-4 d-flex justify-content-between">
+        <div className="d-flex flex-column">
+        <div className="my-4 d-flex justify-content-between" style={{width: '620px'}}>
           <span className="font-weight-bold">Availability</span>
           <a href="javascript:void(0)" className="font-weight-bold text-info" onClick={this.clearDates}>Clear dates</a>
         </div>
@@ -81,6 +82,7 @@ class Calendar extends React.Component {
             return datesBooked.some(date => date.isSame(day, 'day'));
           }}
         />
+        </div>
       </React.Fragment>
     )
   }

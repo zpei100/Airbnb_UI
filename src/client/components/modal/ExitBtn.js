@@ -9,7 +9,7 @@ const ExitBtn = ({ toggleModal }) => {
   return (
     <div id="ExitBtn">
       <button id="exit-button" onClick={toggleModal}>
-        {exit}
+        {exit('white')}
       </button>
     </div>
   );

@@ -7,7 +7,7 @@ const Slider = ({ room: { imgs }, thumbnailWidth, activeImageIndex, changeActive
 
   return (
     <div id="Slider" className="container-fluid m-auto">
-      <div style={{width: `${thumbnailWidth}px`, overflow: 'hidden', position: 'relative' }} className="container-fluid h-100 p-0">
+      <div style={{maxWidth: `${thumbnailWidth}px`, overflow: 'hidden', position: 'relative' }} className="container-fluid h-100 p-0">
         <ol className="carousel-indicators justify-content-start h-100">
           {imgs.map((img, idx) => (
             <li

@@ -4,8 +4,8 @@
   "main": "",
   "scripts": {
     "webpack": "webpack -d -w",
-    "start": "webpack -p && sass src/client/styles.scss dist/styles.css && node src/server/start.js",
-    "sass": "sass --watch src/client/styles.scss dist/styles.css",
+    "start": "webpack -p && sass src/client/lib/styles.scss dist/styles.css && node src/server/start.js",
+    "sass": "sass --watch src/client/lib/styles.scss dist/styles.css",
     "proxy": "node ../FEC_Proxy/server.js",
     "populate": "node src/server/db/populate.js"
   },

@@ -75,10 +75,11 @@
 }
 
 .search-bar {
-  width: 500px !important;
+  width: 600px !important;
 }
 .search-bar input {
-  box-shadow: 0 0 0.3em black !important;
+  box-shadow: 0 0 0.2em grey !important;
+  font-weight: 800;
 }
 
 @media screen and (max-width: 1200px) {
@@ -86,6 +87,10 @@
     width: 100vw !important;
   }
 }
+#navbar-toggle-icon {
+  cursor: pointer;
+}
+
 #navbar-content {
   list-style: none;
 }
@@ -152,7 +157,8 @@
   right: 0;
 }
 .gallery img {
-  width: 100%;
+  width: auto;
+  min-width: 100%;
   height: 100%;
   transition: transform 0.5s;
   cursor: pointer;

@@ -75,10 +75,14 @@ class Booking extends React.Component {
               verticalAlign: 'middle',
               display: 'flex',
               alignItems: 'center'
-            }}
+              },
+              overlay: {
+                zIndex: 2
+              }
+            }
           }>
             <div className="card d-inline m-auto" style={{ width: '24rem', verticalAlign: 'middle'}} >
-              <button className="border-0 mt-3 ml-3" onClick={() => this.setState({modal: false})} style={{backgroundColor: 'rgba(0,0,0,0)'}} >{exit('black', '20px')}</button>
+              <button className="border-0 mt-3 ml-3" onClick={() => this.setState({modal: false}, () => $('body').css('overflow', 'scroll'))} style={{backgroundColor: 'rgba(0,0,0,0)', cursor: 'pointer'}} >{exit('black', '20px')}</button>
               <div className="card-body">
                 <Headers {...room} />
                 <Calendar />
@@ -110,7 +114,7 @@ class Booking extends React.Component {
                 <div className="my-auto">
                   <Headers {...room} />
                 </div>
-                <Book handleClick={() => this.setState({modal: true})}/>
+                <Book handleClick={() => this.setState({modal: true}, () => $('body').css('overflow', 'hidden'))}/>
               </div>
             </div>
           )

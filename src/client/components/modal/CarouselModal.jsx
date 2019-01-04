@@ -4,9 +4,10 @@ import { bindActionCreators } from 'redux';
 import React, { Component } from 'react';
 import $ from 'jquery';
 
-import ExitBtn from './ExitBtn';
-import Carousel from './Carousel';
-import Slider from './Slider';
+import ExitBtn from './ExitBtn.jsx';
+import Carousel from './Carousel.jsx';
+import Slider from './Slider.jsx';
+
 import changeActiveImage from '../../actionCreators/changeActiveImage';
 
 class CarouselModal extends Component {
@@ -105,7 +106,7 @@ class CarouselModal extends Component {
       }}
     >
       <ExitBtn />
-      <div className="container-fluid" id="modal-container" style={{maxWidth: `100vw`, }}>
+      <div className="container-fluid mh-50" id="modal-container" style={{maxWidth: `100vw`, }}>
         <Carousel
           thumbnailWidth={thumbnailWidth}
           isAnimating={this.state.isAnimating}

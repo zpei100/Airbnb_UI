@@ -4,15 +4,16 @@ import thunk from 'redux-thunk';
 import { hydrate, render } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 
 import rootReducer from './reducers/rootReducer';
 import RelatedListings from './components/relatedListings/RelatedListings.jsx'
-import Gallery from "./components/gallery/Gallery";
-import Nav from "./components/navbar/Nav";
+import Gallery from './components/gallery/Gallery.jsx';
+import Nav from "./components/navbar/Nav.jsx";
 import Description from './components/description/Description.jsx';
-import CarouselModal from './components/modal/CarouselModal';
+import CarouselModal from './components/modal/CarouselModal.jsx';
 import Booking from './components/booking/Booking.jsx';
 
 import { floatButtonWhenEntering, highlightImageOnHover } from "./helpers/initialize";

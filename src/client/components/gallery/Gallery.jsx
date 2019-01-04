@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 
-import GalleryImage from './GalleryImage';
-import TopButton from './TopButton';
-import ViewPhotos from './ViewPhotos';
+import GalleryImage from './GalleryImage.jsx';
+import TopButton from './TopButton.jsx';
+import ViewPhotos from './ViewPhotos.jsx';
+
 import updateFavorites from '../../actionCreators/updateFavorites';
 
 const Gallery = ({ room: {imgs}, room, user, updateFavorites}) => {

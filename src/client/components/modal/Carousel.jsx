@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Arrow from './Arrow';
+import Arrow from './Arrow.jsx';
 
 const Carousel = ({ room: { imgs }, thumbnailWidth, isAnimating }) => {
   //need to make arrows shrink at width: 735 px;
@@ -10,7 +10,7 @@ const Carousel = ({ room: { imgs }, thumbnailWidth, isAnimating }) => {
       <div className="carousel-inner container-fluid flex-nowrap p-0" id="Carousel-inner"  role="listbox">
         {imgs.map((img, idx) => (
           <div className="carousel-item container-fluid" key={`carousel${idx}`}>
-            <img className="d-block m-auto h-auto" style={{width: `${thumbnailWidth}px` ,maxWidth: `100vw`, maxHeight: '70vh'}} src={img} alt="" />
+            <img className="d-block m-auto w-md-100 h-auto mw-100 mh-75" style={{width: `${thumbnailWidth}px`}} src={img} alt="" />
           </div>
         ))}
       </div>

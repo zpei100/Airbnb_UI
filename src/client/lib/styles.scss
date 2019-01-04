@@ -92,10 +92,11 @@ $app-body-md: 716px;
 
 //============================================ Nav ================================================
 .search-bar {
-  width: 500px!important;
+  width: 600px!important;
   
   input {
-    box-shadow: 0 0 0.3em black!important;
+    box-shadow: 0 0 0.2em grey!important;
+    font-weight: 800;
   }
 }
 
@@ -103,6 +104,11 @@ $app-body-md: 716px;
   #navbar-content {
     width: 100vw!important;
   }
+}
+
+#navbar-toggle-icon {
+  cursor: pointer;
+
 }
 
 #navbar-content {
@@ -180,7 +186,8 @@ $app-body-md: 716px;
   }
 
   img {
-    width: 100%;
+    width: auto;
+    min-width: 100%;
     height: 100%;
     transition: transform 0.5s;
     cursor: pointer;
@@ -429,8 +436,6 @@ $calendar-flex-height: 50px;
     background-color: #99ede6;
   }
 }
-
-
 
 #booking {
   position: sticky;

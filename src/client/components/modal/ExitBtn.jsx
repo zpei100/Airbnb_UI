@@ -7,7 +7,7 @@ import toggleModal from "../../actionCreators/toggleModal";
 
 const ExitBtn = ({ toggleModal }) => {
   return (
-    <div id="ExitBtn">
+    <div id="ExitBtn" className="d-flex justify-content-end">
       <button id="exit-button" onClick={toggleModal}>
         {exit('white')}
       </button>

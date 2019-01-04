@@ -19,6 +19,8 @@ class Booking extends React.Component {
   constructor({room: {maxGuests}}) {
     super();
     this.state = {
+      adult: 1,
+      children: 0,
       guest: 1,
       infant: 0,
       maxGuests: maxGuests,
@@ -33,8 +35,17 @@ class Booking extends React.Component {
     if (prevState.modal && !this.state.modal) $('body').css('overflow', 'scroll');
   }
 
-  addGuest = change => {
-    this.setState({guest: this.state.guest + change}, () => {
+  addAdult = change => {
+    this.setState({adult: this.state.adult + change, guest: this.state.guest + change}, () => {
+      const guestEle = $('#guest-text');
+      const infantEle = $('#infant-text');
+      if (!guestEle.hasClass('active')) guestEle.addClass('active');
+      if (infantEle.hasClass('active')) infantEle.removeClass('active');
+    });
+  };
+
+  addChildren = change => {
+    this.setState({children: this.state.children + change, guest: this.state.guest + change}, () => {
       const guestEle = $('#guest-text');
       const infantEle = $('#infant-text');
       if (!guestEle.hasClass('active')) guestEle.addClass('active');
@@ -59,6 +70,7 @@ class Booking extends React.Component {
     const {dateRange: {startDate, endDate}, room: {id, datesBooked}, updateDatesBooked, updateDateRange} = this.props; 
     if (!startDate) return this.setState({focusedInput: 'startDate'});
     if (!endDate) return this.setState({focusedInput: 'endDate'});
+    this.setState({guest: 1, adult: 1, children: 0, infant: 0})
     updateDatesBooked({startDate, endDate, id, datesBooked});
     updateDateRange({startDate: null, endDate: null})
   };
@@ -102,8 +114,8 @@ class Booking extends React.Component {
               <div className="card-body">
                 <Headers {...room} />
                 <Calendar focusedInput={this.state.focusedInput} updateFocusedInput={this.updateFocusedInput} />
-                <GuestsDropdown {...this.state} addGuest={this.addGuest} addInfant={this.addInfant} wordString={this.wordString}/>
-                <Fees guest={this.state.guest} maxGuests={this.state.maxGuests} />
+                <GuestsDropdown {...this.state} addChildren={this.addChildren} addAdult={this.addAdult} addInfant={this.addInfant} wordString={this.wordString}/>
+                <Fees guest={this.state.adult + this.state.children} maxGuests={this.state.maxGuests} />
                 <Book handleClick={this.book} />
               </div>
             </div>
@@ -122,8 +134,8 @@ class Booking extends React.Component {
               <div className="card-body">
                 <Headers {...room} />
                 <Calendar focusedInput={this.state.focusedInput} updateFocusedInput={this.updateFocusedInput}/>
-                <GuestsDropdown {...this.state} addGuest={this.addGuest} addInfant={this.addInfant} wordString={this.wordString}/>
-                <Fees guest={this.state.guest} maxGuests={this.state.maxGuests} />
+                <GuestsDropdown {...this.state} addAdult={this.addAdult} addChildren={this.addChildren} addInfant={this.addInfant} wordString={this.wordString}/>
+                <Fees guest={this.state.adult + this.state.children} maxGuests={this.state.maxGuests} />
                 <Book handleClick={this.book} />
               </div>
             </div>

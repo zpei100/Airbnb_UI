@@ -7,6 +7,7 @@ import $ from 'jquery';
 import ExitBtn from './ExitBtn.jsx';
 import Carousel from './Carousel.jsx';
 import Slider from './Slider.jsx';
+import Arrow from './Arrow.jsx';
 
 import changeActiveImage from '../../actionCreators/changeActiveImage';
 
@@ -65,7 +66,7 @@ class CarouselModal extends Component {
 
   componentDidUpdate(prevProps) {
     $(document).ready(() => {
-      if (!prevProps.showModal) $('.carousel-fade .carousel-inner .carousel-item').css('transition-duration',`${this.state.animationDuration}ms`);
+      if (!prevProps.showModal) $('.carousel-fade  .carousel-item').css('transition-duration',`${this.state.animationDuration}ms`);
 
       if (prevProps.activeImageIndex !== this.props.activeImageIndex || !prevProps.showModal) {
         $($('.carousel-item')[this.props.activeImageIndex]).toggleClass('active');
@@ -76,6 +77,7 @@ class CarouselModal extends Component {
 
   render() {
     var thumbnailWidth = this.state.thumbnailWidth >= 1036 ? 1036 : this.state.thumbnailWidth;
+    const { isAnimating } = this.state;
 
     return (
     <ReactModal
@@ -91,10 +93,7 @@ class CarouselModal extends Component {
           width: '100vw',
           height: '100vh',
           verticalAlign: 'middle',
-          display: 'flex',
           alignItems: 'center'
-
-          
         },
         body: {
           overflow: 'hidden'
@@ -107,11 +106,16 @@ class CarouselModal extends Component {
       }}
     >
       <ExitBtn />
-      <div className="container-fluid mh-50" id="modal-container" style={{maxWidth: `100vw`, }}>
-        <Carousel
-          thumbnailWidth={thumbnailWidth}
-          isAnimating={this.state.isAnimating}
-        />
+      <div className="m-auto" id="modal-container" style={{maxWidth: '80vw', height:'500px', width: `${thumbnailWidth}px` }}>
+      <div className="d-flex">
+      <Arrow type="prev" isAnimating={isAnimating} />
+      
+      <Carousel
+        thumbnailWidth={thumbnailWidth}
+        isAnimating={this.state.isAnimating}
+      />
+      <Arrow type="next" isAnimating={isAnimating} />
+      </div>
         <Slider
           thumbnailWidth={thumbnailWidth}
           id="Slider"

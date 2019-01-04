@@ -4,8 +4,6 @@ import $ from 'jquery';
 
 //without this variable, this component will re-mount when screen width changes, causing the on click listner to be repeatedly attached.
 
-let mounted = false;
-
 export default class GuestsDropDown extends Component {
 
   constructor() {
@@ -16,21 +14,24 @@ export default class GuestsDropDown extends Component {
   }
 
   componentDidMount = () => {
-    if (!mounted) {
-      mounted = true;
-      $('html').on('click', e => {
-        if (e.target.id === 'dropdown-button' || e.target.id === 'dropdown-close' || $(e.target).parents('#dropdown-button').length) {
-          console.log('dropdown button clicked')
-          $('#dropdown-menu').slideToggle(0);
-          return this.setState({toggled: !this.state.toggled})
-        }
-        if (e.target.id === 'dropdown-menu' || $(e.target).parents('#dropdown-menu').length) return;
-        if (this.state.toggled) {
-          $('#dropdown-menu').slideToggle(0);
-          this.setState({toggled: false});
-        }
-      })
-    }
+    
+    $('html').off('click');
+     
+    $('html').on('click', e => {
+      console.log('clicked and state toggled: ', this.state.toggled)
+      if (e.target.id === 'dropdown-button' || e.target.id === 'dropdown-close' || $(e.target).parents('#dropdown-button').length) {
+        $('#dropdown-menu').slideToggle(0);
+        console.log('before warning')
+        return this.setState({toggled: !this.state.toggled}, () => console.log('after warning'))
+      }
+      if (e.target.id === 'dropdown-menu' || $(e.target).parents('#dropdown-menu').length) return;
+      if (this.state.toggled) {
+        
+        console.log('hi')
+        $('#dropdown-menu').slideToggle(0);
+        this.setState({toggled: false});
+      }
+    })
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -41,7 +42,10 @@ export default class GuestsDropDown extends Component {
   }
 
   render() {
-    const {guest, infant, maxGuests, addGuest, addInfant, wordString} = this.props;
+    const {guest, adult, children, infant, maxGuests, addAdult, addChildren, addInfant, wordString} = this.props;
+
+    console.log('add adult and add children: ', addAdult, addChildren)
+    
 
     return (
       <React.Fragment>
@@ -49,9 +53,6 @@ export default class GuestsDropDown extends Component {
       <div className="dropdown" id="guest-dropdown">
         <button 
           className="btn dropdown-toggle text-left w-100 btn-drop-down px-3 d-flex"
-          onClick={() => {
-            addGuest(0);
-          }}
           id="dropdown-button">
             <div id="guest-text" className="btn rounded px-0">{guest} {wordString('guest')}</div>
             {infant ? 
@@ -62,9 +63,9 @@ export default class GuestsDropDown extends Component {
             : ''}
         </button>
         <div className="dropdown-menu w-100 px-3 rounded" id="dropdown-menu">
-          <DropdownOption text="Adult" handleChange={addGuest} count={1} maxed={guest >= maxGuests} />
-          <DropdownOption text="Children" handleChange={addGuest} maxed={guest >= maxGuests} />
-          <DropdownOption text="Infants" handleChange={addInfant} />
+          <DropdownOption text="Adult" handleChange={addAdult} count={adult} maxed={adult + children >= maxGuests} />
+          <DropdownOption text="Children" handleChange={addChildren} count={children} maxed={adult + children>= maxGuests} />
+          <DropdownOption text="Infants" handleChange={addInfant} count={infant} />
           <p className="mt-2">{maxGuests} guests maximum. Infants don't count toward the number of guests</p>
           <a id="dropdown-close">Close</a>
         </div>

@@ -6,19 +6,18 @@ import Arrow from './Arrow.jsx';
 const Carousel = ({ room: { imgs }, thumbnailWidth, isAnimating }) => {
   //need to make arrows shrink at width: 735 px;
   return (
-    <div className="carousel slide carousel-fade carousel-thumbnails row m-0" id="modal-carousel" data-interval="false">
-      <div className="carousel-inner container-fluid flex-nowrap p-0" id="Carousel-inner"  role="listbox">
+    <div className="carousel slide carousel-fade carousel-thumbnails row m-0 w-100" id="modal-carousel" data-interval="false"
+      style={{height: '690px', maxHeight: '75vh'}} 
+    >
         {imgs.map((img, idx) => (
-          <div className="carousel-item container-fluid" key={`carousel${idx}`}>
-            <img className="d-block m-auto w-md-100 h-auto mw-100 mh-75" style={{width: `${thumbnailWidth}px`}} src={img} alt="" />
+          <div className="carousel-item" key={`carousel${idx}`}>
+            <img className="d-block m-auto h-100 w-100" style={{objectFit: 'cover'}} src={img} />
           </div>
         ))}
-      </div>
 
-      <Arrow type="prev" isAnimating={isAnimating} />
-      <Arrow type="next" isAnimating={isAnimating} />
+      
     </div>
-  );
+  )
 };
 
 const mapStateToProps = state => { return {room: state.room} }

@@ -44,6 +44,7 @@ class Calendar extends Component {
           block={true}
           numberOfMonths={1}
           showClearDates={true}
+          isOutsideRange={day => day.isBefore(Moment()) || (day.isBefore(startDate, 'day') && !endDate)}
           isDayHighlighted={day => startDate && endDate ? Moment.range(startDate, endDate).contains(day) : false}
           isDayBlocked={day => {
 

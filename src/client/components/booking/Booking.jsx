@@ -23,7 +23,8 @@ class Booking extends React.Component {
       infant: 0,
       maxGuests: maxGuests,
       modal: false,
-      booking: false
+      booking: false,
+      focusedInput: null
     }
   }
 
@@ -51,9 +52,15 @@ class Booking extends React.Component {
 
   book = () => {
     const {dateRange: {startDate, endDate}, room: {id, datesBooked}, updateDatesBooked, updateDateRange} = this.props; 
+    if (!startDate) return this.setState({focusedInput: 'startDate'});
+    if (!endDate) return this.setState({focusedInput: 'endDate'});
     updateDatesBooked({startDate, endDate, id, datesBooked});
     updateDateRange({startDate: null, endDate: null})
   };
+
+  updateFocusedInput = focusedInput => {
+    this.setState({focusedInput})
+  }
 
   render () {
     const {room, showModal} = this.props;
@@ -86,7 +93,7 @@ class Booking extends React.Component {
               <button className="border-0 mt-3 ml-3" onClick={() => this.setState({modal: false, booking: false}, () => $('body').css('overflow', 'scroll'))} style={{backgroundColor: 'rgba(0,0,0,0)', cursor: 'pointer'}} >{exit('black', '20px')}</button>
               <div className="card-body">
                 <Headers {...room} />
-                <Calendar />
+                <Calendar focusedInput={this.state.focusedInput} updateFocusedInput={this.updateFocusedInput} />
                 <GuestsDropdown {...this.state} addGuest={this.addGuest} addInfant={this.addInfant} wordString={this.wordString}/>
                 <Fees guest={this.state.guest} maxGuests={this.state.maxGuests} />
                 <Book handleClick={this.book} />
@@ -106,7 +113,7 @@ class Booking extends React.Component {
             <div className="card mt-4 float-right" style={{ width: '24rem' }} id="booking" >
               <div className="card-body">
                 <Headers {...room} />
-                <Calendar />
+                <Calendar focusedInput={this.state.focusedInput} updateFocusedInput={this.updateFocusedInput}/>
                 <GuestsDropdown {...this.state} addGuest={this.addGuest} addInfant={this.addInfant} wordString={this.wordString}/>
                 <Fees guest={this.state.guest} maxGuests={this.state.maxGuests} />
                 <Book handleClick={this.book} />

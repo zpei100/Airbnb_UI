@@ -15,14 +15,11 @@ const Moment = extendMoment(moment);
 import updateDateRange from '../../actionCreators/updateDateRange';
 
 class Calendar extends Component {
-  constructor() {
-    super();
-    this.state = {
-      focusedInput: null
-    };
-  };
 
   render() {
+
+    const {focusedInput, updateFocusedInput} = this.props;
+
     const { room: { datesBooked : dates }, updateDateRange, dateRange: {startDate, endDate}} = this.props;
     const datesBooked = dates.map(date => Moment(date));
    
@@ -38,8 +35,8 @@ class Calendar extends Component {
           onDatesChange={({ startDate, endDate }) => {
             updateDateRange({startDate, endDate});
           }}
-          focusedInput={this.state.focusedInput}
-          onFocusChange={focusedInput => this.setState({ focusedInput })}
+          focusedInput={focusedInput}
+          onFocusChange={focusedInput => updateFocusedInput(focusedInput)}
           startDatePlaceholderText="Check in"
           endDatePlaceholderText="Check out"
           orientation="horizontal"
@@ -50,12 +47,12 @@ class Calendar extends Component {
           isDayHighlighted={day => startDate && endDate ? Moment.range(startDate, endDate).contains(day) : false}
           isDayBlocked={day => {
 
-            if (this.state.focusedInput === 'endDate') {
+            if (focusedInput === 'endDate') {
               if (startDate && datesBooked.some(date => Moment.range(startDate, day).contains(date))) return true;
               if (datesBooked.some(date => date.clone().add(1, 'day').isSame(day,'day'))) return true;
             };
 
-            if (this.state.focusedInput === 'startDate') {
+            if (focusedInput === 'startDate') {
               if (endDate && datesBooked.some(date => Moment.range(day, endDate).contains(date))) return true;
               if (datesBooked.some(date => day.clone().add(1, 'day').isSame(date, 'day'))) return true; 
             };

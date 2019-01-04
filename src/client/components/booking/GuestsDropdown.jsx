@@ -2,27 +2,35 @@ import React, { Component } from 'react';
 import DropdownOption from './DropdownOption.jsx';
 import $ from 'jquery';
 
+//without this variable, this component will re-mount when screen width changes, causing the on click listner to be repeatedly attached.
+
+let mounted = false;
+
 export default class GuestsDropDown extends Component {
 
   constructor() {
     super();
     this.state = {
-      toggled: false
+      toggled: false,
     }
   }
 
   componentDidMount = () => {
-    $('html').on('click', e => {
-      if (e.target.id === 'dropdown-button' || e.target.id === 'dropdown-close' || $(e.target).parents('#dropdown-button').length) {
-        $('#dropdown-menu').slideToggle(0);
-        return this.setState({toggled: !this.state.toggled})
-      }
-      if (e.target.id === 'dropdown-menu' || $(e.target).parents('#dropdown-menu').length) return;
-      if (this.state.toggled) {
-        $('#dropdown-menu').slideToggle(0);
-        this.setState({toggled: false});
-      }
-    })
+    if (!mounted) {
+      mounted = true;
+      $('html').on('click', e => {
+        if (e.target.id === 'dropdown-button' || e.target.id === 'dropdown-close' || $(e.target).parents('#dropdown-button').length) {
+          console.log('dropdown button clicked')
+          $('#dropdown-menu').slideToggle(0);
+          return this.setState({toggled: !this.state.toggled})
+        }
+        if (e.target.id === 'dropdown-menu' || $(e.target).parents('#dropdown-menu').length) return;
+        if (this.state.toggled) {
+          $('#dropdown-menu').slideToggle(0);
+          this.setState({toggled: false});
+        }
+      })
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {

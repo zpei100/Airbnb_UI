@@ -22,7 +22,8 @@ class Booking extends React.Component {
       guest: 1,
       infant: 0,
       maxGuests: maxGuests,
-      modal: false
+      modal: false,
+      booking: false
     }
   }
 
@@ -82,7 +83,7 @@ class Booking extends React.Component {
             }
           }>
             <div className="card d-inline m-auto" style={{ width: '24rem', verticalAlign: 'middle'}} >
-              <button className="border-0 mt-3 ml-3" onClick={() => this.setState({modal: false}, () => $('body').css('overflow', 'scroll'))} style={{backgroundColor: 'rgba(0,0,0,0)', cursor: 'pointer'}} >{exit('black', '20px')}</button>
+              <button className="border-0 mt-3 ml-3" onClick={() => this.setState({modal: false, booking: false}, () => $('body').css('overflow', 'scroll'))} style={{backgroundColor: 'rgba(0,0,0,0)', cursor: 'pointer'}} >{exit('black', '20px')}</button>
               <div className="card-body">
                 <Headers {...room} />
                 <Calendar />
@@ -97,7 +98,11 @@ class Booking extends React.Component {
 
         <MediaQuery minWidth={1200} values={{width: 1600}}>
         {matches => {
-          if (matches) return (
+          if (matches) {
+          
+          if (this.state.modal) this.setState({modal: false})
+
+          return (
             <div className="card mt-4 float-right" style={{ width: '24rem' }} id="booking" >
               <div className="card-body">
                 <Headers {...room} />
@@ -107,17 +112,22 @@ class Booking extends React.Component {
                 <Book handleClick={this.book} />
               </div>
             </div>
-          ); else return (
+          )} else {
+            
+            if(this.state.booking && !this.state.modal) this.setState({modal: true})
+
+            return (
             showModal || this.state.modal ? '' :
             <div>
               <div className="d-flex justify-content-between container px-2">
                 <div className="my-auto">
                   <Headers {...room} />
                 </div>
-                <Book handleClick={() => this.setState({modal: true}, () => $('body').css('overflow', 'hidden'))}/>
+                <Book handleClick={() => this.setState({modal: true, booking: true}, () => $('body').css('overflow', 'hidden'))}/>
               </div>
             </div>
           )
+          }
         }}
       </MediaQuery>
       </React.Fragment>

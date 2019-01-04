@@ -62,7 +62,7 @@ class Calendar extends React.Component {
             this.setState({ focusedInput })
           }}
           renderCalendarInfo={() => {
-            return <div className="text-center font-weight-bold" style={{position: 'relative', bottom: '20px'}}>Pick {this.state.focusedInput === 'startDate' ? 'a start date' : 'an end date'}</div>
+            return <div className="text-center font-weight-bold mt-2" style={{position: 'relative', bottom: '20px'}}>Pick {this.state.focusedInput === 'startDate' ? 'a start date' : 'an end date'}</div>
           }}
           isOutsideRange={day => day.isBefore(Moment()) || (day.isBefore(startDate, 'day') && !endDate)}
           isDayHighlighted={day => startDate && endDate ? Moment.range(startDate, endDate).contains(day) : false}

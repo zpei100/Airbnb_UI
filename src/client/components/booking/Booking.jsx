@@ -28,6 +28,11 @@ class Booking extends React.Component {
     }
   }
 
+  componentDidUpdate = (prevProps, prevState) => {
+    if (!prevState.modal && this.state.modal) $('body').css('overflow', 'hidden');
+    if (prevState.modal && !this.state.modal) $('body').css('overflow', 'scroll');
+  }
+
   addGuest = change => {
     this.setState({guest: this.state.guest + change}, () => {
       const guestEle = $('#guest-text');
@@ -68,7 +73,10 @@ class Booking extends React.Component {
     return (
       <React.Fragment>
         {this.state.modal ?  
-          <ReactModal isOpen={this.state.modal} style={
+          <ReactModal 
+          isOpen={this.state.modal} 
+          ariaHideApp={false}
+          style={
             {
               content: {
               backgroundColor: 'rgba(0,0,0,0)',
@@ -90,7 +98,7 @@ class Booking extends React.Component {
             }
           }>
             <div className="card d-inline m-auto" style={{ width: '24rem', verticalAlign: 'middle'}} >
-              <button className="border-0 mt-3 ml-3" onClick={() => this.setState({modal: false, booking: false}, () => $('body').css('overflow', 'scroll'))} style={{backgroundColor: 'rgba(0,0,0,0)', cursor: 'pointer'}} >{exit('black', '20px')}</button>
+              <button className="border-0 mt-3 ml-3" onClick={() => this.setState({modal: false, booking: false})} style={{backgroundColor: 'rgba(0,0,0,0)', cursor: 'pointer'}} >{exit('black', '20px')}</button>
               <div className="card-body">
                 <Headers {...room} />
                 <Calendar focusedInput={this.state.focusedInput} updateFocusedInput={this.updateFocusedInput} />
@@ -130,7 +138,7 @@ class Booking extends React.Component {
                 <div className="my-auto">
                   <Headers {...room} />
                 </div>
-                <Book handleClick={() => this.setState({modal: true, booking: true}, () => $('body').css('overflow', 'hidden'))}/>
+                <Book handleClick={() => this.setState({modal: true, booking: true})}/>
               </div>
             </div>
           )

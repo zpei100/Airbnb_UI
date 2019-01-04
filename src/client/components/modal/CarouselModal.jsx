@@ -81,6 +81,7 @@ class CarouselModal extends Component {
     <ReactModal
       isOpen={this.props.showModal}
       className="Modal"
+      ariaHideApp={false}
       style={{
         content: {
           backgroundColor: 'black',

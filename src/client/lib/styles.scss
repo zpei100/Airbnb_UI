@@ -72,7 +72,23 @@ $app-body-md: 716px;
   }
 
   @media screen and (max-width: $break-width-sm) {
-    width: 80vw!important;
+    max-width: 90vw!important;
+
+    #booking-app {
+      margin: auto
+    }
+
+    #description-app {
+      margin: auto
+    }
+    
+    #reviews-app {
+    }
+
+    #related-listings-app {
+      margin: auto
+    }
+
   }
 }
 
@@ -208,8 +224,8 @@ $app-body-md: 716px;
     background-color: #262626;
   }
   
-  .gallery img:hover {
-    transform: scale(1.08);
+  img:hover {
+    transform: scale(1.08)!important;
   }
   
   .img0 {
@@ -361,6 +377,8 @@ $drop-down-option-text-size: $btn-circle-size * 2 /5;
 }
 
 .btn-circle {
+  display: flex;
+  justify-content: center;
   width: $btn-circle-size; 
   height: $btn-circle-size;
   text-align: center;

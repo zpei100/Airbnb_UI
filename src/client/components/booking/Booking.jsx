@@ -98,7 +98,7 @@ class Booking extends React.Component {
             }
           }>
             <div className="card d-inline m-auto" style={{ width: '24rem', verticalAlign: 'middle'}} >
-              <button className="border-0 mt-3 ml-3" onClick={() => this.setState({modal: false, booking: false})} style={{backgroundColor: 'rgba(0,0,0,0)', cursor: 'pointer'}} >{exit('black', '20px')}</button>
+              <button className="btn-circle border-light mt-3 ml-3" onClick={() => this.setState({modal: false, booking: false})} style={{backgroundColor: 'rgba(0,0,0,0)', cursor: 'pointer'}}>{exit('black', '20px')}</button>
               <div className="card-body">
                 <Headers {...room} />
                 <Calendar focusedInput={this.state.focusedInput} updateFocusedInput={this.updateFocusedInput} />

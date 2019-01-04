@@ -59,7 +59,16 @@
 }
 @media screen and (max-width: 768px) {
   #app-body {
-    width: 80vw !important;
+    max-width: 90vw !important;
+  }
+  #app-body #booking-app {
+    margin: auto;
+  }
+  #app-body #description-app {
+    margin: auto;
+  }
+  #app-body #related-listings-app {
+    margin: auto;
   }
 }
 
@@ -175,8 +184,8 @@
   overflow: hidden;
   background-color: #262626;
 }
-.gallery .gallery img:hover {
-  transform: scale(1.08);
+.gallery img:hover {
+  transform: scale(1.08) !important;
 }
 .gallery .img0 {
   grid-area: img0;
@@ -300,6 +309,8 @@
 }
 
 .btn-circle {
+  display: flex;
+  justify-content: center;
   width: 35px;
   height: 35px;
   text-align: center;

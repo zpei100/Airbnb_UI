@@ -10,7 +10,6 @@ export default ({ color, rating, roomId }) => {
   };
 
   return (
- 
     <div style={{position: 'relative'}}>
       <div className="mr-2 d-flex" id={`stars${roomId}`}>
       {[1, 2, 3, 4, 5].map((score) => (

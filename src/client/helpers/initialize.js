@@ -2,25 +2,24 @@ import $ from 'jquery';
 
 export const floatButtonWhenEntering = function(ele) {
   ele.hover(
-    function(e) {
+    () => {
       $('.button-bottom').css({
         transform: 'translateY(-15px)',
         transition: 'opacity 0.2s ease-in, transform 0.35s'
       });
     },
-    function(e) {
+    () => {
       $('.button-bottom ').css({
         transform: 'translateY(0)',
         transition: 'opacity 0.2s ease-in, transform 0.35s'
       });
     },
-    function(e) {}
   );
-}
+};
 
 export const highlightImageOnHover = function(ele) {
   $(ele).hover(
-    function(e) {
+    e => {
       const others = $(e.target)
         .parent()
         .siblings()
@@ -29,8 +28,7 @@ export const highlightImageOnHover = function(ele) {
       $(others).stop();
       $(others).css({ opacity: 0.7, transition: 'ease-in, 1s' });
     },
-
-    function(e) {
+    e => {
       const others = $(e.target)
         .parent()
         .siblings()
@@ -40,9 +38,9 @@ export const highlightImageOnHover = function(ele) {
       $(others).css({ opacity: 1, transition: 'ease-in, 1s' });
     }
   );
-}
+};
 
-export const roundToHalf = function(number) {
+export const roundToHalf = number => {
   var floor = Math.floor(number);
   var ceil = Math.ceil(number);
   var middle = (floor + ceil) / 2;
@@ -54,6 +52,6 @@ export const roundToHalf = function(number) {
   : number - middle <= ceil - number
     ? middle
     : ceil;
-}
+};
 
 

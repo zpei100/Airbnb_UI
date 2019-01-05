@@ -1,10 +1,10 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import RoomCard from './RoomCard.jsx';
 import Arrow from './Arrow.jsx';
-import { bindActionCreators } from 'redux';
 import updateFavorites from '../../actionCreators/updateFavorites';
 import updateFavoriteActivities from '../../actionCreators/updateFavoriteActivities';
 
@@ -46,11 +46,9 @@ const RelatedListings = ({ relatedListings, activities, updateFavorites, updateF
 };
 
 const mapStateToProps = ({relatedListings, activities}) => ({relatedListings, activities})
-const mapDispatchToProps = dispatch => {
-  return {
-    updateFavorites: bindActionCreators(updateFavorites, dispatch),
-    updateFavoriteActivities: bindActionCreators(updateFavoriteActivities, dispatch)
-  };
-};
- 
+const mapDispatchToProps = dispatch => ({
+  updateFavorites: bindActionCreators(updateFavorites, dispatch),
+  updateFavoriteActivities: bindActionCreators(updateFavoriteActivities, dispatch)
+}) 
+
 export default connect(mapStateToProps, mapDispatchToProps)(RelatedListings);

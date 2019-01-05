@@ -1,45 +1,35 @@
 import { Room, User, Activity } from '../db/schema';
 
 export const getRoomAndUserInfo = function(req) {
-  return new Promise(function(resolve, reject) {
-    
+  return new Promise((resolve, reject) => {
     const userId = req.session.user ? req.session.user : 15;
+    try {
+      const id = parseInt(req.params.id);
+      Room.findOne({ id }).then(room => {
+        let relatedListings = [];
+        let activitiesList = [];
+        const {related, activities} = room;
+        activities.forEach(id => {
+          Activity.findOne({id}).then(activity => {
+            activitiesList.push(activity);
 
-  try {
-    const id = parseInt(req.params.id);
+            if (activitiesList.length === activities.length) {
+              related.forEach((id) => {
+                Room.findOne({ id }).then(relatedRoom => {
+                  relatedListings.push(relatedRoom);
 
-    Room.findOne({ id }).then(room => {
-      
-      let relatedListings = [];
-      let activitiesList = [];
-      const {related, activities} = room;
-
-
-      activities.forEach(id => {
-        Activity.findOne({id}).then(activity => {
-          activitiesList.push(activity);
-
-          if (activitiesList.length === activities.length) {
-
-            related.forEach((id) => {
-              Room.findOne({ id }).then(relatedRoom => {
-                relatedListings.push(relatedRoom);
-      
-                if (relatedListings.length === related.length) {
-                  User.findOne({ id: userId }).then(user => {
-                    
-                    resolve({room, relatedListings, activities:activitiesList, user})
-                  }).catch(reject);
-                }
-              }).catch(reject);
-            });
-          }
+                  if (relatedListings.length === related.length) {
+                    User.findOne({ id: userId }).then(user => {
+                      resolve({room, relatedListings, activities:activitiesList, user})
+                    }).catch(reject);
+                  }
+                }).catch(reject);
+              });
+            }
+          })
         })
-      })
-    });
-  } catch(e) {
-      reject(e)
-    }
+      });
+    } catch(e) {reject(e)};
   })
 }
 

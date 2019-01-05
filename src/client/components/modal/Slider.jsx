@@ -29,17 +29,7 @@ const Slider = ({ room: { imgs }, thumbnailWidth, activeImageIndex, changeActive
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    room: state.room,
-    activeImageIndex: state.activeImageIndex
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    changeActiveImage: bindActionCreators(changeActiveImage, dispatch)
-  }
-}
+const mapStateToProps = state => ({room: state.room, activeImageIndex: state.activeImageIndex});
+const mapDispatchToProps = dispatch => ({changeActiveImage: bindActionCreators(changeActiveImage, dispatch)});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Slider);

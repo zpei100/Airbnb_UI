@@ -25,20 +25,7 @@ const Arrow = ({ type, activeImageIndex, changeActiveImage, room: { imgs }, isAn
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    activeImageIndex: state.activeImageIndex,
-    room: state.room
-  };
-};
+const mapStateToProps = state => ({activeImageIndex: state.activeImageIndex, room: state.room}); 
+const mapDispatchToProps = dispatch => ({changeActiveImage: bindActionCreators(changeActiveImage, dispatch)})
 
-const mapDispatchToProps = dispatch => {
-  return {
-    changeActiveImage: bindActionCreators(changeActiveImage, dispatch)
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Arrow);
+export default connect(mapStateToProps, mapDispatchToProps)(Arrow);

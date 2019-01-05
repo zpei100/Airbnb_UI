@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
+const MONGOURL = process.env.MONGOURL || require('../config').MONGOURL;
 
-mongoose.connect(`mongodb://zen:zenpai2@ds115664.mlab.com:15664/fec`, {
+mongoose.connect(MONGOURL, {
   useCreateIndex: true,
   useNewUrlParser: true
 });
 
 const db = mongoose.connection;
-db.once('open', function() {
+
+db.once('open', () => {
   console.log('connection open!');
 });
 

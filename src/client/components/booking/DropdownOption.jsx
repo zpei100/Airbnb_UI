@@ -1,14 +1,8 @@
 import React from 'react';
-import $ from 'jquery';
 
 export default class DropdownOption extends React.Component {
-
-
   render() {
-
     const {text, handleChange, maxed, count} = this.props;
-
-    console.log(text, handleChange, maxed)
 
     return (
     <div className='my-3 d-flex'>

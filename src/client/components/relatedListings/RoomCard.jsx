@@ -1,18 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { bindActionCreators } from "redux";
+
 import Rating from './Rating.jsx';
 import { heart } from '../../lib/svg';
-import updateFavorites from "../../actionCreators/updateFavorites";
 
 const RoomCard = ({type, tag = 'activity', title, id, beds, price, rating, reviews, imgs, favorites, favoriteActivities, handleHeart}) => {
 
   //this component is used by both related homes and activities near area
   const favoriteList = tag === 'activity' ? favoriteActivities : favorites;
   const favorite = (favoriteList.includes(id) ? true : false);
-  const onClick = function() {
-    handleHeart(id)
-  }
+  const onClick = () => handleHeart(id);
 
   if (imgs) {
     const thumbNail = imgs[0];
@@ -73,12 +70,7 @@ const RoomCard = ({type, tag = 'activity', title, id, beds, price, rating, revie
   }
 }
 
-const mapStateToProps = ({user: {favorites, favoriteActivities}}) => {
-
-  return {
-    favorites, favoriteActivities
-  };
-};
+const mapStateToProps = ({user: {favorites, favoriteActivities}}) => ({favorites, favoriteActivities})
 
 export default connect(mapStateToProps)(RoomCard);
 

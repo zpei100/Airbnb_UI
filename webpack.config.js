@@ -1,6 +1,13 @@
 const path = require('path');
+const uglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
+  optimization: {
+    minimizer: [new uglifyJsPlugin()],
+    nodeEnv: 'production',
+    mergeDuplicateChunks: true
+  },
   entry: {
     index: './src/client/index.js',
   },

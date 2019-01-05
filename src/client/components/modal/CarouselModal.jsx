@@ -12,8 +12,8 @@ import Arrow from './Arrow.jsx';
 import changeActiveImage from '../../actionCreators/changeActiveImage';
 
 class CarouselModal extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       isAnimating: false,
@@ -27,16 +27,15 @@ class CarouselModal extends Component {
       setTimeout(() => {
         this.setState({isAnimating: false})
       }, this.state.animationDuration)
-    })
+    });
 
     const { activeImageIndex, room: { imgs } } = this.props;
     const { thumbnailWidth } = this.state;
-    const slider = $('#Slider ol');
 
+    const slider = $('#Slider ol');
     const direction = activeImageIndex - prevActiveImageIndex;
     const sliderImageWidth = $('#Slider li').width();
     const sliderImageMargin = 2 * parseInt($('#Slider li').first().css('margin-right'));
-
     const adjustedSliderImageWidth = sliderImageWidth + sliderImageMargin;
 
     //The margin-left property returns negative result
@@ -60,14 +59,12 @@ class CarouselModal extends Component {
     // If active image is on the left side of the slider and if there is left side overflow and scrolling left
     if (sideOfActiveImage < 0 && leftSideOverflow >= 0 && direction <= 0) move = Math.max(-leftSideOverflow, move);
     
-
     slider.animate({ marginLeft: `-=${move}px` }, this.state.animationDuration);
-  }
+  };
 
   componentDidUpdate(prevProps) {
     $(document).ready(() => {
       if (!prevProps.showModal) $('.carousel-fade  .carousel-item').css('transition-duration',`${this.state.animationDuration}ms`);
-
       if (prevProps.activeImageIndex !== this.props.activeImageIndex || !prevProps.showModal) {
         $($('.carousel-item')[this.props.activeImageIndex]).toggleClass('active');
         if (this.props.showModal) this.slideActiveImageToCenter(prevProps.showModal ? prevProps.activeImageIndex : 0);
@@ -76,9 +73,7 @@ class CarouselModal extends Component {
   };
 
   render() {
-    var thumbnailWidth = this.state.thumbnailWidth >= 1036 ? 1036 : this.state.thumbnailWidth;
-    const { isAnimating } = this.state;
-
+    const { isAnimating, thumbnailWidth } = this.state;
     return (
     <ReactModal
       isOpen={this.props.showModal}
@@ -107,41 +102,19 @@ class CarouselModal extends Component {
     >
       <ExitBtn />
       <div className="m-auto" id="modal-container" style={{maxWidth: '80vw', height:'500px', width: `${thumbnailWidth}px` }}>
-      <div className="d-flex">
-      <Arrow type="prev" isAnimating={isAnimating} />
-      
-      <Carousel
-        thumbnailWidth={thumbnailWidth}
-        isAnimating={this.state.isAnimating}
-      />
-      <Arrow type="next" isAnimating={isAnimating} />
-      </div>
-        <Slider
-          thumbnailWidth={thumbnailWidth}
-          id="Slider"
-          active={this.props.activeImageIndex}
-        />
+        <div className="d-flex">
+          <Arrow type="prev" isAnimating={isAnimating} />
+          <Carousel thumbnailWidth={thumbnailWidth} isAnimating={this.state.isAnimating}/>
+          <Arrow type="next" isAnimating={isAnimating} />
+        </div>
+          <Slider thumbnailWidth={thumbnailWidth} id="Slider" active={this.props.activeImageIndex}/>
       </div> 
     </ReactModal>
     );
   }
-}
-
-const mapStateToProps = state => {
-  return {
-    showModal: state.showModal,
-    activeImageIndex: state.activeImageIndex,
-    room: state.room
-  };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    changeActiveImage: bindActionCreators(changeActiveImage, dispatch)
-  };
-};
+const mapStateToProps = state => ({showModal: state.showModal, activeImageIndex: state.activeImageIndex, room: state.room});
+const mapDispatchToProps = dispatch => ({changeActiveImage: bindActionCreators(changeActiveImage, dispatch)});
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CarouselModal);
+export default connect(mapStateToProps, mapDispatchToProps)(CarouselModal);

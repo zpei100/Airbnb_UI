@@ -9,7 +9,6 @@ import ViewPhotos from './ViewPhotos.jsx';
 import updateFavorites from '../../actionCreators/updateFavorites';
 
 const Gallery = ({ room: {imgs}, room, user, updateFavorites}) => {
-
   return (
     <div className="gallery">
       <div className="button-group-top button mx-4 my-4 d-flex">
@@ -33,18 +32,8 @@ const Gallery = ({ room: {imgs}, room, user, updateFavorites}) => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    room: state.room,
-    user: state.user
-  }
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    updateFavorites: bindActionCreators(updateFavorites, dispatch)
-  };
-};
+const mapStateToProps = state =>({room: state.room, user: state.user}); 
+const mapDispatchToProps = dispatch => ({updateFavorites: bindActionCreators(updateFavorites, dispatch)});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Gallery);
 

@@ -8,8 +8,6 @@ const Fees = ({guest, startDate, endDate, price, pricePerPerson, serviceFee, ser
 
   const days = Moment(endDate).diff(Moment(startDate), 'days');
   const convertUSD = value => currencyFormatter.format(value, {code: 'USD'});
-
-
   const _cleaningFee = convertUSD(cleaningFee);
   const _serviceFee = convertUSD(serviceFeePerPerson * guest + serviceFee);
   const _rent = convertUSD((price + pricePerPerson * guest) * days);
@@ -27,8 +25,6 @@ const Fees = ({guest, startDate, endDate, price, pricePerPerson, serviceFee, ser
   )
 }
 
-const mapStateToProps = ({dateRange: { startDate, endDate }, room: {price, serviceFee, serviceFeePerPerson, cleaningFee, pricePerPerson}}) => {
-  return {startDate, endDate, price, serviceFee, serviceFeePerPerson, cleaningFee, pricePerPerson}
-}
+const mapStateToProps = ({dateRange: { startDate, endDate }, room: {price, serviceFee, serviceFeePerPerson, cleaningFee, pricePerPerson}}) => ({startDate, endDate, price, serviceFee, serviceFeePerPerson, cleaningFee, pricePerPerson});
 
 export default connect(mapStateToProps)(Fees);

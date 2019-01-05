@@ -5,26 +5,26 @@ import $ from 'jquery';
 import DropdownNav from './DropdownNav.jsx';
 
 export default class Nav extends React.Component {
-
   constructor() {
     super();
 
     this.state = {
-      dropdownToggled: false
+      dropdownToggled: false,
+      dropdownAnimationTime: 300
     }
-  }
+  };
 
   toggleDropdown = matches => {
-    if (!matches || this.state.dropdownToggled) {
-      const { dropdownToggled } = this.state;
+    const { dropdownToggled, dropdownAnimationTime } = this.state;
+    if (!matches || dropdownToggled) {
       this.setState({dropdownToggled: !dropdownToggled}, () => {
         const rotation = dropdownToggled ? 0 : 180;
         $('#navbar-toggle-icon img').css({'transform': `rotate(${rotation}deg)`, 'transition-duration' : '0.3s'});
         $('body').css('overflow', dropdownToggled ? 'scroll' : 'hidden');
-        $('#navbar-dropdown').slideToggle(300);
+        $('#navbar-dropdown').slideToggle(dropdownAnimationTime);
       })
     }
-  }
+  };
 
   render () {
     return (

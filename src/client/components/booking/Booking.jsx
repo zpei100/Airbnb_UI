@@ -162,15 +162,7 @@ class Booking extends React.Component {
   };
 }
 
-const mapStateToProps = function({ room, user, dateRange, showModal }) {
-  return {
-    room,
-    user,
-    dateRange,
-    showModal
-  };
-};
-
+const mapStateToProps = ({ room, user, dateRange, showModal }) => ({ room, user, dateRange, showModal });
 const mapDispatchToProps = dispatch => ({
   updateDatesBooked: bindActionCreators(updateDatesBooked, dispatch),
   updateDateRange: bindActionCreators(updateDateRange, dispatch)

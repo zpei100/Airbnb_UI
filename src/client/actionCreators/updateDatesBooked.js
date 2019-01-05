@@ -2,7 +2,7 @@ import Axios from "axios";
 
 export const UPDATE_DATES_BOOKED = 'UDPATE_DATES_BOOKED';
 
-export default function({startDate, endDate, id, datesBooked}) {
+export default ({startDate, endDate, id, datesBooked}) => {
   let now = startDate.clone();
   while (now <= endDate) {
     datesBooked.push(now.clone());
@@ -18,4 +18,4 @@ export default function({startDate, endDate, id, datesBooked}) {
       })
     })
   }
-}
+};

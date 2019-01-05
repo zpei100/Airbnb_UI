@@ -12,11 +12,10 @@ const GalleryImage = ({idx, img, changeActiveImage, toggleModal}) => {
   }} />
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
+const mapDispatchToProps = dispatch => (
+  {
     changeActiveImage: bindActionCreators(changeActiveImage, dispatch),
     toggleModal: bindActionCreators(toggleModal, dispatch)
-  }
-}
+  });
 
 export default connect(null, mapDispatchToProps)(GalleryImage);

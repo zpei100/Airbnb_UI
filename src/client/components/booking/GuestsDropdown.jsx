@@ -14,20 +14,14 @@ export default class GuestsDropDown extends Component {
   }
 
   componentDidMount = () => {
-    
     $('html').off('click');
-     
     $('html').on('click', e => {
-      console.log('clicked and state toggled: ', this.state.toggled)
       if (e.target.id === 'dropdown-button' || e.target.id === 'dropdown-close' || $(e.target).parents('#dropdown-button').length) {
         $('#dropdown-menu').slideToggle(0);
-        console.log('before warning')
-        return this.setState({toggled: !this.state.toggled}, () => console.log('after warning'))
+        return this.setState({toggled: !this.state.toggled});
       }
       if (e.target.id === 'dropdown-menu' || $(e.target).parents('#dropdown-menu').length) return;
       if (this.state.toggled) {
-        
-        console.log('hi')
         $('#dropdown-menu').slideToggle(0);
         this.setState({toggled: false});
       }
@@ -43,10 +37,6 @@ export default class GuestsDropDown extends Component {
 
   render() {
     const {guest, adult, children, infant, maxGuests, addAdult, addChildren, addInfant, wordString} = this.props;
-
-    console.log('add adult and add children: ', addAdult, addChildren)
-    
-
     return (
       <React.Fragment>
       <div className="mt-3 calender-labels">Guests</div>

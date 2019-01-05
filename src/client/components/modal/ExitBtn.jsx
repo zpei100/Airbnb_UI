@@ -8,17 +8,11 @@ import toggleModal from "../../actionCreators/toggleModal";
 const ExitBtn = ({ toggleModal }) => {
   return (
     <div id="ExitBtn" className="d-flex justify-content-end">
-      <button id="exit-button" onClick={toggleModal}>
-        {exit('white')}
-      </button>
+      <button id="exit-button" onClick={toggleModal}>{exit('white')}</button>
     </div>
   );
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    toggleModal: bindActionCreators(toggleModal, dispatch)
-  }
-}
+const mapDispatchToProps = dispatch =>({toggleModal: bindActionCreators(toggleModal, dispatch)}) 
 
 export default connect(null, mapDispatchToProps)(ExitBtn)

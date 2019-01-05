@@ -3,23 +3,20 @@ import {
   SingleDatePicker,
   DayPickerRangeController
 } from 'react-dates';
-
 import { bindActionCreators } from 'redux';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import { extendMoment } from 'moment-range';
- 
-const Moment = extendMoment(moment);
 
 import updateDateRange from '../../actionCreators/updateDateRange';
+
+const Moment = extendMoment(moment);
 
 class Calendar extends Component {
 
   render() {
-
     const {focusedInput, updateFocusedInput} = this.props;
-
     const { room: { datesBooked : dates }, updateDateRange, dateRange: {startDate, endDate}} = this.props;
     const datesBooked = dates.map(date => Moment(date));
    
@@ -66,17 +63,7 @@ class Calendar extends Component {
   }
 };
 
-const mapStateToProps = function(state) {
-  return {
-    room: state.room,
-    dateRange: state.dateRange
-  }
-};
-
-const mapDispatchToProps = function(dispatch) {
-  return {
-    updateDateRange: bindActionCreators(updateDateRange, dispatch)
-  };
-};
+const mapStateToProps = ({room, dateRange}) => ({room, dateRange});
+const mapDispatchToProps = dispatch => ({updateDateRange: bindActionCreators(updateDateRange, dispatch)});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Calendar);

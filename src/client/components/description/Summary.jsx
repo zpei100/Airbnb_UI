@@ -11,9 +11,7 @@ export default class Summary extends React.Component {
     }
   }
 
-  toggleDetails = () => { 
-    this.setState({toggled: !this.state.toggled});
-  }
+  toggleDetails = () => {this.setState({toggled: !this.state.toggled})}
 
   render () {
     const {header, details} = this.props;

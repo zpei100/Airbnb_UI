@@ -4,8 +4,7 @@ import $ from 'jquery';
 export default function(state = false, action) {
   switch (action.type) {
     case TOGGLE_MODAL: {
-      if (state) $('body').css('overflow', 'scroll')
-      else $('body').css('overflow', 'hidden');
+      $('body').css('overflow', state ? 'scroll' : 'hidden');
       return !state;
     } default: return state;
   } 

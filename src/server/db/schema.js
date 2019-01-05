@@ -1,5 +1,5 @@
-const db = require('./db.js');
 const mongoose = require('mongoose');
+require('./db');
 
 const roomSchema = new mongoose.Schema({
   id: {

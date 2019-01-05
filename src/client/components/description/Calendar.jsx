@@ -89,13 +89,7 @@ class Calendar extends React.Component {
 }
 
 const mapStateToProps = ({room, dateRange}) => ({room, dateRange});
-
-
-const mapDispatchToProps = function(dispatch) {
-  return {
-    updateDateRange: bindActionCreators(updateDateRange, dispatch)
-  };
-};
+const mapDispatchToProps = dispatch => ({updateDateRange: bindActionCreators(updateDateRange, dispatch)});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Calendar);
 

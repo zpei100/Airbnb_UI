@@ -73,4 +73,4 @@ $(document).ready(function() {
   highlightImageOnHover($galleryImages)
   floatButtonWhenEntering($fourthImage);
   floatButtonWhenEntering($viewPhoto);
-})
+});

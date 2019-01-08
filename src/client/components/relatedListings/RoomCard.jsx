@@ -18,8 +18,10 @@ const RoomCard = ({type, tag = 'activity', title, id, beds, price, rating, revie
         <div style={{ position: 'relative' }} className="card">
           {heart(favorite, onClick)}
           {tag === 'activity'
-          ? <img style={{cursor: "pointer"}} className="m-auto w-100 h-auto card-img-top" src={thumbNail} alt=""/>
-          : <a target="_self" href={`${window.location.origin}/rooms/${id}`}><img style={{cursor: "pointer"}} className="m-auto w-100 h-auto card-img-top" src={thumbNail} alt=""/></a>
+          ? <img style={{cursor: "pointer"}} className="m-auto w-100 h-auto card-img-top" src={thumbNail.trueSrc} alt=""/>
+          : <a target="_self" href={`${window.location.origin}/rooms/${id}`}>
+              <img style={{cursor: "pointer"}} className="m-auto w-100 h-auto card-img-top" src={thumbNail.trueSrc} alt=""/>
+            </a>
           }
         </div>
   

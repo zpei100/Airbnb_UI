@@ -21,7 +21,7 @@ const Gallery = ({ room: {imgs}, room, user, updateFavorites}) => {
       </div>
 
       {imgs ? imgs.slice(0, 5).map((img, idx) => (
-        <div key={`gallery${idx}`} className={`img${idx} gallery-div border border-dark`}>
+        <div key={`gallery${idx}`} className={`img${idx} gallery-div border border-dark`} style={{position: 'relative'}}>
           <GalleryImage idx={idx} img={img} />
         </div>
       ))

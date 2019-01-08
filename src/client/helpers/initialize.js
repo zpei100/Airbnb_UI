@@ -20,22 +20,20 @@ export const floatButtonWhenEntering = function(ele) {
 export const highlightImageOnHover = function(ele) {
   $(ele).hover(
     e => {
-      const others = $(e.target)
-        .parent()
-        .siblings()
-        .children('img')
-        .not(e.target);
-      $(others).stop();
-      $(others).css({ opacity: 0.7, transition: 'ease-in, 1s' });
+      if ($(e.target).hasClass('reveal')) {
+        const others = $('.gallery .reveal').not(e.target)
+
+        $(others).stop();
+        $(others).css({ filter: 'brightness(75%)', transition: 'ease-in, 1s' });
+      }
     },
     e => {
-      const others = $(e.target)
-        .parent()
-        .siblings()
-        .children('img')
-        .not(e.target);
-      $(others).stop();
-      $(others).css({ opacity: 1, transition: 'ease-in, 1s' });
+      if ($(e.target).hasClass('reveal')) {
+        const others = $('.gallery .reveal').not(e.target)
+        
+        $(others).stop();
+        $(others).css({ filter: 'brightness(100%)', transition: 'ease-in, 1s' });
+      }
     }
   );
 };

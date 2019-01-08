@@ -16,7 +16,7 @@ const roomSchema = new mongoose.Schema({
   datesBooked: [Date],
   rating: Number,
   reviews: Number,
-  imgs: [String],
+  imgs: [Object],
   related: [Number],
   activities: [Number],
   serviceFee: Number,
@@ -43,7 +43,7 @@ const activitySchema = new mongoose.Schema({
   price: Number,
   rating: Number,
   reviews: Number,
-  imgs: [String]
+  imgs: [Object]
 })
 
 const userSchema = new mongoose.Schema({

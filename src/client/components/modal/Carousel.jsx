@@ -9,9 +9,9 @@ const Carousel = ({ room: { imgs }, thumbnailWidth, isAnimating }) => {
       data-interval="false"
       style={{height: '690px', maxHeight: '75vh'}} 
     >
-      {imgs.map((img, idx) => (
+      {imgs.map(({trueSrc}, idx) => (
         <div className="carousel-item" key={`carousel${idx}`}>
-          <img className="d-block m-auto h-100 w-100" style={{objectFit: 'cover'}} src={img} />
+          <img className="d-block m-auto h-100 w-100" style={{objectFit: 'cover'}} src={trueSrc} />
         </div>
       ))}
     </div>

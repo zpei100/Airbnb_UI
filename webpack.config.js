@@ -13,7 +13,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'client.js'
+    filename: 'client.js',
+    chunkFilename: '[name].bundle.js'
   },
   module: {
     rules: [

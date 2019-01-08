@@ -82,31 +82,31 @@ app.get('/rooms/:id', function(req, res) {
       const initialState = store.getState();
 
       const htmls = {
-        galleryHtml: renderToString(
-          <Provider store={store}>
-            <Gallery />
-          </Provider>
-        ),
-        relatedListingsHtml: renderToString(
-          <Provider store={store}>
-            <RelatedListings />
-          </Provider>
-        ),
-        navHtml: renderToString(
-          <Provider store={store}>
-            <Nav />
-          </Provider>
-        ),
-        descriptionHtml: renderToString(
-          <Provider store={store}>
-            <Description />
-          </Provider>
-        ),
-        modalHtml: renderToString(
-          <Provider store={store}>
-            <CarouselModal />
-          </Provider>
-        ),
+        // galleryHtml: renderToString(
+        //   <Provider store={store}>
+        //     <Gallery />
+        //   </Provider>
+        // ),
+        // relatedListingsHtml: renderToString(
+        //   <Provider store={store}>
+        //     <RelatedListings />
+        //   </Provider>
+        // ),
+        // navHtml: renderToString(
+        //   <Provider store={store}>
+        //     <Nav />
+        //   </Provider>
+        // ),
+        // descriptionHtml: renderToString(
+        //   <Provider store={store}>
+        //     <Description />
+        //   </Provider>
+        // ),
+        // modalHtml: renderToString(
+        //   <Provider store={store}>
+        //     <CarouselModal />
+        //   </Provider>
+        // ),
         // bookingHtml: renderToString(
         //   <Provider store={store}>
         //     <Booking />

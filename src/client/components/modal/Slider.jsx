@@ -9,7 +9,7 @@ const Slider = ({ room: { imgs }, thumbnailWidth, activeImageIndex, changeActive
     <div id="Slider" className="container-fluid m-auto">
       <div style={{maxWidth: `${thumbnailWidth}px`, overflow: 'hidden', position: 'relative' }} className="container-fluid h-100 p-0">
         <ol className="carousel-indicators justify-content-start h-100">
-          {imgs.map((img, idx) => (
+          {imgs.map(({src, trueSrc}, idx) => (
             <li
               data-target="#modal-carousel"
               data-slide-to={idx}
@@ -20,7 +20,7 @@ const Slider = ({ room: { imgs }, thumbnailWidth, activeImageIndex, changeActive
                 changeActiveImage(idx);
               }}
             >
-              <img className="d-block h-100 w-auto" src={img} alt="" />
+              <img className="d-block h-100 w-auto" src={trueSrc} alt="" />
             </li>
           ))}
         </ol>

@@ -1,7 +1,22 @@
 const casual = require('casual');
 const dummyData = require('./dummy');
 const { Room, User, Activity } = require('./schema');
-const axios = require('axios');
+
+const random = function(len) {
+  return Math.floor(Math.random() * len);
+};
+
+const randomImageLQ = id => `https://picsum.photos/33/22/?image=${id}`
+const randomImageHQ = id => `https://picsum.photos/666/444/?image=${id}`
+
+const generateArrayOfImageSets = n => {
+  let result = [];
+  for (var i = 0; i < n; i++) {
+    const id = random(999);
+    result.push({src: randomImageLQ(id), trueSrc: randomImageHQ(id)})
+  }
+  return result;
+}
 
 Room.remove({})
 .then(() => User.remove({}))
@@ -25,9 +40,6 @@ Room.remove({})
     favorite: [true, false]
   };
   
-  const random = function(len) {
-    return Math.floor(Math.random() * len);
-  };
   
   const randomlyPick = function(prop) {
     const len = data[prop].length;
@@ -45,7 +57,7 @@ Room.remove({})
   
     var related = [];
     var position = 0;
-    var imgs = [];
+    
   
     while (position < size) {
       position += random(Math.floor(size / 5)) + 1;
@@ -60,11 +72,8 @@ Room.remove({})
       if (position < activitySize) activities.push(position);
     }
 
-  
-    for (var k = 0; k < random(10) + 10; k++) {
-      imgs.push(`https://picsum.photos/666/444/?${random(999999)}`);
-    }
-  
+    var imgs = generateArrayOfImageSets(random(10) + 10)
+    
     new Room({
       ...roomData,
       id: i,
@@ -103,11 +112,8 @@ Room.remove({})
 
   for (var i = 0; i < activitySize; i++) {
     const randIndex = random(activityData.type.length);
-    var imgs = [];
-
-    for (var k = 0; k < random(5) + 5; k++) {
-      imgs.push(`https://picsum.photos/666/444/?${random(999999)}`);
-    }
+    
+    var imgs = generateArrayOfImageSets(random(5) + 5);
 
     new Activity({
       id: i,

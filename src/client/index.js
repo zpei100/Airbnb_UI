@@ -65,8 +65,17 @@ render(
   document.getElementById('booking-app')
 );
 
+// $(document).on('DOMContentLoaded', function() {
+//   Array.from($('.lazy')).forEach(image => {
+//     image.src = image.dataset.src;
+//     $(image).addClass('preview').addClass('reveal').removeClass('preview').removeClass('lazy');
+//   });
+// })
+
 $(document).ready(function() {
-  const $galleryImages = $('.gallery img');
+  const $galleryImages = $('.gallery-div');
+
+  console.log($galleryImages)
   const $fourthImage = $('.img4');
   const $viewPhoto = $('.button-bottom');
 

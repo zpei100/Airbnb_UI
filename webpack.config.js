@@ -4,15 +4,15 @@ const uglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
   optimization: {
     minimizer: [new uglifyJsPlugin()],
-    nodeEnv: 'production',
     mergeDuplicateChunks: true
   },
   entry: {
-    index: './src/client/index.js',
+    index: './src/client/index.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'client.js'
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js'
   },
   module: {
     rules: [

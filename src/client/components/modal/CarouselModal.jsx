@@ -27,7 +27,7 @@ class CarouselModal extends Component {
       setTimeout(() => {
         this.setState({isAnimating: false})
       }, this.state.animationDuration)
-    });
+
 
     const { activeImageIndex, room: { imgs } } = this.props;
     const { thumbnailWidth } = this.state;
@@ -39,14 +39,12 @@ class CarouselModal extends Component {
     const adjustedSliderImageWidth = sliderImageWidth + sliderImageMargin;
 
     //The margin-left property returns negative result
-    const totalDistanceSlided = -parseInt($('.carousel-indicators').css('margin-left'));
-
+    const totalDistanceSlided = -parseInt($('.carousel-indicators').css('margin-left')) || 0
     const rightSideOverflow = adjustedSliderImageWidth * (imgs.length - 2) + 2 * sliderImageWidth - totalDistanceSlided - thumbnailWidth;
     const leftSideOverflow = totalDistanceSlided;
 
     //Offset calculates the distance between the left side of the image and the left edge of the container
-    const offSet = (idx) => adjustedSliderImageWidth * idx;
-
+    const offSet = idx => adjustedSliderImageWidth * idx;
     const sideOfActiveImage = offSet(activeImageIndex) + sliderImageWidth / 2 - totalDistanceSlided - thumbnailWidth /2;
     let move = offSet(activeImageIndex) - totalDistanceSlided - thumbnailWidth /2 + sliderImageWidth / 2;
 
@@ -60,16 +58,18 @@ class CarouselModal extends Component {
     if (sideOfActiveImage < 0 && leftSideOverflow >= 0 && direction <= 0) move = Math.max(-leftSideOverflow, move);
     
     slider.animate({ marginLeft: `-=${move}px` }, this.state.animationDuration);
+    });
   };
 
   componentDidUpdate(prevProps) {
-    $(document).ready(() => {
-      if (!prevProps.showModal) $('.carousel-fade  .carousel-item').css('transition-duration',`${this.state.animationDuration}ms`);
-      if (prevProps.activeImageIndex !== this.props.activeImageIndex || !prevProps.showModal) {
-        $($('.carousel-item')[this.props.activeImageIndex]).toggleClass('active');
-        if (this.props.showModal) this.slideActiveImageToCenter(prevProps.showModal ? prevProps.activeImageIndex : 0);
-      }
-    });
+    if (prevProps.activeImageIndex !== this.props.activeImageIndex || !prevProps.showModal) {
+      $($('.carousel-item')[this.props.activeImageIndex]).toggleClass('active');
+      if (this.props.showModal) this.slideActiveImageToCenter(prevProps.showModal ? prevProps.activeImageIndex : 0);
+    }
+  };
+
+  componentDidMount() {
+    this.slideActiveImageToCenter(0);
   };
 
   render() {
@@ -104,7 +104,7 @@ class CarouselModal extends Component {
       <div className="m-auto" id="modal-container" style={{maxWidth: '80vw', height:'500px', width: `${thumbnailWidth}px` }}>
         <div className="d-flex">
           <Arrow type="prev" isAnimating={isAnimating} />
-          <Carousel thumbnailWidth={thumbnailWidth} isAnimating={this.state.isAnimating}/>
+          <Carousel thumbnailWidth={thumbnailWidth} isAnimating={this.state.isAnimating} animationDuration={this.state.animationDuration}/>
           <Arrow type="next" isAnimating={isAnimating} />
         </div>
           <Slider thumbnailWidth={thumbnailWidth} id="Slider" active={this.props.activeImageIndex}/>

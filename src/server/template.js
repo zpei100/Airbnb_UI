@@ -16,6 +16,7 @@ module.exports = function(
   <head>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="dns-prefetch" href="https://picsum.photos">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     
@@ -57,7 +58,7 @@ module.exports = function(
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
   
     <script>window.__initialState__ = ${JSON.stringify(initialState)}</script>
-    <script src="client.js"></script>
+    <script src="index.bundle.js"></script>
 
     <!-- scripts from other services --> 
     <!-- scripts from other services --> 

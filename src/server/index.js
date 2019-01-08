@@ -21,6 +21,7 @@ import CarouselModal from '../client/components/modal/CarouselModal';
 // import Booking from '../client/components/booking/Booking.jsx';
 
 import { getRoomAndUserInfo, addDates } from './handlers/getRoomAndUserInfo';
+import Loadable from 'react-loadable';
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -87,26 +88,26 @@ app.get('/rooms/:id', function(req, res) {
             <Gallery />
           </Provider>
         ),
-        relatedListingsHtml: renderToString(
-          <Provider store={store}>
-            <RelatedListings />
-          </Provider>
-        ),
+        // relatedListingsHtml: renderToString(
+        //   <Provider store={store}>
+        //     <RelatedListings />
+        //   </Provider>
+        // ),
         navHtml: renderToString(
           <Provider store={store}>
             <Nav />
           </Provider>
         ),
-        descriptionHtml: renderToString(
-          <Provider store={store}>
-            <Description />
-          </Provider>
-        ),
-        modalHtml: renderToString(
-          <Provider store={store}>
-            <CarouselModal />
-          </Provider>
-        ),
+        // descriptionHtml: renderToString(
+        //   <Provider store={store}>
+        //     <Description />
+        //   </Provider>
+        // ),
+        // modalHtml: renderToString(
+        //   <Provider store={store}>
+        //     <CarouselModal />
+        //   </Provider>
+        // ),
         // bookingHtml: renderToString(
         //   <Provider store={store}>
         //     <Booking />
@@ -163,6 +164,8 @@ app.get('/getRoom/:id', function(req, res) {
     }).catch(() => res.status(404));
 });
 
-app.listen(port, function() {
-  console.log(`server up on port ${port}`);
-});
+Loadable.preloadAll().then(() => {
+  app.listen(port, function() {
+    console.log(`server up on port ${port}`);
+  });
+})

@@ -1,7 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import thunk from 'redux-thunk';
-import { hydrate, render } from 'react-dom';
+import { hydrate } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
@@ -9,12 +9,13 @@ import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 
 import rootReducer from './reducers/rootReducer';
-import RelatedListings from './components/relatedListings/RelatedListings.jsx'
 import Gallery from './components/gallery/Gallery.jsx';
-import Nav from "./components/navbar/Nav.jsx";
-import Description from './components/description/Description.jsx';
-import CarouselModal from './components/modal/CarouselModal.jsx';
-import Booking from './components/booking/Booking.jsx';
+import Nav from './components/navbar/Nav.jsx';
+
+import LazyRelatedListing from './components/relatedListings/LazyRelatedListings.jsx'
+import LoadableModal from './components/modal/LoadableModal.jsx'
+import LoadableBooking from './components/booking/LoadableBooking.jsx'
+import LoadableDescription from './components/description/LoadableDescription.jsx'
 
 import { floatButtonWhenEntering, highlightImageOnHover } from "./helpers/initialize";
 
@@ -25,7 +26,7 @@ const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
 
 hydrate(
   <Provider store={store}>
-    <RelatedListings />
+    <LazyRelatedListing />
   </Provider>,
   document.getElementById('related-listings-app')
 );
@@ -46,32 +47,31 @@ hydrate(
 
 hydrate(
   <Provider store={store}>
-    <Description />
+    <LoadableDescription />
   </Provider>,
   document.getElementById('description-app')
 );
 
 hydrate(
   <Provider store={store}>
-    <CarouselModal />
+    <LoadableModal />
   </Provider>,
   document.getElementById('modal-app')
 );
 
-render(
+hydrate(
   <Provider store={store}>
-    <Booking />
+    <LoadableBooking />
   </Provider>,
   document.getElementById('booking-app')
 );
 
 $(document).ready(function() {
   const $galleryImages = $('.gallery-div');
-
   const $fourthImage = $('.img4');
   const $viewPhoto = $('.button-bottom');
 
-  highlightImageOnHover($galleryImages)
+  highlightImageOnHover($galleryImages);
   floatButtonWhenEntering($fourthImage);
   floatButtonWhenEntering($viewPhoto);
 });

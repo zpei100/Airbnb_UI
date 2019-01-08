@@ -13,7 +13,6 @@ export default class Observer extends React.Component {
     this.io = new IntersectionObserver(
       ([entry]) => {
         if(entry.isIntersecting) {
-          console.log('is intersecting')
           this.io.unobserve(this.container)
           this.props.load().then(module => this.setState({component: module.default}))
         }        

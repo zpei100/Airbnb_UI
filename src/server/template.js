@@ -17,20 +17,17 @@ module.exports = function(
     <meta charset="utf-8">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <link rel="dns-prefetch" href="https://picsum.photos">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
-      crossorigin="anonymous">
+      crossorigin="anonymous" defer>
 
     <title>FEC</title>
 
     <base href="/" target="_blank">
-    <link rel="stylesheet" href="styles.css" />
-
-    <!-- styles from other services --> 
-    <!-- styles from other services --> 
-
+    <link rel="stylesheet" href="styles.css" defer/>
   </head>
   
   <body>

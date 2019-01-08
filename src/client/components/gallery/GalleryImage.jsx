@@ -15,15 +15,21 @@ class GalleryImage extends React.Component {
   }
 
   componentDidMount() {
-    console.log("this image: ? ", this.image)
-    this.image.onload = () => {
-      this.setState({loaded: true}, () => {
-        this.trueImage.onload = function() {
-          $(this).removeClass('hidden').removeClass('preview').addClass('reveal')
-          setTimeout(() => {$(this).addClass('zoom')}, 1050)
-        }
-      }) 
-    }
+    this.setState({loaded: true}, () => {
+      this.trueImage.onload = function() {
+        $(this).removeClass('hidden').removeClass('preview').addClass('reveal')
+        setTimeout(() => {$(this).addClass('zoom')}, 1050)
+      }
+    }) 
+
+    // this.image.onload = () => {
+    //   this.setState({loaded: true}, () => {
+    //     this.trueImage.onload = function() {
+    //       $(this).removeClass('hidden').removeClass('preview').addClass('reveal')
+    //       setTimeout(() => {$(this).addClass('zoom')}, 1050)
+    //     }
+    //   }) 
+    // }
   }
 
   handleClick = () => {

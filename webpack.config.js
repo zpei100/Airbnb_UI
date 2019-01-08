@@ -1,6 +1,5 @@
 const path = require('path');
 const uglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const webpack = require('webpack');
 
 module.exports = {
   optimization: {
@@ -13,8 +12,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'client.js',
-    chunkFilename: '[name].bundle.js'
+    filename: 'client.js'
   },
   module: {
     rules: [

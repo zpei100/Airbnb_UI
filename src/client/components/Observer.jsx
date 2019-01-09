@@ -10,11 +10,9 @@ export default class Observer extends React.Component {
   }
 
   componentDidMount() {
-    console.log('component mounted!!!')
     this.io = new IntersectionObserver(
       ([entry]) => {
-        console.log('item intersection')
-        if(entry.isIntersecting) {
+        if(entry.intersectionRatio > 0) {
            this.io.unobserve(this.container)
           this.props.load().then(module => this.setState({component: module.default}))
         }        

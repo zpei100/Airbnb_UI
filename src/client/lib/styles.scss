@@ -70,7 +70,7 @@ img.reveal {
   margin: auto!important;
   
   @media screen and (min-width: $break-width-md) {
-    grid-template-columns: 11fr 8fr;
+    grid-template-columns: 11fr 7fr;
     grid-template-rows: auto auto auto auto;
     grid-template-areas: 
     "description-app booking-app"

@@ -12,6 +12,7 @@ import rootReducer from './reducers/rootReducer';
 import Gallery from './components/gallery/Gallery.jsx';
 import Nav from './components/navbar/Nav.jsx';
 
+import Loadable from 'react-loadable';
 import LazyRelatedListing from './components/relatedListings/LazyRelatedListings.jsx'
 import LoadableModal from './components/modal/LoadableModal.jsx'
 import LoadableBooking from './components/booking/LoadableBooking.jsx'
@@ -26,54 +27,57 @@ delete window.__initialState__;
 
 const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
 
-hydrate(
-  <Provider store={store}>
-    <LazyRelatedListing />
-  </Provider>,
-  document.getElementById('related-listings-app')
-);
 
-hydrate(
-  <Provider store={store}>
-    <Gallery />
-  </Provider>,
-  document.getElementById('gallery-app')
-);
-
-hydrate(
-  <Provider store={store}>
-    <Nav />
-  </Provider>,
-  document.getElementById('nav-app')
-);
-
-hydrate(
-  <Provider store={store}>
-    <LoadableDescription />
-  </Provider>,
-  document.getElementById('description-app')
-);
-
-hydrate(
-  <Provider store={store}>
-    <LoadableModal />
-  </Provider>,
-  document.getElementById('modal-app')
-);
-
-hydrate(
-  <Provider store={store}>
-    <LoadableBooking />
-  </Provider>,
-  document.getElementById('booking-app')
-);
-
-$(document).ready(function() {
-  const $galleryImages = $('.gallery-div');
-  const $fourthImage = $('.img4');
-  const $viewPhoto = $('.button-bottom');
-
-  highlightImageOnHover($galleryImages);
-  floatButtonWhenEntering($fourthImage);
-  floatButtonWhenEntering($viewPhoto);
-});
+Loadable.preloadReady().then(() => {
+  hydrate(
+    <Provider store={store}>
+      <LazyRelatedListing />
+    </Provider>,
+    document.getElementById('related-listings-app')
+  );
+  
+  hydrate(
+    <Provider store={store}>
+      <Gallery />
+    </Provider>,
+    document.getElementById('gallery-app')
+  );
+  
+  hydrate(
+    <Provider store={store}>
+      <Nav />
+    </Provider>,
+    document.getElementById('nav-app')
+  );
+  
+  hydrate(
+    <Provider store={store}>
+      <LoadableDescription />
+    </Provider>,
+    document.getElementById('description-app')
+  );
+  
+  hydrate(
+    <Provider store={store}>
+      <LoadableModal />
+    </Provider>,
+    document.getElementById('modal-app')
+  );
+  
+  hydrate(
+    <Provider store={store}>
+      <LoadableBooking />
+    </Provider>,
+    document.getElementById('booking-app')
+  );
+  
+  $(document).ready(function() {
+    const $galleryImages = $('.gallery-div');
+    const $fourthImage = $('.img4');
+    const $viewPhoto = $('.button-bottom');
+  
+    highlightImageOnHover($galleryImages);
+    floatButtonWhenEntering($fourthImage);
+    floatButtonWhenEntering($viewPhoto);
+  });
+})

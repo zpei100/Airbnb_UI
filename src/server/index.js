@@ -11,17 +11,23 @@ import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 
 import template from './template';
-import { Room, User } from './db/schema';
+import { User } from './db/schema';
 import rootReducer from '../client/reducers/rootReducer';
+
 import Gallery from '../client/components/gallery/Gallery';
-import RelatedListings from '../client/components/relatedListings/RelatedListings';
 import Nav from '../client/components/navbar/Nav';
-import Description from '../client/components/description/Description';
+
+import Description from '../client/components/description/Description.jsx';
+
+import RelatedListings from '../client/components/relatedListings/RelatedListings';
 import CarouselModal from '../client/components/modal/CarouselModal';
 // import Booking from '../client/components/booking/Booking.jsx';
 
 import { getRoomAndUserInfo, addDates } from './handlers/getRoomAndUserInfo';
+
 import Loadable from 'react-loadable';
+import { getBundles } from 'react-loadable/webpack';
+import stats from '../../dist/react-loadable.json';
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -77,6 +83,8 @@ app.post('/updateFavoriteActivities', function(req, res) {
 })
 
 app.get('/rooms/:id', function(req, res) {
+  let modules = [];
+
   getRoomAndUserInfo(req)
     .then(({ room, relatedListings, activities, user }) => {
       const store = createStore(rootReducer, { room, relatedListings, activities, user }, applyMiddleware(thunk));
@@ -88,34 +96,38 @@ app.get('/rooms/:id', function(req, res) {
             <Gallery />
           </Provider>
         ),
-        // relatedListingsHtml: renderToString(
-        //   <Provider store={store}>
-        //     <RelatedListings />
-        //   </Provider>
-        // ),
+        relatedListingsHtml: renderToString(
+          <Provider store={store}>
+            <RelatedListings />
+          </Provider>
+        ),
         navHtml: renderToString(
           <Provider store={store}>
             <Nav />
           </Provider>
         ),
-        // descriptionHtml: renderToString(
-        //   <Provider store={store}>
-        //     <Description />
-        //   </Provider>
-        // ),
-        // modalHtml: renderToString(
-        //   <Provider store={store}>
-        //     <CarouselModal />
-        //   </Provider>
-        // ),
-        // bookingHtml: renderToString(
-        //   <Provider store={store}>
-        //     <Booking />
-        //   </Provider>
-        // )
+        descriptionHtml: renderToString(
+          <Provider store={store}>
+            <Loadable.Capture report={moduleName => modules.push(moduleName)}>
+              <Description />
+            </Loadable.Capture>
+          </Provider>
+        ),
+        modalHtml: renderToString(
+          <Provider store={store}>
+            <CarouselModal />
+          </Provider>
+        ),
+        bookingHtml: renderToString(
+          <Provider store={store}>
+            <Booking />
+          </Provider>
+        )
       };
 
-    res.status(200).send(template(initialState, htmls));
+      let bundles = getBundles(stats, modules);
+
+    res.status(200).send(template(initialState, htmls, bundles));
   });
 });
 

@@ -1,5 +1,6 @@
 const path = require('path');
 const uglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const { ReactLoadablePlugin } = require('react-loadable/webpack');
 
 module.exports = {
   optimization: {
@@ -30,5 +31,10 @@ module.exports = {
         loader: 'url-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new ReactLoadablePlugin({
+      filename: './dist/react-loadable.json'
+    })
+  ]
 };

@@ -17,7 +17,7 @@ class LoadableModal extends React.Component {
         loaded: true,
         component: Loadable({
           loader: () => import(/* webpackChunkName: "Modal" */ './CarouselModal.jsx'),
-          loading: () => <div></div>
+          loading: () => '' 
         })
       })
     }

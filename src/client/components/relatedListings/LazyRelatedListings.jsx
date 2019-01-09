@@ -9,7 +9,7 @@ export default class LazyRelatedListings extends React.Component {
         import('slick-carousel/slick/slick-theme.css')
         return import(/* chunkFilename: "RelatedListings" */ './RelatedListings.jsx')
       }}>
-        {Component => Component ? <Component /> : <div>Related Listings is still loading</div>} 
+        {Component => Component ? <Component /> : ''} 
       </Observer>
     )
   }

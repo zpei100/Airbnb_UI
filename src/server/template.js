@@ -7,7 +7,8 @@ module.exports = function(
     descriptionHtml,
     relatedListingsHtml,
     bookingHtml
-  }
+  },
+  bundles
 ) {
   return `
   <!DOCTYPE html>
@@ -39,9 +40,11 @@ module.exports = function(
           <div id="booking-app" class="pr-2">${bookingHtml || ''}</div> 
           <div id="related-listings-app">${relatedListingsHtml || ''}</div>
         </div>
-        
-        
       </div>
+
+      ${bundles.map(bundle => `<script src="${bundle.file}"></script>`).join('\n')}
+
+
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous" defer></script>
 

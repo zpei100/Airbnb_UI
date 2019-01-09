@@ -15,10 +15,11 @@ class GalleryImage extends React.Component {
   }
 
   componentDidMount() {
+    console.log('mounted !!!')
     this.setState({loaded: true}, () => {
       this.trueImage.onload = function() {
         $(this).removeClass('hidden').removeClass('preview').addClass('reveal')
-        setTimeout(() => {$(this).addClass('zoom')}, 1050)
+        setTimeout(() => {$(this).addClass('zoom').removeClass('reveal')}, 1050)
       }
     }) 
   }
@@ -33,12 +34,14 @@ class GalleryImage extends React.Component {
     const {img: {src, trueSrc}} = this.props;  
     return (
       <React.Fragment>
-        <img ref={image => this.image = image} src={src} onClick={this.handleClick}/>
-        
-          <div style={{overflow: 'hidden', position:'absolute', top: 0}} className="w-100 h-100">
-          {this.state.loaded ?
-            <img ref={image => this.trueImage = image} src={trueSrc} className="preview w-100 h-100 hidden" onClick={this.handleClick}/> : ''}
-          </div> 
+        <div style={{width: '100%', height: '100%', position: 'absolute', top: 0}}>
+          <img style={{width: '100%', height: '100%'}} ref={image => this.image = image} src={src} onClick={this.handleClick}/>
+        </div>
+
+        <div style={{overflow: 'hidden', position:'absolute', top: 0}} className="w-100 h-100">
+        {this.state.loaded ?
+          <img ref={image => this.trueImage = image} src={trueSrc} className="preview w-100 h-100 hidden" onClick={this.handleClick}/> : ''}
+        </div> 
       </React.Fragment>
     )
   }

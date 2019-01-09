@@ -2,7 +2,7 @@ import React from 'react';
 import { logo } from '../../lib/svg';
 import Responsive from 'react-responsive';
 import $ from 'jquery';
-import DropdownNav from './DropdownNav.jsx';
+import Loadable from 'react-loadable';
 
 export default class Nav extends React.Component {
   constructor() {
@@ -10,23 +10,30 @@ export default class Nav extends React.Component {
 
     this.state = {
       dropdownToggled: false,
-      dropdownAnimationTime: 300
+      dropdownAnimationTime: 300,
+      LoadableDropdown: null
     }
   };
 
   toggleDropdown = matches => {
-    const { dropdownToggled, dropdownAnimationTime } = this.state;
-    if (!matches || dropdownToggled) {
-      this.setState({dropdownToggled: !dropdownToggled}, () => {
-        const rotation = dropdownToggled ? 0 : 180;
-        $('#navbar-toggle-icon img').css({'transform': `rotate(${rotation}deg)`, 'transition-duration' : '0.3s'});
-        $('body').css('overflow', dropdownToggled ? 'scroll' : 'hidden');
-        $('#navbar-dropdown').slideToggle(dropdownAnimationTime);
-      })
-    }
+    this.setState({LoadableDropdown: Loadable({
+      loader: () => import(/* Navbar-dropdown */ './DropdownNav.jsx'),
+      loading: () => <div className="loader" style={{height: '30px', width: '30px'}}></div>
+    })}, () => {
+      const { dropdownToggled, dropdownAnimationTime } = this.state;
+      if (!matches || dropdownToggled) {
+        this.setState({dropdownToggled: !dropdownToggled}, () => {
+          const rotation = dropdownToggled ? 0 : 180;
+          $('#navbar-toggle-icon img').css({'transform': `rotate(${rotation}deg)`, 'transition-duration' : '0.3s'});
+          $('body').css('overflow', dropdownToggled ? 'scroll' : 'hidden');
+          $('#navbar-dropdown').slideToggle(dropdownAnimationTime);
+        })
+      }
+    })
   };
 
   render () {
+    const {LoadableDropdown} = this.state
     return (
       <Responsive minWidth={1200} values={{width: 1600}}>
         {matches => {
@@ -50,10 +57,10 @@ export default class Nav extends React.Component {
                 </div>
       
                 {matches ? <div>
-                  <ul className="d-flex my-auto" id="navbar-content">
+                  <ul style={{display: 'flex', margin: 'auto', listStyle: 'none'}}>
                     {['Become a host', 'Help', 'Sign up', 'Log in'].map(key => (
-                      <li className="nav-item mx-3" key={key}>
-                        <a className="nav-text" href="#">
+                      <li className="mx-3" key={key}>
+                        <a style={{color: 'grey', fontWeight: 600}} href="#">
                           {key}
                         </a>
                       </li>
@@ -62,10 +69,14 @@ export default class Nav extends React.Component {
                 </div> : ''}
               
               </div>
-
-              <div id="navbar-dropdown" className="pl-4 dropdown-menu rounded-0 mt-0 w-100 border-0" style={{height: '100vh'}}>
-                <DropdownNav />
-              </div>
+                {LoadableDropdown ? 
+                  <div 
+                    id="navbar-dropdown" 
+                    className="pl-4 dropdown-menu rounded-0 mt-0 w-100 border-0" 
+                    style={{height: '100vh'}}
+                  >
+                    <LoadableDropdown />
+                  </div> : ''}
             </div>
           )
         }}

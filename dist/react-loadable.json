@@ -837,7 +837,7 @@
       "publicPath": "index.bundle.js"
     }
   ],
-  "../../css-loader/lib/css-base.js": [
+  "../../../css-loader/lib/css-base.js": [
     {
       "id": "./node_modules/css-loader/lib/css-base.js",
       "name": "./node_modules/css-loader/lib/css-base.js",
@@ -1477,7 +1477,7 @@
       "publicPath": "index.bundle.js"
     }
   ],
-  "!../../style-loader/lib/addStyles.js": [
+  "!../../../style-loader/lib/addStyles.js": [
     {
       "id": "./node_modules/style-loader/lib/addStyles.js",
       "name": "./node_modules/style-loader/lib/addStyles.js",
@@ -1525,7 +1525,7 @@
       "publicPath": "index.bundle.js"
     }
   ],
-  "../../actionCreators/changeActiveImage": [
+  "../actionCreators/changeActiveImage": [
     {
       "id": "./src/client/actionCreators/changeActiveImage.js",
       "name": "./src/client/actionCreators/changeActiveImage.js",
@@ -1533,7 +1533,7 @@
       "publicPath": "index.bundle.js"
     }
   ],
-  "../../actionCreators/toggleModal": [
+  "../actionCreators/toggleModal": [
     {
       "id": "./src/client/actionCreators/toggleModal.js",
       "name": "./src/client/actionCreators/toggleModal.js",
@@ -1541,7 +1541,7 @@
       "publicPath": "index.bundle.js"
     }
   ],
-  "../../actionCreators/updateDateRange": [
+  "../actionCreators/updateDateRange": [
     {
       "id": "./src/client/actionCreators/updateDateRange.js",
       "name": "./src/client/actionCreators/updateDateRange.js",
@@ -1549,7 +1549,7 @@
       "publicPath": "index.bundle.js"
     }
   ],
-  "../../actionCreators/updateDatesBooked": [
+  "../actionCreators/updateDatesBooked": [
     {
       "id": "./src/client/actionCreators/updateDatesBooked.js",
       "name": "./src/client/actionCreators/updateDatesBooked.js",
@@ -1557,7 +1557,7 @@
       "publicPath": "index.bundle.js"
     }
   ],
-  "../../actionCreators/updateFavoriteActivities": [
+  "../actionCreators/updateFavoriteActivities": [
     {
       "id": "./src/client/actionCreators/updateFavoriteActivities.js",
       "name": "./src/client/actionCreators/updateFavoriteActivities.js",
@@ -1889,6 +1889,12 @@
     {
       "id": "./node_modules/airbnb-prop-types/build/helpers/isPlainObject.js",
       "name": "./node_modules/airbnb-prop-types/build/helpers/isPlainObject.js",
+      "file": "vendors~Booking~Description-calendar.bundle.js",
+      "publicPath": "vendors~Booking~Description-calendar.bundle.js"
+    },
+    {
+      "id": "./node_modules/prop-types-exact/build/helpers/isPlainObject.js",
+      "name": "./node_modules/prop-types-exact/build/helpers/isPlainObject.js",
       "file": "vendors~Booking~Description-calendar.bundle.js",
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
@@ -2277,7 +2283,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./af.js": [
+  "./af": [
     {
       "id": "./node_modules/moment/locale/af.js",
       "name": "./node_modules/moment/locale/af.js",
@@ -2285,7 +2291,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ar-dz.js": [
+  "./ar-dz": [
     {
       "id": "./node_modules/moment/locale/ar-dz.js",
       "name": "./node_modules/moment/locale/ar-dz.js",
@@ -2293,7 +2299,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ar-kw.js": [
+  "./ar-kw": [
     {
       "id": "./node_modules/moment/locale/ar-kw.js",
       "name": "./node_modules/moment/locale/ar-kw.js",
@@ -2301,7 +2307,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ar-ly.js": [
+  "./ar-ly": [
     {
       "id": "./node_modules/moment/locale/ar-ly.js",
       "name": "./node_modules/moment/locale/ar-ly.js",
@@ -2309,7 +2315,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ar-ma.js": [
+  "./ar-ma": [
     {
       "id": "./node_modules/moment/locale/ar-ma.js",
       "name": "./node_modules/moment/locale/ar-ma.js",
@@ -2317,7 +2323,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ar-sa.js": [
+  "./ar-sa": [
     {
       "id": "./node_modules/moment/locale/ar-sa.js",
       "name": "./node_modules/moment/locale/ar-sa.js",
@@ -2325,7 +2331,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ar-tn.js": [
+  "./ar-tn": [
     {
       "id": "./node_modules/moment/locale/ar-tn.js",
       "name": "./node_modules/moment/locale/ar-tn.js",
@@ -2333,7 +2339,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ar.js": [
+  "./ar": [
     {
       "id": "./node_modules/moment/locale/ar.js",
       "name": "./node_modules/moment/locale/ar.js",
@@ -2341,7 +2347,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./az.js": [
+  "./az": [
     {
       "id": "./node_modules/moment/locale/az.js",
       "name": "./node_modules/moment/locale/az.js",
@@ -2349,7 +2355,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./be.js": [
+  "./be": [
     {
       "id": "./node_modules/moment/locale/be.js",
       "name": "./node_modules/moment/locale/be.js",
@@ -2357,7 +2363,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./bg.js": [
+  "./bg": [
     {
       "id": "./node_modules/moment/locale/bg.js",
       "name": "./node_modules/moment/locale/bg.js",
@@ -2365,7 +2371,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./bm.js": [
+  "./bm": [
     {
       "id": "./node_modules/moment/locale/bm.js",
       "name": "./node_modules/moment/locale/bm.js",
@@ -2373,7 +2379,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./bn.js": [
+  "./bn": [
     {
       "id": "./node_modules/moment/locale/bn.js",
       "name": "./node_modules/moment/locale/bn.js",
@@ -2381,7 +2387,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./bo.js": [
+  "./bo": [
     {
       "id": "./node_modules/moment/locale/bo.js",
       "name": "./node_modules/moment/locale/bo.js",
@@ -2389,7 +2395,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./br.js": [
+  "./br": [
     {
       "id": "./node_modules/moment/locale/br.js",
       "name": "./node_modules/moment/locale/br.js",
@@ -2397,7 +2403,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./bs.js": [
+  "./bs": [
     {
       "id": "./node_modules/moment/locale/bs.js",
       "name": "./node_modules/moment/locale/bs.js",
@@ -2405,7 +2411,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ca.js": [
+  "./ca": [
     {
       "id": "./node_modules/moment/locale/ca.js",
       "name": "./node_modules/moment/locale/ca.js",
@@ -2413,7 +2419,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./cs.js": [
+  "./cs": [
     {
       "id": "./node_modules/moment/locale/cs.js",
       "name": "./node_modules/moment/locale/cs.js",
@@ -2421,7 +2427,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./cv.js": [
+  "./cv": [
     {
       "id": "./node_modules/moment/locale/cv.js",
       "name": "./node_modules/moment/locale/cv.js",
@@ -2429,7 +2435,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./cy.js": [
+  "./cy": [
     {
       "id": "./node_modules/moment/locale/cy.js",
       "name": "./node_modules/moment/locale/cy.js",
@@ -2437,7 +2443,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./da.js": [
+  "./da": [
     {
       "id": "./node_modules/moment/locale/da.js",
       "name": "./node_modules/moment/locale/da.js",
@@ -2445,7 +2451,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./de-at.js": [
+  "./de-at": [
     {
       "id": "./node_modules/moment/locale/de-at.js",
       "name": "./node_modules/moment/locale/de-at.js",
@@ -2453,7 +2459,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./de-ch.js": [
+  "./de-ch": [
     {
       "id": "./node_modules/moment/locale/de-ch.js",
       "name": "./node_modules/moment/locale/de-ch.js",
@@ -2461,7 +2467,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./de.js": [
+  "./de": [
     {
       "id": "./node_modules/moment/locale/de.js",
       "name": "./node_modules/moment/locale/de.js",
@@ -2469,7 +2475,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./dv.js": [
+  "./dv": [
     {
       "id": "./node_modules/moment/locale/dv.js",
       "name": "./node_modules/moment/locale/dv.js",
@@ -2477,7 +2483,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./el.js": [
+  "./el": [
     {
       "id": "./node_modules/moment/locale/el.js",
       "name": "./node_modules/moment/locale/el.js",
@@ -2485,7 +2491,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./en-au.js": [
+  "./en-au": [
     {
       "id": "./node_modules/moment/locale/en-au.js",
       "name": "./node_modules/moment/locale/en-au.js",
@@ -2493,7 +2499,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./en-ca.js": [
+  "./en-ca": [
     {
       "id": "./node_modules/moment/locale/en-ca.js",
       "name": "./node_modules/moment/locale/en-ca.js",
@@ -2501,7 +2507,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./en-gb.js": [
+  "./en-gb": [
     {
       "id": "./node_modules/moment/locale/en-gb.js",
       "name": "./node_modules/moment/locale/en-gb.js",
@@ -2509,7 +2515,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./en-ie.js": [
+  "./en-ie": [
     {
       "id": "./node_modules/moment/locale/en-ie.js",
       "name": "./node_modules/moment/locale/en-ie.js",
@@ -2517,7 +2523,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./en-il.js": [
+  "./en-il": [
     {
       "id": "./node_modules/moment/locale/en-il.js",
       "name": "./node_modules/moment/locale/en-il.js",
@@ -2525,7 +2531,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./en-nz.js": [
+  "./en-nz": [
     {
       "id": "./node_modules/moment/locale/en-nz.js",
       "name": "./node_modules/moment/locale/en-nz.js",
@@ -2533,7 +2539,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./eo.js": [
+  "./eo": [
     {
       "id": "./node_modules/moment/locale/eo.js",
       "name": "./node_modules/moment/locale/eo.js",
@@ -2541,7 +2547,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./es-do.js": [
+  "./es-do": [
     {
       "id": "./node_modules/moment/locale/es-do.js",
       "name": "./node_modules/moment/locale/es-do.js",
@@ -2549,7 +2555,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./es-us.js": [
+  "./es-us": [
     {
       "id": "./node_modules/moment/locale/es-us.js",
       "name": "./node_modules/moment/locale/es-us.js",
@@ -2557,7 +2563,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./es.js": [
+  "./es": [
     {
       "id": "./node_modules/moment/locale/es.js",
       "name": "./node_modules/moment/locale/es.js",
@@ -2565,7 +2571,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./et.js": [
+  "./et": [
     {
       "id": "./node_modules/moment/locale/et.js",
       "name": "./node_modules/moment/locale/et.js",
@@ -2573,7 +2579,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./eu.js": [
+  "./eu": [
     {
       "id": "./node_modules/moment/locale/eu.js",
       "name": "./node_modules/moment/locale/eu.js",
@@ -2581,7 +2587,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./fa.js": [
+  "./fa": [
     {
       "id": "./node_modules/moment/locale/fa.js",
       "name": "./node_modules/moment/locale/fa.js",
@@ -2589,7 +2595,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./fi.js": [
+  "./fi": [
     {
       "id": "./node_modules/moment/locale/fi.js",
       "name": "./node_modules/moment/locale/fi.js",
@@ -2597,7 +2603,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./fo.js": [
+  "./fo": [
     {
       "id": "./node_modules/moment/locale/fo.js",
       "name": "./node_modules/moment/locale/fo.js",
@@ -2605,7 +2611,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./fr-ca.js": [
+  "./fr-ca": [
     {
       "id": "./node_modules/moment/locale/fr-ca.js",
       "name": "./node_modules/moment/locale/fr-ca.js",
@@ -2613,7 +2619,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./fr-ch.js": [
+  "./fr-ch": [
     {
       "id": "./node_modules/moment/locale/fr-ch.js",
       "name": "./node_modules/moment/locale/fr-ch.js",
@@ -2621,7 +2627,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./fr.js": [
+  "./fr": [
     {
       "id": "./node_modules/moment/locale/fr.js",
       "name": "./node_modules/moment/locale/fr.js",
@@ -2629,7 +2635,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./fy.js": [
+  "./fy": [
     {
       "id": "./node_modules/moment/locale/fy.js",
       "name": "./node_modules/moment/locale/fy.js",
@@ -2637,7 +2643,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./gd.js": [
+  "./gd": [
     {
       "id": "./node_modules/moment/locale/gd.js",
       "name": "./node_modules/moment/locale/gd.js",
@@ -2645,7 +2651,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./gl.js": [
+  "./gl": [
     {
       "id": "./node_modules/moment/locale/gl.js",
       "name": "./node_modules/moment/locale/gl.js",
@@ -2653,7 +2659,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./gom-latn.js": [
+  "./gom-latn": [
     {
       "id": "./node_modules/moment/locale/gom-latn.js",
       "name": "./node_modules/moment/locale/gom-latn.js",
@@ -2661,7 +2667,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./gu.js": [
+  "./gu": [
     {
       "id": "./node_modules/moment/locale/gu.js",
       "name": "./node_modules/moment/locale/gu.js",
@@ -2669,7 +2675,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./he.js": [
+  "./he": [
     {
       "id": "./node_modules/moment/locale/he.js",
       "name": "./node_modules/moment/locale/he.js",
@@ -2677,7 +2683,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./hi.js": [
+  "./hi": [
     {
       "id": "./node_modules/moment/locale/hi.js",
       "name": "./node_modules/moment/locale/hi.js",
@@ -2685,7 +2691,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./hr.js": [
+  "./hr": [
     {
       "id": "./node_modules/moment/locale/hr.js",
       "name": "./node_modules/moment/locale/hr.js",
@@ -2693,7 +2699,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./hu.js": [
+  "./hu": [
     {
       "id": "./node_modules/moment/locale/hu.js",
       "name": "./node_modules/moment/locale/hu.js",
@@ -2701,7 +2707,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./hy-am.js": [
+  "./hy-am": [
     {
       "id": "./node_modules/moment/locale/hy-am.js",
       "name": "./node_modules/moment/locale/hy-am.js",
@@ -2709,7 +2715,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./id.js": [
+  "./id": [
     {
       "id": "./node_modules/moment/locale/id.js",
       "name": "./node_modules/moment/locale/id.js",
@@ -2717,7 +2723,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./is.js": [
+  "./is": [
     {
       "id": "./node_modules/moment/locale/is.js",
       "name": "./node_modules/moment/locale/is.js",
@@ -2725,7 +2731,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./it.js": [
+  "./it": [
     {
       "id": "./node_modules/moment/locale/it.js",
       "name": "./node_modules/moment/locale/it.js",
@@ -2733,7 +2739,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ja.js": [
+  "./ja": [
     {
       "id": "./node_modules/moment/locale/ja.js",
       "name": "./node_modules/moment/locale/ja.js",
@@ -2741,7 +2747,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./jv.js": [
+  "./jv": [
     {
       "id": "./node_modules/moment/locale/jv.js",
       "name": "./node_modules/moment/locale/jv.js",
@@ -2749,7 +2755,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ka.js": [
+  "./ka": [
     {
       "id": "./node_modules/moment/locale/ka.js",
       "name": "./node_modules/moment/locale/ka.js",
@@ -2757,7 +2763,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./kk.js": [
+  "./kk": [
     {
       "id": "./node_modules/moment/locale/kk.js",
       "name": "./node_modules/moment/locale/kk.js",
@@ -2765,7 +2771,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./km.js": [
+  "./km": [
     {
       "id": "./node_modules/moment/locale/km.js",
       "name": "./node_modules/moment/locale/km.js",
@@ -2773,7 +2779,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./kn.js": [
+  "./kn": [
     {
       "id": "./node_modules/moment/locale/kn.js",
       "name": "./node_modules/moment/locale/kn.js",
@@ -2781,7 +2787,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ko.js": [
+  "./ko": [
     {
       "id": "./node_modules/moment/locale/ko.js",
       "name": "./node_modules/moment/locale/ko.js",
@@ -2789,7 +2795,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ky.js": [
+  "./ky": [
     {
       "id": "./node_modules/moment/locale/ky.js",
       "name": "./node_modules/moment/locale/ky.js",
@@ -2797,7 +2803,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./lb.js": [
+  "./lb": [
     {
       "id": "./node_modules/moment/locale/lb.js",
       "name": "./node_modules/moment/locale/lb.js",
@@ -2805,7 +2811,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./lo.js": [
+  "./lo": [
     {
       "id": "./node_modules/moment/locale/lo.js",
       "name": "./node_modules/moment/locale/lo.js",
@@ -2813,7 +2819,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./lt.js": [
+  "./lt": [
     {
       "id": "./node_modules/moment/locale/lt.js",
       "name": "./node_modules/moment/locale/lt.js",
@@ -2821,7 +2827,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./lv.js": [
+  "./lv": [
     {
       "id": "./node_modules/moment/locale/lv.js",
       "name": "./node_modules/moment/locale/lv.js",
@@ -2829,7 +2835,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./me.js": [
+  "./me": [
     {
       "id": "./node_modules/moment/locale/me.js",
       "name": "./node_modules/moment/locale/me.js",
@@ -2837,7 +2843,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./mi.js": [
+  "./mi": [
     {
       "id": "./node_modules/moment/locale/mi.js",
       "name": "./node_modules/moment/locale/mi.js",
@@ -2845,7 +2851,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./mk.js": [
+  "./mk": [
     {
       "id": "./node_modules/moment/locale/mk.js",
       "name": "./node_modules/moment/locale/mk.js",
@@ -2853,7 +2859,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ml.js": [
+  "./ml": [
     {
       "id": "./node_modules/moment/locale/ml.js",
       "name": "./node_modules/moment/locale/ml.js",
@@ -2861,7 +2867,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./mn.js": [
+  "./mn": [
     {
       "id": "./node_modules/moment/locale/mn.js",
       "name": "./node_modules/moment/locale/mn.js",
@@ -2869,7 +2875,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./mr.js": [
+  "./mr": [
     {
       "id": "./node_modules/moment/locale/mr.js",
       "name": "./node_modules/moment/locale/mr.js",
@@ -2877,7 +2883,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ms-my.js": [
+  "./ms-my": [
     {
       "id": "./node_modules/moment/locale/ms-my.js",
       "name": "./node_modules/moment/locale/ms-my.js",
@@ -2885,7 +2891,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ms.js": [
+  "./ms": [
     {
       "id": "./node_modules/moment/locale/ms.js",
       "name": "./node_modules/moment/locale/ms.js",
@@ -2893,7 +2899,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./mt.js": [
+  "./mt": [
     {
       "id": "./node_modules/moment/locale/mt.js",
       "name": "./node_modules/moment/locale/mt.js",
@@ -2901,7 +2907,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./my.js": [
+  "./my": [
     {
       "id": "./node_modules/moment/locale/my.js",
       "name": "./node_modules/moment/locale/my.js",
@@ -2909,7 +2915,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./nb.js": [
+  "./nb": [
     {
       "id": "./node_modules/moment/locale/nb.js",
       "name": "./node_modules/moment/locale/nb.js",
@@ -2917,7 +2923,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ne.js": [
+  "./ne": [
     {
       "id": "./node_modules/moment/locale/ne.js",
       "name": "./node_modules/moment/locale/ne.js",
@@ -2925,7 +2931,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./nl-be.js": [
+  "./nl-be": [
     {
       "id": "./node_modules/moment/locale/nl-be.js",
       "name": "./node_modules/moment/locale/nl-be.js",
@@ -2933,7 +2939,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./nl.js": [
+  "./nl": [
     {
       "id": "./node_modules/moment/locale/nl.js",
       "name": "./node_modules/moment/locale/nl.js",
@@ -2941,7 +2947,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./nn.js": [
+  "./nn": [
     {
       "id": "./node_modules/moment/locale/nn.js",
       "name": "./node_modules/moment/locale/nn.js",
@@ -2949,7 +2955,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./pa-in.js": [
+  "./pa-in": [
     {
       "id": "./node_modules/moment/locale/pa-in.js",
       "name": "./node_modules/moment/locale/pa-in.js",
@@ -2957,7 +2963,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./pl.js": [
+  "./pl": [
     {
       "id": "./node_modules/moment/locale/pl.js",
       "name": "./node_modules/moment/locale/pl.js",
@@ -2965,7 +2971,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./pt-br.js": [
+  "./pt-br": [
     {
       "id": "./node_modules/moment/locale/pt-br.js",
       "name": "./node_modules/moment/locale/pt-br.js",
@@ -2973,7 +2979,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./pt.js": [
+  "./pt": [
     {
       "id": "./node_modules/moment/locale/pt.js",
       "name": "./node_modules/moment/locale/pt.js",
@@ -2981,7 +2987,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ro.js": [
+  "./ro": [
     {
       "id": "./node_modules/moment/locale/ro.js",
       "name": "./node_modules/moment/locale/ro.js",
@@ -2989,7 +2995,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ru.js": [
+  "./ru": [
     {
       "id": "./node_modules/moment/locale/ru.js",
       "name": "./node_modules/moment/locale/ru.js",
@@ -2997,7 +3003,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./sd.js": [
+  "./sd": [
     {
       "id": "./node_modules/moment/locale/sd.js",
       "name": "./node_modules/moment/locale/sd.js",
@@ -3005,7 +3011,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./se.js": [
+  "./se": [
     {
       "id": "./node_modules/moment/locale/se.js",
       "name": "./node_modules/moment/locale/se.js",
@@ -3013,7 +3019,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./si.js": [
+  "./si": [
     {
       "id": "./node_modules/moment/locale/si.js",
       "name": "./node_modules/moment/locale/si.js",
@@ -3021,7 +3027,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./sk.js": [
+  "./sk": [
     {
       "id": "./node_modules/moment/locale/sk.js",
       "name": "./node_modules/moment/locale/sk.js",
@@ -3029,7 +3035,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./sl.js": [
+  "./sl": [
     {
       "id": "./node_modules/moment/locale/sl.js",
       "name": "./node_modules/moment/locale/sl.js",
@@ -3037,7 +3043,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./sq.js": [
+  "./sq": [
     {
       "id": "./node_modules/moment/locale/sq.js",
       "name": "./node_modules/moment/locale/sq.js",
@@ -3045,7 +3051,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./sr-cyrl.js": [
+  "./sr-cyrl": [
     {
       "id": "./node_modules/moment/locale/sr-cyrl.js",
       "name": "./node_modules/moment/locale/sr-cyrl.js",
@@ -3053,7 +3059,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./sr.js": [
+  "./sr": [
     {
       "id": "./node_modules/moment/locale/sr.js",
       "name": "./node_modules/moment/locale/sr.js",
@@ -3061,7 +3067,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ss.js": [
+  "./ss": [
     {
       "id": "./node_modules/moment/locale/ss.js",
       "name": "./node_modules/moment/locale/ss.js",
@@ -3069,7 +3075,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./sv.js": [
+  "./sv": [
     {
       "id": "./node_modules/moment/locale/sv.js",
       "name": "./node_modules/moment/locale/sv.js",
@@ -3077,7 +3083,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./sw.js": [
+  "./sw": [
     {
       "id": "./node_modules/moment/locale/sw.js",
       "name": "./node_modules/moment/locale/sw.js",
@@ -3085,7 +3091,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ta.js": [
+  "./ta": [
     {
       "id": "./node_modules/moment/locale/ta.js",
       "name": "./node_modules/moment/locale/ta.js",
@@ -3093,7 +3099,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./te.js": [
+  "./te": [
     {
       "id": "./node_modules/moment/locale/te.js",
       "name": "./node_modules/moment/locale/te.js",
@@ -3101,7 +3107,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./tet.js": [
+  "./tet": [
     {
       "id": "./node_modules/moment/locale/tet.js",
       "name": "./node_modules/moment/locale/tet.js",
@@ -3109,7 +3115,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./tg.js": [
+  "./tg": [
     {
       "id": "./node_modules/moment/locale/tg.js",
       "name": "./node_modules/moment/locale/tg.js",
@@ -3117,7 +3123,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./th.js": [
+  "./th": [
     {
       "id": "./node_modules/moment/locale/th.js",
       "name": "./node_modules/moment/locale/th.js",
@@ -3125,7 +3131,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./tl-ph.js": [
+  "./tl-ph": [
     {
       "id": "./node_modules/moment/locale/tl-ph.js",
       "name": "./node_modules/moment/locale/tl-ph.js",
@@ -3133,7 +3139,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./tlh.js": [
+  "./tlh": [
     {
       "id": "./node_modules/moment/locale/tlh.js",
       "name": "./node_modules/moment/locale/tlh.js",
@@ -3141,7 +3147,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./tr.js": [
+  "./tr": [
     {
       "id": "./node_modules/moment/locale/tr.js",
       "name": "./node_modules/moment/locale/tr.js",
@@ -3149,7 +3155,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./tzl.js": [
+  "./tzl": [
     {
       "id": "./node_modules/moment/locale/tzl.js",
       "name": "./node_modules/moment/locale/tzl.js",
@@ -3157,7 +3163,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./tzm-latn.js": [
+  "./tzm-latn": [
     {
       "id": "./node_modules/moment/locale/tzm-latn.js",
       "name": "./node_modules/moment/locale/tzm-latn.js",
@@ -3165,7 +3171,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./tzm.js": [
+  "./tzm": [
     {
       "id": "./node_modules/moment/locale/tzm.js",
       "name": "./node_modules/moment/locale/tzm.js",
@@ -3173,7 +3179,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ug-cn.js": [
+  "./ug-cn": [
     {
       "id": "./node_modules/moment/locale/ug-cn.js",
       "name": "./node_modules/moment/locale/ug-cn.js",
@@ -3181,7 +3187,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./uk.js": [
+  "./uk": [
     {
       "id": "./node_modules/moment/locale/uk.js",
       "name": "./node_modules/moment/locale/uk.js",
@@ -3189,7 +3195,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./ur.js": [
+  "./ur": [
     {
       "id": "./node_modules/moment/locale/ur.js",
       "name": "./node_modules/moment/locale/ur.js",
@@ -3197,7 +3203,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./uz-latn.js": [
+  "./uz-latn": [
     {
       "id": "./node_modules/moment/locale/uz-latn.js",
       "name": "./node_modules/moment/locale/uz-latn.js",
@@ -3205,7 +3211,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./uz.js": [
+  "./uz": [
     {
       "id": "./node_modules/moment/locale/uz.js",
       "name": "./node_modules/moment/locale/uz.js",
@@ -3213,7 +3219,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./vi.js": [
+  "./vi": [
     {
       "id": "./node_modules/moment/locale/vi.js",
       "name": "./node_modules/moment/locale/vi.js",
@@ -3221,7 +3227,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./x-pseudo.js": [
+  "./x-pseudo": [
     {
       "id": "./node_modules/moment/locale/x-pseudo.js",
       "name": "./node_modules/moment/locale/x-pseudo.js",
@@ -3229,7 +3235,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./yo.js": [
+  "./yo": [
     {
       "id": "./node_modules/moment/locale/yo.js",
       "name": "./node_modules/moment/locale/yo.js",
@@ -3237,7 +3243,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./zh-cn.js": [
+  "./zh-cn": [
     {
       "id": "./node_modules/moment/locale/zh-cn.js",
       "name": "./node_modules/moment/locale/zh-cn.js",
@@ -3245,7 +3251,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./zh-hk.js": [
+  "./zh-hk": [
     {
       "id": "./node_modules/moment/locale/zh-hk.js",
       "name": "./node_modules/moment/locale/zh-hk.js",
@@ -3253,7 +3259,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./zh-tw.js": [
+  "./zh-tw": [
     {
       "id": "./node_modules/moment/locale/zh-tw.js",
       "name": "./node_modules/moment/locale/zh-tw.js",
@@ -3297,14 +3303,6 @@
     {
       "id": "./node_modules/object.values/index.js",
       "name": "./node_modules/object.values/index.js",
-      "file": "vendors~Booking~Description-calendar.bundle.js",
-      "publicPath": "vendors~Booking~Description-calendar.bundle.js"
-    }
-  ],
-  "prop-types-exact/build/helpers/isPlainObject": [
-    {
-      "id": "./node_modules/prop-types-exact/build/helpers/isPlainObject.js",
-      "name": "./node_modules/prop-types-exact/build/helpers/isPlainObject.js",
       "file": "vendors~Booking~Description-calendar.bundle.js",
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
@@ -3573,7 +3571,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./DayOfWeekShape": [
+  "../shapes/DayOfWeekShape": [
     {
       "id": "./node_modules/react-dates/lib/shapes/DayOfWeekShape.js",
       "name": "./node_modules/react-dates/lib/shapes/DayOfWeekShape.js",
@@ -3589,7 +3587,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "../shapes/FocusedInputShape": [
+  "./FocusedInputShape": [
     {
       "id": "./node_modules/react-dates/lib/shapes/FocusedInputShape.js",
       "name": "./node_modules/react-dates/lib/shapes/FocusedInputShape.js",
@@ -3613,7 +3611,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./OpenDirectionShape": [
+  "../shapes/OpenDirectionShape": [
     {
       "id": "./node_modules/react-dates/lib/shapes/OpenDirectionShape.js",
       "name": "./node_modules/react-dates/lib/shapes/OpenDirectionShape.js",
@@ -3765,7 +3763,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./isAfterDay": [
+  "../utils/isAfterDay": [
     {
       "id": "./node_modules/react-dates/lib/utils/isAfterDay.js",
       "name": "./node_modules/react-dates/lib/utils/isAfterDay.js",
@@ -3773,7 +3771,7 @@
       "publicPath": "vendors~Booking~Description-calendar.bundle.js"
     }
   ],
-  "./isBeforeDay": [
+  "../utils/isBeforeDay": [
     {
       "id": "./node_modules/react-dates/lib/utils/isBeforeDay.js",
       "name": "./node_modules/react-dates/lib/utils/isBeforeDay.js",
@@ -4069,7 +4067,7 @@
       "publicPath": "vendors~Booking~Modal.bundle.js"
     }
   ],
-  "./tabbable": [
+  "../helpers/tabbable": [
     {
       "id": "./node_modules/react-modal/lib/helpers/tabbable.js",
       "name": "./node_modules/react-modal/lib/helpers/tabbable.js",

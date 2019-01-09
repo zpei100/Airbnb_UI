@@ -16,7 +16,6 @@ import rootReducer from '../client/reducers/rootReducer';
 
 import Gallery from '../client/components/gallery/Gallery';
 import Nav from '../client/components/navbar/Nav';
-
 import Description from '../client/components/description/Description.jsx';
 
 import RelatedListings from '../client/components/relatedListings/RelatedListings';
@@ -118,11 +117,11 @@ app.get('/rooms/:id', function(req, res) {
             <CarouselModal />
           </Provider>
         ),
-        bookingHtml: renderToString(
-          <Provider store={store}>
-            <Booking />
-          </Provider>
-        )
+        // bookingHtml: renderToString(
+        //   <Provider store={store}>
+        //     <Booking />
+        //   </Provider>
+        // )
       };
 
       let bundles = getBundles(stats, modules);

@@ -92,7 +92,7 @@ Room.remove({})
       beds: random(5) + 2,
       baths: random(2) + 1,
       owner: casual.first_name,
-      ownerImage: `https://picsum.photos/666/444/?${random(999999)}`,
+      ownerImage: `https://picsum.photos/66/44/?${random(999999)}`,
       header: dummyData.headers[random(dummyData.headers.length)],
       details: dummyData.details[random(dummyData.details.length)],
       related,

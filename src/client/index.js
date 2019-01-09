@@ -17,6 +17,8 @@ import LoadableModal from './components/modal/LoadableModal.jsx'
 import LoadableBooking from './components/booking/LoadableBooking.jsx'
 import LoadableDescription from './components/description/LoadableDescription.jsx'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import { floatButtonWhenEntering, highlightImageOnHover } from "./helpers/initialize";
 
 const initialState = window.__initialState__;

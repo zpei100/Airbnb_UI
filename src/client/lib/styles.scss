@@ -360,6 +360,7 @@ $image-size: 65px;
     width: $image-size;
     height: $image-size;
     border-radius: 50%;
+    overflow: hidden;
   }
 
   ul img {

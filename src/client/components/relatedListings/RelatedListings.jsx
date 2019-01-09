@@ -9,7 +9,6 @@ import updateFavorites from '../../actionCreators/updateFavorites';
 import updateFavoriteActivities from '../../actionCreators/updateFavoriteActivities';
 
 const RelatedListings = ({ relatedListings, activities, updateFavorites, updateFavoriteActivities }) => {
-
   const breakpoint = (breakpoint, slidesToShow) => { return {breakpoint, settings: {slidesToShow}}}
   const settings = {
     infinite: false,

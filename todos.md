@@ -1,9 +1,9 @@
 [ ] pre-fetch resources
-[ ] make description loadable
-[ ] Make calendar inside description loadable with intersection observer
+[x] make description loadable
+[x] Make calendar inside description loadable with intersection observer
 [x] Make related listings loadable with intersection observer
 [x] Make modal loadable with onClick event (pre-fetch)
-[ ] Make better loading components
+[x] Make better loading components
 
 issues with SSR coupled with loadable:
 

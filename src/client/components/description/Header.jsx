@@ -9,7 +9,9 @@ export default ({title, location, ownerImage, owner}) => {
         <div>{location}</div>
       </div>
       <div>
-        <img id="profile-picture" src={ownerImage} />
+        <div id="profile-picture">
+          <img className="h-100 w-auto" src={ownerImage} />
+        </div>
         <div className="text-center">{owner}</div>
       </div>
     </div>

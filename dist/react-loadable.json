@@ -3,152 +3,152 @@
     {
       "id": "./node_modules/classnames/index.js",
       "name": "./node_modules/classnames/index.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "./MediaQuery": [
     {
       "id": "./node_modules/enquire.js/src/MediaQuery.js",
       "name": "./node_modules/enquire.js/src/MediaQuery.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "./MediaQueryDispatch": [
     {
       "id": "./node_modules/enquire.js/src/MediaQueryDispatch.js",
       "name": "./node_modules/enquire.js/src/MediaQueryDispatch.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "./QueryHandler": [
     {
       "id": "./node_modules/enquire.js/src/QueryHandler.js",
       "name": "./node_modules/enquire.js/src/QueryHandler.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "./Util": [
     {
       "id": "./node_modules/enquire.js/src/Util.js",
       "name": "./node_modules/enquire.js/src/Util.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "enquire.js": [
     {
       "id": "./node_modules/enquire.js/src/index.js",
       "name": "./node_modules/enquire.js/src/index.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "json2mq": [
     {
       "id": "./node_modules/json2mq/index.js",
       "name": "./node_modules/json2mq/index.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "lodash.debounce": [
     {
       "id": "./node_modules/lodash.debounce/index.js",
       "name": "./node_modules/lodash.debounce/index.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "./arrows": [
     {
       "id": "./node_modules/react-slick/lib/arrows.js",
       "name": "./node_modules/react-slick/lib/arrows.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "./default-props": [
     {
       "id": "./node_modules/react-slick/lib/default-props.js",
       "name": "./node_modules/react-slick/lib/default-props.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "./dots": [
     {
       "id": "./node_modules/react-slick/lib/dots.js",
       "name": "./node_modules/react-slick/lib/dots.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "react-slick": [
     {
       "id": "./node_modules/react-slick/lib/index.js",
       "name": "./node_modules/react-slick/lib/index.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "./initial-state": [
     {
       "id": "./node_modules/react-slick/lib/initial-state.js",
       "name": "./node_modules/react-slick/lib/initial-state.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "./inner-slider": [
     {
       "id": "./node_modules/react-slick/lib/inner-slider.js",
       "name": "./node_modules/react-slick/lib/inner-slider.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "./slider": [
     {
       "id": "./node_modules/react-slick/lib/slider.js",
       "name": "./node_modules/react-slick/lib/slider.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "./track": [
     {
       "id": "./node_modules/react-slick/lib/track.js",
       "name": "./node_modules/react-slick/lib/track.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "./utils/innerSliderUtils": [
     {
       "id": "./node_modules/react-slick/lib/utils/innerSliderUtils.js",
       "name": "./node_modules/react-slick/lib/utils/innerSliderUtils.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "resize-observer-polyfill": [
     {
       "id": "./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js",
       "name": "./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "string-convert/camel2hyphen": [
     {
       "id": "./node_modules/string-convert/camel2hyphen.js",
       "name": "./node_modules/string-convert/camel2hyphen.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "vendors~RelatedListings.bundle.js",
+      "publicPath": "vendors~RelatedListings.bundle.js"
     }
   ],
   "!!../../css-loader/index.js!./slick-theme.css": [
@@ -219,8 +219,8 @@
     {
       "id": "./src/client/components/relatedListings/Arrow.jsx",
       "name": "./src/client/components/relatedListings/Arrow.jsx",
-      "file": "2.bundle.js",
-      "publicPath": "2.bundle.js"
+      "file": "RelatedListings.bundle.js",
+      "publicPath": "RelatedListings.bundle.js"
     },
     {
       "id": "./src/client/components/modal/Arrow.jsx",
@@ -229,12 +229,12 @@
       "publicPath": "Modal.bundle.js"
     }
   ],
-  "./Rating.jsx": [
+  "../relatedListings/Rating.jsx": [
     {
       "id": "./src/client/components/relatedListings/Rating.jsx",
       "name": "./src/client/components/relatedListings/Rating.jsx",
-      "file": "2.bundle.js",
-      "publicPath": "2.bundle.js"
+      "file": "RelatedListings.bundle.js",
+      "publicPath": "RelatedListings.bundle.js"
     },
     {
       "id": "./src/client/components/relatedListings/Rating.jsx",
@@ -247,16 +247,16 @@
     {
       "id": "./src/client/components/relatedListings/RelatedListings.jsx",
       "name": "./src/client/components/relatedListings/RelatedListings.jsx",
-      "file": "2.bundle.js",
-      "publicPath": "2.bundle.js"
+      "file": "RelatedListings.bundle.js",
+      "publicPath": "RelatedListings.bundle.js"
     }
   ],
   "./RoomCard.jsx": [
     {
       "id": "./src/client/components/relatedListings/RoomCard.jsx",
       "name": "./src/client/components/relatedListings/RoomCard.jsx",
-      "file": "2.bundle.js",
-      "publicPath": "2.bundle.js"
+      "file": "RelatedListings.bundle.js",
+      "publicPath": "RelatedListings.bundle.js"
     }
   ],
   "!!../../css-loader/index.js!./slick.css": [

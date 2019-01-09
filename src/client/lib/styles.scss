@@ -160,6 +160,7 @@ img.reveal {
 //============================================ Gallery ============================================
 .gallery {
   display: grid;
+  background-color: white;
   position: relative;
   height: 590px;
   grid-template-columns: 2fr 1fr 1fr;

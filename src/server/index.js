@@ -29,7 +29,7 @@ import { getBundles } from 'react-loadable/webpack';
 import stats from '../../dist/react-loadable.json';
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3002;
 
 app.use(compression());
 app.use(cors());
@@ -95,28 +95,28 @@ app.get('/rooms/:id', function(req, res) {
             <Gallery />
           </Provider>
         ),
-        relatedListingsHtml: renderToString(
-          <Provider store={store}>
-            <RelatedListings />
-          </Provider>
-        ),
+        // relatedListingsHtml: renderToString(
+        //   <Provider store={store}>
+        //     <RelatedListings />
+        //   </Provider>
+        // ),
         navHtml: renderToString(
           <Provider store={store}>
             <Nav />
           </Provider>
         ),
-        descriptionHtml: renderToString(
-          <Provider store={store}>
-            <Loadable.Capture report={moduleName => modules.push(moduleName)}>
-              <Description />
-            </Loadable.Capture>
-          </Provider>
-        ),
-        modalHtml: renderToString(
-          <Provider store={store}>
-            <CarouselModal />
-          </Provider>
-        ),
+        // descriptionHtml: renderToString(
+        //   <Provider store={store}>
+        //     <Loadable.Capture report={moduleName => modules.push(moduleName)}>
+        //       <Description />
+        //     </Loadable.Capture>
+        //   </Provider>
+        // ),
+        // modalHtml: renderToString(
+        //   <Provider store={store}>
+        //     <CarouselModal />
+        //   </Provider>
+        // ),
         // bookingHtml: renderToString(
         //   <Provider store={store}>
         //     <Booking />
@@ -144,26 +144,26 @@ app.get('/getRoom/:id', function(req, res) {
             <Gallery />
           </Provider>
         ),
-        relatedListingsHtml: renderToString(
-          <Provider store={store}>
-            <RelatedListings />
-          </Provider>
-        ),
+        // relatedListingsHtml: renderToString(
+        //   <Provider store={store}>
+        //     <RelatedListings />
+        //   </Provider>
+        // ),
         navHtml: renderToString(
           <Provider store={store}>
             <Nav />
           </Provider>
         ),
-        descriptionHtml: renderToString(
-          <Provider store={store}>
-            <Description />
-          </Provider>
-        ),
-        modalHtml: renderToString(
-          <Provider store={store}>
-            <CarouselModal />
-          </Provider>
-        ),
+        // descriptionHtml: renderToString(
+        //   <Provider store={store}>
+        //     <Description />
+        //   </Provider>
+        // ),
+        // modalHtml: renderToString(
+        //   <Provider store={store}>
+        //     <CarouselModal />
+        //   </Provider>
+        // ),
         // bookingHtml: renderToString(
         //   <Provider store={store}>
         //     <Booking />
@@ -175,8 +175,8 @@ app.get('/getRoom/:id', function(req, res) {
     }).catch(() => res.status(404));
 });
 
-Loadable.preloadAll().then(() => {
+// Loadable.preloadAll().then(() => {
   app.listen(port, function() {
     console.log(`server up on port ${port}`);
   });
-})
+// })

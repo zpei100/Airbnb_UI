@@ -35,7 +35,7 @@ module.exports = function(
         <div id="modal-app">${modalHtml || ''}</div>
         <div id="gallery-app">${galleryHtml || ''}</div>
         <div id="app-body" class="container m-auto p-0">
-          <div id="description-app">${descriptionHtml || ''}</div>
+          <div id="description-app">${descriptionHtml || ''}<div style="height: 1000px, background-color: white"></div></div>
           <div id="reviews-app" style="height: 30px"></div>
           <div id="booking-app" class="pr-2">${bookingHtml || ''}</div> 
           <div id="related-listings-app">${relatedListingsHtml || ''}</div>

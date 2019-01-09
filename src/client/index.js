@@ -27,7 +27,7 @@ delete window.__initialState__;
 
 const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
 
-Loadable.preloadReady().then(() => {
+// Loadable.preloadReady().then(() => {
   hydrate(
     <Provider store={store}>
       <LazyRelatedListing />
@@ -79,4 +79,4 @@ Loadable.preloadReady().then(() => {
     floatButtonWhenEntering($fourthImage);
     floatButtonWhenEntering($viewPhoto);
   });
-})
+// })

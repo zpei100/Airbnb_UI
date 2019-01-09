@@ -7,7 +7,7 @@ export default class LazyRelatedListings extends React.Component {
       <Observer load={() => {
         import('slick-carousel/slick/slick.css')
         import('slick-carousel/slick/slick-theme.css')
-        return import(/* chunkFilename: "RelatedListings" */ './RelatedListings.jsx')
+        return import(/* webpackChunkName: "RelatedListings" */ './RelatedListings.jsx')
       }}>
         {Component => Component ? <Component /> : ''} 
       </Observer>

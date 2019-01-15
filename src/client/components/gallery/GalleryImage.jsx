@@ -15,11 +15,10 @@ class GalleryImage extends React.Component {
   }
 
   componentDidMount() {
-    console.log('mounted !!!')
     this.setState({loaded: true}, () => {
       this.trueImage.onload = function() {
         $(this).removeClass('hidden').removeClass('preview').addClass('reveal')
-        setTimeout(() => {$(this).addClass('zoom').removeClass('reveal')}, 1050)
+        setTimeout(() => {$(this).addClass('zoom')}, 1050)
       }
     }) 
   }

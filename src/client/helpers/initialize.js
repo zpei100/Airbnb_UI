@@ -24,7 +24,7 @@ export const highlightImageOnHover = function(ele) {
         const others = $('.gallery .reveal').not(e.target)
 
         $(others).stop();
-        $(others).css({ filter: 'brightness(75%)', transition: 'ease-in, 1s' });
+        $(others).css({ filter: 'brightness(60%)', transition: 'ease-in, 1s' });
       }
     },
     e => {

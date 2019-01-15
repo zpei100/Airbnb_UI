@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import $ from 'jquery';
 
 class Carousel extends React.Component {
   componentDidMount() {
-    $('.carousel-fade  .carousel-item').css('transition-duration',`${this.props.animationDuration}ms`);
     $($('.carousel-item')[this.props.activeImageIndex]).toggleClass('active');
 
   }

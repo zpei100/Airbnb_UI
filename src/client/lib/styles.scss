@@ -315,9 +315,9 @@ img.reveal {
   margin-right: 0;
 }
 
-#Slider li:not(.active) {
-  filter: brightness(50%);
-}
+// #Slider li:not(.active) {
+//   filter: brightness(0%)!important;
+// }
 
 @media (max-width: $break-width-sm) {
   #modal-carousel .carousel-arrows svg {
@@ -402,7 +402,7 @@ $drop-down-option-text-size: $btn-circle-size * 2 /5;
   text-align: center;
   padding: 6px 0;
   font-size: $btn-circle-size * 2 / 5;
-  border-radius: $btn-circle-size/2;
+  border-radius: $btn-circle-size/2 !important;
 }
 
 .navbar {

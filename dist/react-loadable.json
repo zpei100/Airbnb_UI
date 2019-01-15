@@ -179,7 +179,7 @@
       "publicPath": "Booking.bundle.js"
     }
   ],
-  "../relatedListings/Rating.jsx": [
+  "./Rating.jsx": [
     {
       "id": "./src/client/components/relatedListings/Rating.jsx",
       "name": "./src/client/components/relatedListings/Rating.jsx",

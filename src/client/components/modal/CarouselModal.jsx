@@ -63,6 +63,8 @@ class CarouselModal extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.activeImageIndex !== this.props.activeImageIndex || !prevProps.showModal) {
+      console.log('prev active and this. active', prevProps.activeImageIndex, this.props.activeImageIndex)
+      $($('.carousel-item')[prevProps.activeImageIndex]).toggleClass('active');
       $($('.carousel-item')[this.props.activeImageIndex]).toggleClass('active');
       if (this.props.showModal) this.slideActiveImageToCenter(prevProps.showModal ? prevProps.activeImageIndex : 0);
     }

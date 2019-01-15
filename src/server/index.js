@@ -24,7 +24,6 @@ const app = express();
 const port = process.env.PORT || 3002;
 
 app.use(compression());
-app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.resolve(__dirname, '../../dist')));
 app.use(session({

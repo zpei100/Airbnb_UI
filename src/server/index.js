@@ -1,6 +1,5 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import cors from 'cors';
 import path from 'path';
 import session from 'express-session';
 import compression from 'compression';
@@ -16,15 +15,8 @@ import rootReducer from '../client/reducers/rootReducer';
 
 import Gallery from '../client/components/gallery/Gallery';
 import Nav from '../client/components/navbar/Nav';
-import Description from '../client/components/description/Description.jsx';
-
-import RelatedListings from '../client/components/relatedListings/RelatedListings';
-import CarouselModal from '../client/components/modal/CarouselModal';
-// import Booking from '../client/components/booking/Booking.jsx';
 
 import { getRoomAndUserInfo, addDates } from './handlers/getRoomAndUserInfo';
-
-import Loadable from 'react-loadable';
 import { getBundles } from 'react-loadable/webpack';
 import stats from '../../dist/react-loadable.json';
 
